@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>NMS Representações — Esteiras & Correntes Transportadoras Modulares</title>
+<link rel="icon" type="image/png" href="NMS - FaveIcon.png">
+<link rel="shortcut icon" type="image/png" href="NMS - FaveIcon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#D4222A;--red-dark:#A81920;
+  --black:#0A0A0A;--white:#FFFFFF;
+  --gray-100:#F5F5F3;--gray-200:#E8E8E4;
+  --gray-400:#9E9E95;--gray-600:#5A5A54;--gray-800:#1E1E1C;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--black);cursor:none;overflow-x:hidden}
+
+/* CURSOR */
+.cursor-dot{position:fixed;top:0;left:0;width:10px;height:10px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;will-change:left,top}
+.cursor-ring{position:fixed;top:0;left:0;width:44px;height:44px;border:1.5px solid rgba(212,34,42,.55);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .35s,height .35s,border-color .3s;will-change:left,top}
+.cursor-ring.hover{width:64px;height:64px;border-color:var(--red)}
+body.cursor-dark .cursor-ring{border-color:rgba(255,255,255,.4)}
+body.cursor-dark .cursor-dot{background:var(--white)}
+
+/* OVERLAY */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:998;opacity:0;pointer-events:none;transition:opacity .4s}
+.overlay.show{opacity:1;pointer-events:all}
+
+/* NAV */
+header>nav, body>nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;height:72px;pointer-events:none;transition:background .4s ease, backdrop-filter .4s ease, box-shadow .4s ease}
+body>nav.scrolled{background:rgba(10,10,10,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 24px rgba(0,0,0,.4)}
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;height:72px;pointer-events:none;transition:background .4s ease, backdrop-filter .4s ease, box-shadow .4s ease}
+#main-nav.scrolled{background:rgba(10,10,10,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 24px rgba(0,0,0,.4)}
+.nav-left{background:transparent;display:flex;align-items:center;padding:0 0 0 28px;pointer-events:all}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo img{height:60px;display:block;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.4))}
+.nav-hamburger{display:none}
+.nav-right{flex:1;display:flex;align-items:center;justify-content:flex-end;padding:0 32px;gap:36px;pointer-events:all}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--white);text-decoration:none;position:relative;cursor:none;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--white);transition:width .3s}
+.nav-link:hover::after{width:100%}
+
+/* MEGA MENU - removido */
+
+/* HERO */
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#0d1520}
+.hero-bg{position:absolute;inset:0;background:#0a0c0f}
+.hero-bg-img{position:absolute;inset:0;background-image:url('nms-fullbanner.webp');background-size:cover;background-position:center;opacity:1}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,8,12,.82) 0%,rgba(5,8,12,.55) 50%,rgba(5,8,12,.2) 100%)}
+.hero-pattern{display:none}
+
+.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 28px 128px;max-width:680px}
+.unirons-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border:1px solid rgba(255,255,255,.2);border-radius:100px;margin-bottom:22px;opacity:0;animation:fadeIn .8s .2s forwards;width:fit-content}
+.unirons-badge span{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.unirons-badge strong{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--white)}
+.unirons-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--white);margin-bottom:14px;opacity:0;transform:translateY(20px);animation:fadeUp .8s .3s forwards}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(50px,13vw,84px);font-weight:800;line-height:.93;color:var(--white);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:32px;opacity:0;transform:translateY(30px);animation:fadeUp .9s .5s forwards}
+.hero-title em{font-style:normal;color:var(--red)}
+.hero-cta-wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp .8s .8s forwards}
+
+/* BUTTONS */
+.btn-solid{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:var(--red);border-radius:100px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);text-decoration:none;cursor:none;border:1.5px solid var(--red);transition:background .3s,border-color .3s,transform .2s}
+.btn-solid:hover{background:var(--red-dark);border-color:var(--red-dark);transform:translateY(-1px)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border:1.5px solid rgba(255,255,255,.45);border-radius:100px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);text-decoration:none;cursor:none;transition:border-color .3s,background .3s}
+.btn-outline:hover{border-color:var(--red);background:var(--red)}
+
+/* scroll indicator */
+.scroll-indicator{position:absolute;bottom:36px;right:24px;z-index:3;opacity:0;animation:fadeIn 1s 1.2s forwards}
+.scroll-circle{width:52px;height:52px;border:1.5px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);animation:pulse 2.5s infinite;cursor:none}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.09);opacity:.65}}
+.featured-card{position:absolute;bottom:0;left:0;background:var(--white);padding:22px 28px 22px 40px;width:min(300px,78vw);z-index:3;opacity:0;transform:translateY(20px);animation:fadeUp .8s 1s forwards}
+.featured-label{position:absolute;left:10px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gray-400)}
+.featured-location{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray-400);margin-bottom:4px}
+.featured-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--black)}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{to{opacity:1}}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s cubic-bezier(.25,.46,.45,.94),transform .75s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.12s}
+.reveal-d2{transition-delay:.24s}
+.reveal-d3{transition-delay:.36s}
+.reveal-d4{transition-delay:.48s}
+
+/* SECTION HELPERS */
+.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,7.5vw,54px);font-weight:800;text-transform:uppercase;line-height:1.02;color:var(--black)}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:36px}
+
+/* CLIENTS MARQUEE */
+.clients{background:var(--gray-100);padding:44px 24px;overflow:hidden}
+.clients-label{font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray-400);text-align:center;margin-bottom:28px}
+.clients-track{display:flex;overflow:hidden}
+.clients-list{display:flex;gap:44px;align-items:center;animation:marquee 18s linear infinite;flex-shrink:0}
+.client-item{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);white-space:nowrap;cursor:default;transition:color .3s}
+.client-item:hover{color:var(--gray-600)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+/* SERVICES */
+.services{padding:80px 24px;background:var(--white)}
+.services-grid{display:grid;grid-template-columns:1fr;gap:2px}
+@media(min-width:600px){.services-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.services-grid{grid-template-columns:1fr 1fr 1fr}}
+.service-card{background:var(--gray-100);padding:36px 28px;position:relative;overflow:hidden;transition:background .45s ease,color .45s ease;cursor:none}
+.service-card:hover{background:var(--black)}
+.service-icon{width:50px;height:50px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-size:22px;transition:background .45s,color .45s}
+.service-card:hover .service-icon{background:rgba(212,34,42,.35)}
+.service-title{font-family:'Barlow Condensed',sans-serif;font-size:23px;font-weight:700;text-transform:uppercase;color:var(--black);margin-bottom:10px;transition:color .45s}
+.service-card:hover .service-title{color:var(--white)}
+.service-desc{font-size:16px;line-height:1.65;color:var(--gray-600);transition:color .45s}
+.service-card:hover .service-desc{color:rgba(255,255,255,.55)}
+.service-link{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);text-decoration:none;cursor:none;opacity:0;transition:opacity .3s}
+.service-card:hover .service-link{opacity:1}
+
+/* DISCOVER BAR */
+.discover-bar{display:flex;align-items:center;gap:14px;background:var(--white);border-top:1px solid var(--gray-200);padding:16px 24px;cursor:none;text-decoration:none;position:sticky;bottom:0;z-index:100}
+.discover-plus{width:32px;height:32px;border:1.5px solid var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .3s,border-color .3s}
+.discover-bar:hover .discover-plus{background:var(--black);color:var(--white)}
+.discover-text{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.15em;text-transform:uppercase;color:var(--black)}
+
+/* DIFFERENTIALS */
+.differentials{padding:80px 24px;background:var(--white)}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+@media(max-width:480px){.diff-grid{grid-template-columns:1fr}}
+.diff-item{padding:36px 28px;background:var(--gray-100);position:relative;overflow:hidden;transition:background .3s}
+.diff-item:hover{background:#eaeae7}
+.diff-number{position:absolute;top:14px;right:18px;font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:900;color:rgba(0,0,0,.08);line-height:1;pointer-events:none;user-select:none;transition:color .3s}
+.diff-item:hover .diff-number{color:rgba(0,0,0,.13)}
+.diff-icon{font-size:30px;margin-bottom:14px;display:block}
+.diff-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+.diff-desc{font-size:16px;line-height:1.65;color:var(--gray-600)}
+
+/* QUOTE */
+.quote-section{background:var(--gray-800);padding:0;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:700px){.quote-section{grid-template-columns:1fr}}
+.quote-content{padding:72px 40px 72px 32px;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center}
+.quote-bg-text{position:absolute;bottom:-20px;left:-10px;font-family:'Barlow Condensed',sans-serif;font-size:clamp(80px,14vw,140px);font-weight:900;color:rgba(255,255,255,.025);text-transform:uppercase;letter-spacing:-.02em;white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
+.quote-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:20px;position:relative;z-index:1}
+.quote-text{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,3.4vw,38px);font-weight:700;color:var(--white);line-height:1.25;margin-bottom:24px;position:relative;z-index:1}
+.quote-attribution{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+.quote-line{width:24px;height:2px;background:var(--red);flex-shrink:0}
+.quote-name{font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-400)}
+.quote-play{display:inline-flex;align-items:center;gap:14px;margin-top:32px;cursor:none;text-decoration:none;position:relative;z-index:1}
+.play-circle{width:56px;height:56px;border:1.5px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);transition:border-color .3s,background .3s}
+.quote-play:hover .play-circle{border-color:var(--red);background:var(--red)}
+.play-label{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);transition:color .3s}
+.quote-play:hover .play-label{color:var(--white)}
+.quote-image-col{position:relative;overflow:hidden;min-height:420px}
+@media(max-width:700px){.quote-image-col{min-height:260px}}
+.quote-image-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(.85);transition:filter .7s ease;display:block}
+.quote-image-col:hover img{filter:grayscale(0%) brightness(1)}
+.quote-image-col::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,30,28,.6) 0%,transparent 60%);pointer-events:none;transition:opacity .7s ease}
+.quote-image-col:hover::after{opacity:.2}
+
+/* BRANDS */
+.brands-section{background:var(--white);padding:72px 0}
+.brands-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray-400);text-align:center;margin-bottom:12px}
+.brands-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,6vw,44px);font-weight:800;text-transform:uppercase;text-align:center;color:var(--black);margin-bottom:48px;line-height:1.1;padding:0 24px}
+.brands-track{overflow:hidden;width:100%;position:relative}
+.brands-track::before,.brands-track::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.brands-track::before{left:0;background:linear-gradient(90deg,var(--white),transparent)}
+.brands-track::after{right:0;background:linear-gradient(270deg,var(--white),transparent)}
+.brands-list{display:flex;gap:60px;align-items:center;animation:brandScroll 22s linear infinite;flex-shrink:0;width:max-content}
+.brands-list:hover{animation-play-state:paused}
+@keyframes brandScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.brand-logo{display:flex;align-items:center;justify-content:center;padding:8px 20px;flex-shrink:0}
+.brand-logo img{height:44px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%) opacity(.45);transition:filter .4s ease;display:block}
+.brand-logo:hover img{filter:grayscale(0%) opacity(1)}
+
+/* PROJECTS BANNER */
+.projects-banner{background:var(--black);padding:80px 24px;position:relative;overflow:hidden;text-align:center}
+.projects-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,#0d1a2a 0%,#1a0d0d 100%)}
+.projects-eyebrow{position:relative;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray-400);margin-bottom:14px}
+.projects-title{position:relative;font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,6.5vw,50px);font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:36px;line-height:1.1}
+.projects-cats{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin-top:48px;border-top:1px solid rgba(255,255,255,.08)}
+.projects-cat{padding:18px 26px;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-400);text-decoration:none;border-right:1px solid rgba(255,255,255,.08);cursor:none;transition:color .3s,background .3s}
+.projects-cat:last-child{border-right:none}
+.projects-cat:hover{color:var(--white);background:rgba(255,255,255,.05)}
+
+/* RESPONSIBLE */
+.responsible{background:var(--black);padding:0;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:700px){.responsible{grid-template-columns:1fr}}
+.responsible-inner{position:relative;z-index:1;padding:72px 40px 72px 32px;display:flex;flex-direction:column;justify-content:center}
+.responsible-top{display:flex;align-items:center;gap:20px;margin-bottom:24px;flex-wrap:wrap}
+.responsible-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:24px}
+.responsible-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,10vw,68px);font-weight:900;color:var(--white);text-transform:uppercase;line-height:.93;margin-bottom:6px}
+.responsible-role{font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-400)}
+.responsible-desc{font-size:17px;line-height:1.72;color:rgba(255,255,255,.58);max-width:520px;margin-top:20px}
+.responsible-contact{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.contact-link{display:flex;align-items:center;gap:14px;font-size:16px;color:var(--white);text-decoration:none;cursor:none;transition:color .3s}
+.contact-link:hover{color:var(--red)}
+.contact-icon{width:38px;height:38px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;transition:border-color .3s,background .3s}
+.contact-link:hover .contact-icon{border-color:var(--red);background:var(--red)}
+.contact-meta{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2px}
+.contact-val{font-size:17px}
+.responsible-image-col{position:relative;overflow:hidden;min-height:480px}
+@media(max-width:700px){.responsible-image-col{min-height:280px;order:-1}}
+.responsible-image-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(.8);transition:filter .7s ease;display:block}
+.responsible-image-col:hover img{filter:grayscale(0%) brightness(1)}
+.responsible-image-col::after{content:'';position:absolute;inset:0;background:linear-gradient(270deg,transparent 50%,rgba(10,10,10,.55) 100%);pointer-events:none;transition:opacity .7s ease}
+.responsible-image-col:hover::after{opacity:.15}
+
+/* FOOTER */
+footer{background:var(--gray-800);padding:52px 24px 32px;border-top:1px solid rgba(255,255,255,.07)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.footer-logo img{height:90px;display:block;object-fit:contain}
+.footer-tag{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-400);margin-top:8px;line-height:1.8}
+.footer-nav{display:flex;flex-direction:column;gap:10px}
+.footer-nav a{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;cursor:none;transition:color .3s}
+.footer-nav a:hover{color:var(--white)}
+.footer-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:24px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:14px;color:rgba(255,255,255,.28);line-height:1.6}
+.footer-powered{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.footer-powered span{color:var(--red)}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn{position:fixed;bottom:24px;right:20px;z-index:2000;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);text-decoration:none;cursor:none;animation:waPulse 2.5s ease-in-out infinite;transition:transform .2s,background .2s}
+.whatsapp-btn:hover{transform:scale(1.12);background:#1EBF5A;animation:none}
+.whatsapp-btn svg{width:30px;height:30px;fill:white}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.4)}
+  60%{box-shadow:0 4px 20px rgba(37,211,102,.45),0 0 0 16px rgba(37,211,102,0)}
+}
+
+/* RESPONSIVE */
+@media(max-width:520px){
+  .nav-right{display:none}
+  .hero-content{padding-bottom:112px}
+  .projects-cats{flex-direction:column}
+  .projects-cat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .footer-top{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<!-- overlay removido -->
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://www.skill.avalonx8.com/r/Qak2L92d" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.004 2.667C8.637 2.667 2.667 8.632 2.667 16c0 2.342.623 4.542 1.71 6.444L2.667 29.333l7.076-1.69A13.26 13.26 0 0016.004 29.333c7.363 0 13.33-5.965 13.33-13.333S23.367 2.667 16.004 2.667zm0 24c-2.1 0-4.06-.563-5.752-1.546l-.41-.243-4.2 1.003.996-4.097-.268-.422A10.627 10.627 0 015.333 16c0-5.886 4.786-10.667 10.671-10.667S26.667 10.114 26.667 16 21.886 26.667 16.004 26.667zm5.85-7.988c-.32-.16-1.894-.934-2.187-1.04-.293-.107-.507-.16-.72.16-.213.32-.827 1.04-1.014 1.254-.187.213-.373.24-.694.08-.32-.16-1.35-.498-2.573-1.588-.95-.847-1.592-1.893-1.778-2.213-.187-.32-.02-.493.14-.652.145-.143.32-.373.48-.56.16-.186.213-.32.32-.533.107-.213.054-.4-.027-.56-.08-.16-.72-1.733-.987-2.373-.26-.626-.527-.54-.72-.55-.187-.01-.4-.013-.613-.013-.213 0-.56.08-.854.4-.293.32-1.12 1.093-1.12 2.666s1.147 3.094 1.307 3.307c.16.213 2.254 3.44 5.467 4.827.763.33 1.36.527 1.824.673.767.243 1.467.21 2.02.127.616-.093 1.894-.773 2.16-1.52.267-.747.267-1.387.187-1.52-.08-.133-.293-.213-.613-.373z"/>
+  </svg>
+</a>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-left">
+    <a href="#home" class="nav-logo">
+      <img src="NMS - Estudo de Marca (final)-02.png" alt="NMS Representações">
+    </a>
+  </div>
+  <div class="nav-right">
+    <a href="#servicos" class="nav-link">Serviços</a>
+    <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="nav-link">Catálogo</a>
+    <a href="#responsavel" class="nav-link">Contato</a>
+  </div>
+</nav>
+
+<!-- MEGA MENU -->
+<!-- MEGA MENU removido - sem hamburger -->
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-img"></div>
+  <div class="hero-bg-overlay"></div>
+
+  <div class="hero-content">
+    <div class="unirons-badge">
+      <div class="unirons-dot"></div>
+      <span>Powered by</span>
+      <strong>Unirons</strong>
+    </div>
+    <div class="hero-eyebrow">Representações em Uberlândia &amp; Região</div>
+    <h1 class="hero-title">
+      <em>Esteiras</em> que<br>
+      <em>não param</em> sua<br>
+      produção.
+    </h1>
+    <div class="hero-cta-wrap">
+      <a href="https://www.skill.avalonx8.com/r/Qak2L92d" target="_blank" class="btn-solid">Solicitar Orçamento</a>
+      <a href="#servicos" class="btn-outline">Ver Produtos</a>
+    </div>
+  </div>
+
+  <div class="featured-card">
+    <span class="featured-label">Destaque</span>
+    <div class="featured-location">Uberlândia, MG</div>
+    <div class="featured-name">NMS Representações</div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-circle">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS MARQUEE -->
+<section class="clients">
+  <div class="clients-label reveal">Setores Atendidos</div>
+  <div class="clients-track">
+    <div class="clients-list">
+      <span class="client-item">Alimentício</span><span class="client-item">·</span>
+      <span class="client-item">Bebidas</span><span class="client-item">·</span>
+      <span class="client-item">Farmacêutico</span><span class="client-item">·</span>
+      <span class="client-item">Químico</span><span class="client-item">·</span>
+      <span class="client-item">Automotivo</span><span class="client-item">·</span>
+      <span class="client-item">Logística</span><span class="client-item">·</span>
+      <span class="client-item">Congelados</span><span class="client-item">·</span>
+    </div>
+    <div class="clients-list" aria-hidden="true">
+      <span class="client-item">Alimentício</span><span class="client-item">·</span>
+      <span class="client-item">Bebidas</span><span class="client-item">·</span>
+      <span class="client-item">Farmacêutico</span><span class="client-item">·</span>
+      <span class="client-item">Químico</span><span class="client-item">·</span>
+      <span class="client-item">Automotivo</span><span class="client-item">·</span>
+      <span class="client-item">Logística</span><span class="client-item">·</span>
+      <span class="client-item">Congelados</span><span class="client-item">·</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow reveal">Nossos Produtos</div>
+      <h2 class="section-title reveal reveal-d1">Soluções que<br>fazem mover.</h2>
+    </div>
+    <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="btn-solid reveal reveal-d2" style="background:var(--black);border-color:var(--black);">Ver Catálogo</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">⬡</div>
+      <div class="service-title">Esteiras Modulares</div>
+      <p class="service-desc">Sistemas versáteis para movimentação de produtos, montados por módulos interligados que facilitam a manutenção. Disponíveis retas, curvas, vazadas e emborrachadas.</p>
+      <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="service-link">Ver no catálogo →</a>
+    </div>
+    <div class="service-card reveal reveal-d1">
+      <div class="service-icon">⛓</div>
+      <div class="service-title">Correntes Plásticas</div>
+      <p class="service-desc">Essenciais para indústrias químicas, de bebidas com garrafas de vidro e alimentícias. Alta resistência química e mecânica.</p>
+      <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="service-link">Ver no catálogo →</a>
+    </div>
+    <div class="service-card reveal reveal-d2">
+      <div class="service-icon">⚙</div>
+      <div class="service-title">Correntes de Inox</div>
+      <p class="service-desc">Linha premium para indústrias que exigem máxima higiene. Aprovadas para contato com alimentos conforme normas sanitárias vigentes.</p>
+      <a href="https://www.skill.avalonx8.com/r/Qak2L92d" target="_blank" class="service-link">Solicitar orçamento →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔩</div>
+      <div class="service-title">Componentes</div>
+      <p class="service-desc">Linha completa: mancais, suportes laterais, tripés, guias e guardas. Todos os acessórios para uma instalação segura e duradoura.</p>
+      <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="service-link">Ver catálogo →</a>
+    </div>
+    <div class="service-card reveal reveal-d1">
+      <div class="service-icon">◈</div>
+      <div class="service-title">Perfis PVLLIS</div>
+      <p class="service-desc">Perfis de deslizamento em polietileno de alta densidade que reduzem o atrito e aumentam consideravelmente a vida útil das esteiras.</p>
+      <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="service-link">Saiba mais →</a>
+    </div>
+    <div class="service-card reveal reveal-d2">
+      <div class="service-icon">★</div>
+      <div class="service-title">Projetos Sob Medida</div>
+      <p class="service-desc">De −45°C em túneis de congelamento até +105°C em pasteurizadores. Cada projeto é consultivo e personalizado.</p>
+      <a href="https://www.skill.avalonx8.com/r/Qak2L92d" target="_blank" class="service-link">Agendar consulta →</a>
+    </div>
+  </div>
+</section>
+
+<a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="discover-bar">
+  <div class="discover-plus">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+    </svg>
+  </div>
+  <span class="discover-text">Baixar catálogo completo Unirons</span>
+</a>
+
+<!-- DIFFERENTIALS -->
+<section class="differentials" id="projetos">
+  <div class="section-eyebrow reveal">Por que NMS + Unirons</div>
+  <h2 class="section-title reveal reveal-d1">Fazemos<br>diferente.</h2>
+  <div class="diff-grid">
+    <div class="diff-item reveal">
+      <div class="diff-number">01</div>
+      <span class="diff-icon">🛡️</span>
+      <div class="diff-title">Garantia 24 Meses</div>
+      <p class="diff-desc">A maior garantia do setor. Nossos produtos Unirons operam com confiança porque são feitos para durar — e garantimos isso por escrito.</p>
+    </div>
+    <div class="diff-item reveal reveal-d1">
+      <div class="diff-number">02</div>
+      <span class="diff-icon">🏅</span>
+      <div class="diff-title">Certificação ISO</div>
+      <p class="diff-desc">Processos e produtos que seguem padrões internacionais de qualidade e segurança. ISO como prática, não como vitrine.</p>
+    </div>
+    <div class="diff-item reveal">
+      <div class="diff-number">03</div>
+      <span class="diff-icon">🔬</span>
+      <div class="diff-title">Alta Tecnologia</div>
+      <p class="diff-desc">Materiais plásticos de engenharia de primeira geração e usinagem de alta precisão. Do −45°C ao +105°C sem comprometer performance.</p>
+    </div>
+    <div class="diff-item reveal reveal-d1">
+      <div class="diff-number">04</div>
+      <span class="diff-icon">📍</span>
+      <div class="diff-title">Suporte Regional</div>
+      <p class="diff-desc">Nivair e a NMS atendem Uberlândia e todo o Brasil com agilidade de representante local e força de fabricante nacional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="quote-content">
+    <div class="quote-bg-text" aria-hidden="true">NMS</div>
+    <div class="quote-eyebrow reveal">Nossa Filosofia</div>
+    <blockquote class="quote-text reveal reveal-d1">
+      "A fábrica não pode parar. É por isso que cada esteira, cada elo de corrente que entregamos precisa ser perfeito."
+    </blockquote>
+    <div class="quote-attribution reveal reveal-d2">
+      <div class="quote-line"></div>
+      <div class="quote-name">Nivair — Representante NMS, Uberlândia</div>
+    </div>
+    <a href="https://unirons.com.br/" target="_blank" class="quote-play reveal reveal-d3">
+      <div class="play-circle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+      <span class="play-label">Conheça a estrutura Unirons</span>
+    </a>
+  </div>
+  <div class="quote-image-col">
+    <img src="Nossa-filosofia.webp" alt="Estrutura industrial NMS Representações">
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands-section">
+  <div class="brands-eyebrow reveal">Clientes &amp; Parceiros</div>
+  <h2 class="brands-title reveal reveal-d1">Grandes marcas<br>confiam na nossa linha.</h2>
+  <div class="brands-track">
+    <div class="brands-list">
+      <div class="brand-logo"><img src="JBS-logo.webp" alt="JBS"></div>
+      <div class="brand-logo"><img src="BRF-logo.webp" alt="BRF"></div>
+      <div class="brand-logo"><img src="Gulozitos-logo.png" alt="Gulozitos"></div>
+      <div class="brand-logo"><img src="Junco-logo.webp" alt="Junco"></div>
+      <div class="brand-logo"><img src="Forno-de-minas-logo.png" alt="Forno de Minas"></div>
+      <div class="brand-logo"><img src="Cemil-logo.webp" alt="Cemil"></div>
+      <div class="brand-logo"><img src="Marfrig-logo.webp" alt="Marfrig"></div>
+      <!-- duplicadas para loop infinito -->
+      <div class="brand-logo"><img src="JBS-logo.webp" alt="JBS"></div>
+      <div class="brand-logo"><img src="BRF-logo.webp" alt="BRF"></div>
+      <div class="brand-logo"><img src="Gulozitos-logo.png" alt="Gulozitos"></div>
+      <div class="brand-logo"><img src="Junco-logo.webp" alt="Junco"></div>
+      <div class="brand-logo"><img src="Forno-de-minas-logo.png" alt="Forno de Minas"></div>
+      <div class="brand-logo"><img src="Cemil-logo.webp" alt="Cemil"></div>
+      <div class="brand-logo"><img src="Marfrig-logo.webp" alt="Marfrig"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS BANNER -->
+<section class="projects-banner">
+  <div class="projects-eyebrow reveal">Explore Nossa Linha</div>
+  <h2 class="projects-title reveal reveal-d1">Veja o que podemos<br>fazer juntos.</h2>
+  <a href="https://www.skill.avalonx8.com/r/Qak2L92d" target="_blank" class="btn-outline reveal reveal-d2" style="display:inline-flex;">Solicitar Proposta</a>
+  <div class="projects-cats">
+    <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="projects-cat">Esteiras Planas</a>
+    <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="projects-cat">Esteiras Curvas</a>
+    <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="projects-cat">Correntes Industriais</a>
+    <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="projects-cat">Linha Inox</a>
+    <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank" class="projects-cat">Componentes</a>
+  </div>
+</section>
+
+<!-- RESPONSIBLE -->
+<section class="responsible" id="responsavel">
+  <div class="responsible-inner">
+    <div class="responsible-eyebrow reveal">Representante Oficial</div>
+    <div class="responsible-top reveal reveal-d1">
+      <div>
+        <h2 class="responsible-name">Nivair</h2>
+        <div class="responsible-role">Representante Oficial Unirons</div>
+      </div>
+    </div>
+    <p class="responsible-desc reveal reveal-d2">
+      A NMS Representações é a porta de entrada para as soluções Unirons em Uberlândia e diversas regiões do Brasil. Com atendimento consultivo e técnico, Nivair garante que cada cliente receba a solução ideal para sua linha de produção — com suporte ágil, garantia estendida de 24 meses e o respaldo de um fabricante consolidado desde 2014.
+    </p>
+    <div class="responsible-contact">
+      <a href="https://wa.me/5534988540031" target="_blank" class="contact-link reveal reveal-d2">
+        <div class="contact-icon">📱</div>
+        <div><div class="contact-meta">WhatsApp</div><div class="contact-val">(34) 98854-0031</div></div>
+      </a>
+      <a href="mailto:contato@nmsrepresentacoes.com.br" class="contact-link reveal reveal-d3">
+        <div class="contact-icon">✉</div>
+        <div><div class="contact-meta">E-mail</div><div class="contact-val">contato@nmsrepresentacoes.com.br</div></div>
+      </a>
+      <a href="https://unirons.com.br/" target="_blank" class="contact-link reveal reveal-d4">
+        <div class="contact-icon">🌐</div>
+        <div><div class="contact-meta">Fabricante</div><div class="contact-val">unirons.com.br</div></div>
+      </a>
+    </div>
+  </div>
+  <div class="responsible-image-col">
+    <img src="nivair.webp" alt="Nivair — Representante NMS">
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <img src="NMS - Estudo de Marca (final)-02.png" alt="NMS Representações">
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Produtos</a>
+      <a href="#responsavel">Representante</a>
+      <a href="https://unirons.com.br/" target="_blank">Site Unirons</a>
+      <a href="https://unirons.com.br/wp-content/uploads/2024/06/UNIRONS-Catalogos.pdf" target="_blank">Catálogo PDF</a>
+    </nav>
+    <div>
+      <div class="footer-tag" style="color:rgba(255,255,255,.4);margin-bottom:10px;">Áreas de Atuação</div>
+      <div class="footer-tag" style="color:rgba(255,255,255,.6);">
+        Uberlândia · Uberaba · Patos de Minas<br>
+        Triângulo Mineiro · Interior de SP<br>
+        Todo o Brasil via Unirons
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-copy">
+      © 2025 NMS Representações · Todos os direitos reservados<br>
+      Uberlândia, MG · (34) 98854-0031
+    </div>
+    <div class="footer-powered">Produtos <span>Unirons</span> · Desde 2014</div>
+  </div>
+</footer>
+
+<script>
+// CURSOR
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  dot.style.left=mx+'px'; dot.style.top=my+'px';
+});
+(function loop(){
+  rx+=(mx-rx)*.11; ry+=(my-ry)*.11;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(loop);
+})();
+document.querySelectorAll('a,button,[role="button"],.service-card,.diff-item,.brand-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+  el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
+});
+
+// Cursor dark on dark sections
+const darkSections = document.querySelectorAll('.hero,.quote-section,.projects-banner,.responsible,footer');
+const checkDark = () => {
+  const vh = window.innerHeight;
+  const anyDark = [...darkSections].some(s=>{
+    const r=s.getBoundingClientRect();
+    return r.top < vh*.55 && r.bottom > vh*.45;
+  });
+  document.body.classList.toggle('cursor-dark', anyDark);
+};
+window.addEventListener('scroll', checkDark, {passive:true});
+checkDark();
+
+// NAV SCROLL BACKGROUND
+const navEl = document.getElementById('main-nav');
+const handleNavScroll = () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 60);
+};
+window.addEventListener('scroll', handleNavScroll, {passive:true});
+handleNavScroll();
+
+// HAMBURGER - removido (sem hamburger no layout atual)
+const hb=null;
+const mm=null;
+const ov=document.getElementById('overlay');
+if(ov){
+  ov.addEventListener('click',()=>{
+    ov.classList.remove('show');
+  });
+}
+
+// SCROLL REVEAL — observe each element individually
+const revObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      revObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06, rootMargin:'0px 0px -10px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const id=a.getAttribute('href').slice(1);
+    const t=document.getElementById(id);
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+    if(hb) hb.classList.remove('open');
+    mm.classList.remove('open');
+    ov.classList.remove('show');
+  });
+});
+
+// Touch: restore cursor
+if('ontouchstart' in window){
+  dot.style.display='none'; ring.style.display='none';
+  document.body.style.cursor='auto';
+  document.querySelectorAll('*').forEach(el=>{ if(el.style.cursor==='none') el.style.cursor='auto'; });
+}
+</script>
+</body>
+</html>
