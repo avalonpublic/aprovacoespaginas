@@ -1339,9 +1339,84 @@
       .nav-center { display: none; } /* Esconde o menu central em telas menores */
     }
     @media(max-width:768px) {
-      .hero-headline { font-size: clamp(1.5rem, 6vw, 2.5rem); } /* Proporção ajustada para celular */
       .hero-bottom { flex-direction: column; align-items: center; }
       .nav-cta { display: none; }
+
+      /* ── SEÇÃO 1 HERO: ajustes específicos ── */
+
+      /* Título principal: +15% (era clamp(1.5rem,6vw,2.5rem)) */
+      .hero-headline {
+        font-size: clamp(1.73rem, 6.9vw, 2.88rem) !important;
+        white-space: normal !important;
+      }
+
+      /* Texto corrido hero: -5% (era 0.95rem) */
+      .hero-desc {
+        font-size: 0.9rem !important;
+      }
+
+      /* Optica Premium: aproximar do titulo (sobrescreve o 35px global) */
+      .hero-eyebrow,
+      #hero .hero-eyebrow {
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* ── PADRONIZACAO GLOBAL MOBILE ──
+         Hierarquia: Tag (menor) < Subtitulo (medio) < Titulo (maior)
+         TAG    = 0.60rem
+         TITULO = clamp(1.9rem, 6.5vw, 2.6rem)
+         SUBTIT = 0.85rem
+      */
+
+      /* TAGS */
+      .section-label,
+      #catalogo .section-label,
+      #servicos .section-label,
+      #localizacao .section-label,
+      #experiencia .section-label,
+      #diferenciais .section-label,
+      .estilo-subtitle {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.35em !important;
+      }
+
+      .hero-eyebrow {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.35em !important;
+      }
+
+      /* TITULOS */
+      .hero-headline,
+      .localizacao-title,
+      .videos-title,
+      .diferenciais-title,
+      .estilo-title,
+      .catalogo-title,
+      .servicos-title,
+      .experiencia-title,
+      .autoridade-quote,
+      .cta-title {
+        font-size: clamp(1.9rem, 6.5vw, 2.6rem) !important;
+        line-height: 1.1 !important;
+        white-space: normal !important;
+      }
+
+      /* hero-headline recebe o +15% por cima da base padrao */
+      .hero-headline {
+        font-size: clamp(1.73rem, 6.9vw, 2.88rem) !important;
+      }
+
+      /* SUBTITULOS */
+      .localizacao-sub,
+      .diferenciais-intro,
+      .estilo-desc,
+      .servicos-text,
+      .experiencia-text,
+      .cta-text,
+      .hero-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.75 !important;
+      }
     }
 
 /* ─── PADRONIZAÇÃO FINAL DE RESPIROS ─── */
@@ -2053,6 +2128,347 @@
       .localizacao-sub br { display: none; }
     }
 
+    /* ─── MOBILE ONLY ADJUSTMENTS ─── */
+    @media (max-width: 768px) {
+
+      /* FULLBANNER: Substituir imagens de fundo pelas versões mobile */
+      .hero-bg.img1 {
+        background-image: url('FullbannerImagem1Mobile.png') !important;
+      }
+      .hero-bg.img2 {
+        background-image: url('FullbannerImagem2Mobile.png') !important;
+      }
+      .hero-bg.img3 {
+        background-image: url('FullbannerImagem3Mobile.png') !important;
+      }
+
+      /* SEÇÃO LOCALIZAÇÃO: Aumentar altura das imagens */
+      .localizacao-fotos {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 !important;
+      }
+
+      .loja-foto {
+        aspect-ratio: 4/3 !important; /* Altura maior do que 16/9 */
+      }
+
+      /* No mobile, as imagens NÃO fazem hover (não tem mouse),
+         então usamos um slideshow automático via classe JS */
+      /* No mobile, ambas as imagens ficam no DOM para a transição funcionar */
+      .loja-foto .img-hover {
+        display: block !important;
+        opacity: 0 !important;
+        transition: opacity 0.8s ease !important;
+      }
+
+      .loja-foto .img-default {
+        transition: opacity 0.8s ease !important;
+      }
+
+      /* Estado ativo do slideshow mobile */
+      .loja-foto.mobile-active .img-default {
+        opacity: 0 !important;
+      }
+      .loja-foto.mobile-active .img-hover {
+        opacity: 1 !important;
+      }
+
+      /* Overlay visível no mobile */
+      .loja-foto .loja-foto-overlay {
+        opacity: 1 !important;
+      }
+    }
+
+
+    /* ─── SEÇÃO 5 ESTILOS: DESKTOP mantém layout original, MOBILE usa cards ─── */
+
+    /* Por padrão (desktop): mostra o layout original, esconde o mobile */
+    .estilos-desktop-layout { display: grid; }
+    .estilos-mobile-layout  { display: none; }
+
+    /* ─── ESTILOS MOBILE CARDS ─── */
+    @media (max-width: 768px) {
+
+      /* Oculta o layout desktop na seção 5 */
+      .estilos-desktop-layout { display: none !important; }
+
+      /* Ativa o layout mobile */
+      .estilos-mobile-layout {
+        display: flex !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+      }
+
+      /* Cada card: imagem em cima, texto embaixo, centralizados */
+      .estilo-mobile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .estilo-mobile-card:last-child {
+        border-bottom: none;
+      }
+
+      /* Imagem quadrada, centralizada */
+      .estilo-mobile-img-wrap {
+        width: 80%;
+        max-width: 320px;
+        aspect-ratio: 1;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+      .estilo-mobile-img-wrap img {
+        width: 170%;
+        height: 170%;
+        object-fit: cover;
+        position: absolute;
+        top: -35%;
+        left: -35%;
+      }
+
+      /* Bloco de texto centralizado */
+      .estilo-mobile-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      /* Tag, título, desc e botão centralizados */
+      .estilo-mobile-text .estilo-subtitle {
+        text-align: center !important;
+      }
+      .estilo-mobile-text .estilo-title {
+        text-align: center !important;
+        font-size: clamp(1.9rem, 6.5vw, 2.6rem) !important;
+        line-height: 1.1 !important;
+      }
+      .estilo-mobile-text .estilo-desc {
+        text-align: center !important;
+        font-size: 0.85rem !important;
+        max-width: 320px;
+      }
+      .estilo-mobile-text .btn-ghost {
+        margin-top: 0.5rem;
+        cursor: pointer;
+      }
+
+      /* HERO DESC: garantir 3 linhas, sem <br> escondido sobrar */
+      .hero-desc br {
+        display: block !important;
+      }
+    }
+
+
+    /* ─── MOBILE: FILTRO CATÁLOGO CARROSSEL < Categoria > ─── */
+
+    /* Desktop: esconde o seletor mobile */
+    .catalogo-mobile-filter { display: none; }
+
+    @media (max-width: 768px) {
+
+      /* Esconde as abas normais no mobile */
+      .catalogo-tabs { display: none !important; }
+
+      /* Mostra o seletor carrossel */
+      .catalogo-mobile-filter {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(0, 27, 28, 0.1);
+        padding-bottom: 1rem;
+      }
+
+      /* Setas */
+      .cat-arrow {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        line-height: 1;
+        color: rgba(0, 27, 28, 0.4);
+        padding: 0 1.2rem;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .cat-arrow:active { color: var(--ink); }
+
+      /* Label central */
+      .cat-current-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--ink);
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 400;
+        min-width: 90px;
+        text-align: center;
+      }
+
+      /* ─── SEÇÃO SERVIÇOS: centralizar tag, título, subtítulo e botão ─── */
+      #servicos .servicos-sticky {
+        align-items: center !important;
+        text-align: center !important;
+        max-width: 100% !important;
+      }
+      #servicos .section-label {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      #servicos .servicos-title {
+        text-align: center !important;
+        white-space: normal !important;
+      }
+      #servicos .servicos-text {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 100% !important;
+      }
+      #servicos .btn-primary {
+        align-self: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* ─── SEÇÃO QUALIDADES-MARQUEE: ocultar no mobile ─── */
+      #qualidades-marquee {
+        display: none !important;
+      }
+    }
+
+
+    /* ════════════════════════════════════════════════════════
+       AJUSTES FINAIS — APENAS MOBILE (max-width: 768px)
+       ════════════════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* ── ESPAÇAMENTO GLOBAL: 25px entre tag → título → subtítulo ──
+         Aplica-se a qualquer section-label, h2 e parágrafo de texto
+         dentro de containers de seção no mobile.                      */
+      .section-label   { margin-bottom: 25px !important; }
+
+      .localizacao-title,
+      .videos-title,
+      .diferenciais-title,
+      .estilo-title,
+      .catalogo-title,
+      .servicos-title,
+      .experiencia-title,
+      .cta-title {
+        margin-bottom: 25px !important;
+      }
+
+      /* hero: espaçamento tag → título já tratado antes;
+         aqui o título → desc também fica 25px               */
+      .hero-headline  { margin-bottom: 25px !important; }
+      .hero-eyebrow   { margin-bottom: 25px !important; }
+
+      /* ── SEÇÃO "SUA IMAGEM COMEÇA ANTES DE VOCÊ FALAR" ─── */
+
+      /* Centralizar o wrapper de texto inteiro */
+      #experiencia .reveal-right {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      /* Tag */
+      #experiencia .section-label {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Título */
+      #experiencia .experiencia-title {
+        text-align: center !important;
+      }
+
+      /* Subtítulo / texto */
+      #experiencia .experiencia-text {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Stats: centralizar o grupo e cada item */
+      #experiencia .experiencia-stats {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 2rem !important;
+      }
+      #experiencia .stat-item {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      /* ── SEÇÃO "PRONTO PARA SER VISTO DO JEITO CERTO" ── */
+
+      /* Subtítulo: forçar as <br> a funcionarem corretamente */
+      #cta .cta-text br {
+        display: block !important;
+      }
+
+      /* Botões: mesmo tamanho, centralizados */
+      #cta .cta-buttons {
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        flex-wrap: nowrap !important;
+      }
+      /* Iguala padding e visual dos dois botões */
+      #cta .cta-btn-mobile {
+        padding: 1rem 2rem !important;
+        font-size: 0.7rem !important;
+        letter-spacing: 0.2em !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        flex: 1 1 0 !important;      /* mesma largura */
+        max-width: 160px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+    }
+
+    /* ── FOOTER: centralizar tudo no mobile ── */
+    @media (max-width: 768px) {
+      .footer-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-nav {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+      }
+      .footer-social {
+        justify-content: center !important;
+      }
+      .footer-bottom {
+        justify-content: center !important;
+        text-align: center !important;
+      }
+      .footer-copy {
+        text-align: center !important;
+        width: 100% !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2132,8 +2548,9 @@
     </h1>
     <div class="hero-bottom">
       <p class="hero-desc">
-      Na Hoy, cada detalhe importa. Combinamos curadoria de alto padrão,<br>
-      consultoria de imagem e tecnologia de ponta para revelar a melhor versão de você.
+      Na Hoy, cada detalhe importa.<br>
+      Combinamos curadoria de alto padrão,<br>
+      consultoria de imagem e tecnologia de ponta.
     </p>
       <div class="hero-cta-group">
         <a href="#cta" class="btn-primary">
@@ -2259,7 +2676,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
         <div class="diferencial-name">Curadoria Exclusiva</div>
-        <p class="diferencial-text">Acervos autorais selecionados com as tendências mais desejadas do mundo e renovados com frequência.</p>
+        <p class="diferencial-text">Acervos selecionados das marcas mais desejadas do mundo, renovados com a frequência das tendências.</p>
       </div>
       <div class="diferencial-card reveal" data-delay="4">
         <div class="diferencial-icon">
@@ -2273,54 +2690,89 @@
 </section>
 
 <section id="estilos-scroll">
-  <div class="estilos-container">
+
+  <!-- DESKTOP: layout sticky com scroll (original intacto) -->
+  <div class="estilos-container estilos-desktop-layout">
     
     <div class="estilos-sticky-col">
-      
       <div class="sticky-content-group" style="width: 100%; max-width: 1200px;">
-        
         <div class="sticky-image-wrapper">
           <img src="Secao2IMG1.png" class="estilo-img active" id="img-estilo-1" alt="Estilo Clássico">
           <img src="Secao2IMG2.png" class="estilo-img" id="img-estilo-2" alt="Estilo Solar">
           <img src="Secao2IMG3.png" class="estilo-img" id="img-estilo-3" alt="Estilo Ousado">
         </div>
-
         <div class="scroll-indicator-wrapper">
           <div class="indicator-label" id="indicatorLabel">CLÁSSICO</div>
           <div class="indicator-track">
             <div class="indicator-progress" id="indicatorProgress"></div>
           </div>
         </div>
-
       </div>
-
     </div>
 
     <div class="estilos-scroll-col">
-      
       <div class="estilo-text-box active-text" data-target="img-estilo-1">
         <div class="estilo-subtitle">Grau · Clássico</div>
         <h2 class="estilo-title">O poder do <br><em>atemporal.</em></h2>
         <p class="estilo-desc">Armações que equilibram autoridade e delicadeza. Para quem constrói uma presença sólida e incontestável em qualquer ambiente.</p>
         <a href="#catalogo" class="btn-ghost" style="margin-top:2.5rem; padding: 1rem 2rem;">Ver Clássicos</a>
       </div>
-
       <div class="estilo-text-box" data-target="img-estilo-2">
         <div class="estilo-subtitle">Solar · Editorial</div>
         <h2 class="estilo-title">Presença que <br><em>dispensa</em><br>apresentações.</h2>
         <p class="estilo-desc">Óculos solares imponentes. Linhas marcantes projetadas para quem ocupa o espaço que merece sob o sol, sem pedir licença.</p>
         <a href="#catalogo" class="btn-ghost" style="margin-top:2.5rem; padding: 1rem 2rem;">Ver Solares</a>
       </div>
-
       <div class="estilo-text-box" data-target="img-estilo-3">
         <div class="estilo-subtitle">Design · Ousado</div>
         <h2 class="estilo-title">Rompa o <br><em>óbvio.</em></h2>
         <p class="estilo-desc">Silhuetas geométricas, acetatos grossos e cores que comunicam criatividade absoluta. Seja lembrado por onde passar.</p>
         <a href="#catalogo" class="btn-ghost" style="margin-top:2.5rem; padding: 1rem 2rem;">Ver Ousados</a>
       </div>
-
     </div>
   </div>
+
+  <!-- MOBILE: cards empilhados, cada um com sua imagem dedicada -->
+  <div class="estilos-mobile-layout">
+
+    <div class="estilo-mobile-card">
+      <div class="estilo-mobile-img-wrap">
+        <img src="Secao2IMG1.png" alt="Estilo Clássico">
+      </div>
+      <div class="estilo-mobile-text">
+        <div class="estilo-subtitle">Grau · Clássico</div>
+        <h2 class="estilo-title">O poder do <em>atemporal.</em></h2>
+        <p class="estilo-desc">Armações que equilibram autoridade e delicadeza. Para quem constrói uma presença sólida e incontestável em qualquer ambiente.</p>
+        <a href="#catalogo" class="btn-ghost">Ver Clássicos</a>
+      </div>
+    </div>
+
+    <div class="estilo-mobile-card">
+      <div class="estilo-mobile-img-wrap">
+        <img src="Secao2IMG2.png" alt="Estilo Solar">
+      </div>
+      <div class="estilo-mobile-text">
+        <div class="estilo-subtitle">Solar · Editorial</div>
+        <h2 class="estilo-title">Presença que <em>dispensa</em> apresentações.</h2>
+        <p class="estilo-desc">Óculos solares imponentes. Linhas marcantes projetadas para quem ocupa o espaço que merece sob o sol, sem pedir licença.</p>
+        <a href="#catalogo" class="btn-ghost">Ver Solares</a>
+      </div>
+    </div>
+
+    <div class="estilo-mobile-card">
+      <div class="estilo-mobile-img-wrap">
+        <img src="Secao2IMG3.png" alt="Estilo Ousado">
+      </div>
+      <div class="estilo-mobile-text">
+        <div class="estilo-subtitle">Design · Ousado</div>
+        <h2 class="estilo-title">Rompa o <em>óbvio.</em></h2>
+        <p class="estilo-desc">Silhuetas geométricas, acetatos grossos e cores que comunicam criatividade absoluta. Seja lembrado por onde passar.</p>
+        <a href="#catalogo" class="btn-ghost">Ver Ousados</a>
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
 <!-- CATÁLOGO -->
@@ -2332,11 +2784,19 @@
       <p class="catalogo-sub">Modelos cuidadosamente selecionados para quem entende de estilo</p>
     </div>
 
+    <!-- DESKTOP: abas normais -->
     <div class="catalogo-tabs reveal" data-delay="2">
       <button class="cat-tab active" data-cat="all">Todos</button>
       <button class="cat-tab" data-cat="grau">Grau</button>
       <button class="cat-tab" data-cat="solar">Solar</button>
       <button class="cat-tab" data-cat="destaque">Destaques</button>
+    </div>
+
+    <!-- MOBILE: seletor carrossel < Categoria > -->
+    <div class="catalogo-mobile-filter reveal" data-delay="2" aria-label="Filtro de categoria">
+      <button class="cat-arrow cat-prev" aria-label="Anterior">&#8249;</button>
+      <span class="cat-current-label">Todos</span>
+      <button class="cat-arrow cat-next" aria-label="Próximo">&#8250;</button>
     </div>
 
     <div class="catalogo-grid">
@@ -2644,13 +3104,14 @@
     </h2>
     
     <p class="cta-text">
-      Agende seu atendimento e vivencie uma consultoria pensada para você.<br>
-      Sem compromisso, sem pressa — só o tempo e a atenção que sua imagem merece.
+      Agende seu atendimento e vivencie<br>
+      uma consultoria pensada para você.<br>
+      Sem compromisso, sem pressa.
     </p>
 
     <div class="cta-buttons">
-      <a href="#" class="btn-primary">Agendar pelo WhatsApp <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="https://share.google/hNYzc9po6mFDjj4DG" target="_blank" rel="noopener" class="btn-ghost">Endereço</a>
+      <a href="#" class="btn-primary cta-btn-mobile">Agendar</a>
+      <a href="https://share.google/hNYzc9po6mFDjj4DG" target="_blank" rel="noopener" class="btn-ghost cta-btn-mobile">Endereço</a>
     </div>
   </div>
 </section>
@@ -2797,25 +3258,63 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
 
-  // ── CATALOG TABS ──
+  // ── CATALOG TABS (Desktop) ──
   const tabs  = document.querySelectorAll('.cat-tab');
   const cards = document.querySelectorAll('.product-card');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const cat = tab.dataset.cat;
-      cards.forEach(card => {
-        const cats = card.dataset.category || '';
-        if (cat === 'all' || cats.includes(cat)) {
-          card.classList.remove('hidden');
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+
+  function applyFilter(cat) {
+    // Atualiza tabs desktop
+    tabs.forEach(t => {
+      t.classList.toggle('active', t.dataset.cat === cat);
     });
+    // Filtra os cards
+    cards.forEach(card => {
+      const cats = card.dataset.category || '';
+      if (cat === 'all' || cats.includes(cat)) {
+        card.classList.remove('hidden');
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => applyFilter(tab.dataset.cat));
   });
+
+  // ── CATALOG MOBILE FILTER (seletor < Categoria >) ──
+  const catOptions = [
+    { cat: 'all',      label: 'Todos' },
+    { cat: 'grau',     label: 'Grau' },
+    { cat: 'solar',    label: 'Solar' },
+    { cat: 'destaque', label: 'Destaques' }
+  ];
+  let catIndex = 0;
+
+  const mobileFilter  = document.querySelector('.catalogo-mobile-filter');
+  const currentLabel  = document.querySelector('.cat-current-label');
+  const btnPrev       = document.querySelector('.cat-prev');
+  const btnNext       = document.querySelector('.cat-next');
+
+  function updateMobileFilter() {
+    const opt = catOptions[catIndex];
+    if (currentLabel) currentLabel.textContent = opt.label;
+    applyFilter(opt.cat);
+  }
+
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => {
+      catIndex = (catIndex - 1 + catOptions.length) % catOptions.length;
+      updateMobileFilter();
+    });
+  }
+  if (btnNext) {
+    btnNext.addEventListener('click', () => {
+      catIndex = (catIndex + 1) % catOptions.length;
+      updateMobileFilter();
+    });
+  }
 
 // ── EFEITO MÁSCARA GIRATÓRIA NO SCROLL (Seção 3) ──
   const textBoxes = document.querySelectorAll('.estilo-text-box');
@@ -2951,6 +3450,60 @@
 
     servicosObserver.observe(servicosTrigger);
   }
+
+  // ── SLIDESHOW AUTOMÁTICO MOBILE: Seção "No coração do centro" ──
+  (function() {
+    const isMobile = () => window.innerWidth <= 768;
+    const lojaFotos = document.querySelectorAll('.loja-foto');
+    let slideshowIntervals = [];
+    let slideshowStarted = false;
+
+    function startMobileSlideshow() {
+      if (!isMobile() || slideshowStarted) return;
+      slideshowStarted = true;
+
+      lojaFotos.forEach((foto, index) => {
+        // Ciclos diferentes por foto para ficarem dessincronizadas (mais natural)
+        const delay = index * 800; // escalonamento inicial
+        const interval = 3000; // 3s cada
+
+        setTimeout(() => {
+          const id = setInterval(() => {
+            foto.classList.toggle('mobile-active');
+          }, interval);
+          slideshowIntervals.push(id);
+        }, delay);
+      });
+    }
+
+    function stopMobileSlideshow() {
+      slideshowIntervals.forEach(id => clearInterval(id));
+      slideshowIntervals = [];
+      slideshowStarted = false;
+      lojaFotos.forEach(foto => foto.classList.remove('mobile-active'));
+    }
+
+    // Observa quando a seção localização entra na tela
+    const localizacaoFotos = document.querySelector('.localizacao-fotos');
+    if (localizacaoFotos) {
+      const mobileSlideObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && isMobile()) {
+            startMobileSlideshow();
+          } else if (!entry.isIntersecting) {
+            stopMobileSlideshow();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      mobileSlideObserver.observe(localizacaoFotos);
+    }
+
+    // Reinicia ao redimensionar para mobile
+    window.addEventListener('resize', () => {
+      if (!isMobile()) stopMobileSlideshow();
+    });
+  })();
 
   // ── SMOOTH ANCHOR ──
   document.querySelectorAll('a[href^="#"]').forEach(a => {
