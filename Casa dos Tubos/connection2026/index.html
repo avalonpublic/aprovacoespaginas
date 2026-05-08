@@ -81,7 +81,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   overflow: hidden;
 }
 
-/* Decorative shapes — Filtradas para não quebrar a paleta escura */
+/* Decorative shapes — Opacidade reduzida para minimalismo */
 .shape {
   position: absolute;
   pointer-events: none;
@@ -117,7 +117,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   height: 44px; 
   width: auto; 
   object-fit: contain;
-  filter: brightness(0) invert(1); 
+  /* CORREÇÃO 1: Removido filtro brightness/invert para mostrar cores originais */
 }
 .brandbar__divider { width: 1px; height: 32px; background: var(--line); }
 .brandbar__partner { display: flex; flex-direction: column; gap: 2px; }
@@ -132,7 +132,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   height: 22px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1); 
+  /* CORREÇÃO 1: Removido filtro brightness/invert para mostrar cores originais */
 }
 .brandbar__date {
   display: flex;
@@ -242,7 +242,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 }
 
 /* =========================================================
-   STEP 1 — INVITE
+   STEP 1 — INVITE (CORREÇÃO 2: Estrutura Contida do Fluxo 1)
    ========================================================= */
 .step { display: none; animation: stepIn 0.6s var(--ease-soft) both; }
 .step.is-active { display: block; }
@@ -420,7 +420,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 .invite__cta-note__icon { width: 16px; height: 16px; color: var(--brand-blue); }
 
 /* =========================================================
-   INVITE — VISUAL PANEL
+   INVITE — PAINEL VISUAL (CORREÇÃO 3: Retângulo Vertical do Fluxo 1)
    ========================================================= */
 .invite__visual {
   position: relative;
@@ -428,46 +428,51 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   border-left: 1px solid var(--line);
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  padding: 40px; /* Respiro lateral */
 }
 
-.invite__logo-mark {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(76%, 320px);
-  z-index: 3;
-  filter: brightness(0) invert(1) opacity(0.8);
-  animation: logoFloat 4s ease-in-out infinite;
-}
-@keyframes logoFloat { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-6px); } }
-
-.invite__characters {
+/* Moldura Retangular Vertical baseada no Fluxo 1 */
+.invite__photo-frame {
   position: relative;
   z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  width: min(80%, 280px); /* Largura contida baseada no respiro lateral */
+  aspect-ratio: 9 / 14; /* Proporção vertical do Fluxo 1 */
+  background: var(--bg); /* Fundo navy interno */
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border-radius: var(--radius-sm); /* Mais minimalista */
+}
+
+/* Imagem Única e Contida dentro da moldura */
+.invite__photo-frame img {
   width: 100%;
   height: 100%;
-  padding-top: 100px;
+  object-fit: cover !important; /* Preenche o retângulo sem vazar */
+  position: relative;
 }
-.character { position: relative; object-fit: cover !important; }
-.character--man { width: 60%; max-width: 320px; z-index: 2; animation: charBob 5s ease-in-out infinite; }
-.character--wrench { position: absolute; bottom: 0; left: 8%; width: 28%; max-width: 150px; z-index: 1; animation: charBob 5s ease-in-out infinite 0.3s; }
-.character--pipe { position: absolute; bottom: 0; right: 6%; width: 26%; max-width: 140px; z-index: 3; animation: charBob 5s ease-in-out infinite 0.6s; }
-@keyframes charBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-.invite__visual-deco { position: absolute; width: 200px; opacity: 0.05; z-index: 1; filter: invert(1); }
-.invite__visual-deco--1 { top: 20%; right: -40px; transform: rotate(15deg); }
-.invite__visual-deco--2 { bottom: 30%; left: -40px; transform: rotate(-20deg); opacity: 0.03; }
+/* Marca d'água sutil (reaproveitando a logo CDT invertida) */
+.invite__logo-mark {
+  position: absolute;
+  bottom: 20px; /* Canto inferior direito sutil */
+  right: 20px;
+  width: 120px;
+  z-index: 1;
+  /* Marca d'água muito sutil invertida */
+  filter: brightness(0) invert(1) opacity(0.04) !important;
+  animation: none; /* Remove flutuação */
+}
+
+/* Removemos elementos flutuantes anteriores que não fazem parte do estilo Fluxo 1 Contido */
+.invite__visual-deco { display: none !important; }
 
 @media (max-width: 880px) {
-  .invite__visual { min-height: 380px; border-left: none; border-top: 1px solid var(--line); }
-  .invite__logo-mark { top: 24px; width: 60%; }
-  .invite__characters { padding-top: 80px; }
+  .invite__visual { min-height: 480px; border-left: none; border-top: 1px solid var(--line); padding: 32px; }
+  .invite__logo-mark { bottom: 16px; right: 16px; width: 100px; }
+  .invite__photo-frame { width: 70%; max-width: 240px; }
 }
 
 /* =========================================================
@@ -533,6 +538,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 .aside__signature-logo { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; }
 .aside__signature-divider { width: 1px; height: 24px; background: var(--line); }
 
+/* Fundo sutil invertido */
 .aside__pipe-bg {
   position: absolute;
   bottom: -40px;
@@ -541,7 +547,6 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   opacity: 0.05;
   z-index: 1;
   filter: invert(1);
-  animation: charBob 6s ease-in-out infinite;
 }
 
 @media (max-width: 880px) {
@@ -891,14 +896,11 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
           </div>
 
           <div class="invite__visual">
-            <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Elemento_1.png" class="invite__visual-deco invite__visual-deco--1" alt="" aria-hidden="true" />
-            <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Elemento_3.png" class="invite__visual-deco invite__visual-deco--2" alt="" aria-hidden="true" />
-            <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Marca.png" class="invite__logo-mark" alt="Connection Casa dos Tubos 2026" />
-            <div class="invite__characters">
-              <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Personagem_3.png" class="character character--wrench" alt="" aria-hidden="true" />
-              <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Personagem_1.png" class="character character--man" alt="" />
-              <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Personagem_2.png" class="character character--pipe" alt="" aria-hidden="true" />
+            <div class="invite__photo-frame">
+              <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Personagem_Mulher.png" alt="Arquiteta Connection" />
             </div>
+            
+            <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Marca.png" class="invite__logo-mark" alt="" aria-hidden="true" />
           </div>
 
         </div>
