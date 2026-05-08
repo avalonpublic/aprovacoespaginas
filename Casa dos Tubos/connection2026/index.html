@@ -20,19 +20,19 @@
    ========================================================= */
 :root {
   /* Brand palette — Azul e Preto */
-  --brand-blue: #1e90ff; /* Azul vibrante dos botões e destaques */
+  --brand-blue: #1e90ff; 
   --brand-blue-hover: #2da4ff;
-  --brand-cyan: #00e5b8; /* Ciano para pontos de luz e check */
-  --brand-navy: #0a1f4f; /* Azul marinho profundo para cards */
+  --brand-cyan: #00e5b8; 
+  --brand-navy: #0a1f4f; 
   
-  --ink: #F4F4F5; /* Texto principal claro */
-  --ink-soft: #A1A1AA; /* Texto secundário */
+  --ink: #F4F4F5; 
+  --ink-soft: #A1A1AA; 
   --muted: #6b7896;
-  --line: rgba(255, 255, 255, 0.12); /* Bordas sutis */
+  --line: rgba(255, 255, 255, 0.12); 
   
-  --bg: #03050A; /* Preto quase absoluto com toque navy no fundo */
-  --bg-soft: #070D1F; /* Fundo de áreas de destaque */
-  --surface: #0a1f4f; /* Fundo dos cards (Navy) */
+  --bg: #03050A; 
+  --bg-soft: #070D1F; 
+  --surface: #0a1f4f; 
 
   --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.8);
 
@@ -81,7 +81,6 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   overflow: hidden;
 }
 
-/* Decorative shapes — Opacidade reduzida para minimalismo */
 .shape {
   position: absolute;
   pointer-events: none;
@@ -117,7 +116,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   height: 44px; 
   width: auto; 
   object-fit: contain;
-  /* CORREÇÃO 1: Removido filtro brightness/invert para mostrar cores originais */
+  filter: none !important; /* CORREÇÃO 1: Forçando cores originais */
 }
 .brandbar__divider { width: 1px; height: 32px; background: var(--line); }
 .brandbar__partner { display: flex; flex-direction: column; gap: 2px; }
@@ -132,7 +131,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   height: 22px;
   width: auto;
   object-fit: contain;
-  /* CORREÇÃO 1: Removido filtro brightness/invert para mostrar cores originais */
+  filter: none !important; /* CORREÇÃO 1: Forçando cores originais */
 }
 .brandbar__date {
   display: flex;
@@ -242,7 +241,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 }
 
 /* =========================================================
-   STEP 1 — INVITE (CORREÇÃO 2: Estrutura Contida do Fluxo 1)
+   STEP 1 — INVITE
    ========================================================= */
 .step { display: none; animation: stepIn 0.6s var(--ease-soft) both; }
 .step.is-active { display: block; }
@@ -420,59 +419,49 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 .invite__cta-note__icon { width: 16px; height: 16px; color: var(--brand-blue); }
 
 /* =========================================================
-   INVITE — PAINEL VISUAL (CORREÇÃO 3: Retângulo Vertical do Fluxo 1)
+   INVITE — PAINEL VISUAL (CORREÇÃO 2: Full Bleed & Logo Segura)
    ========================================================= */
 .invite__visual {
   position: relative;
   background: var(--bg-soft);
   border-left: 1px solid var(--line);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px; /* Respiro lateral */
+  display: block;
+  padding: 0; /* Removido o padding para a foto preencher tudo */
 }
 
-/* Moldura Retangular Vertical baseada no Fluxo 1 */
 .invite__photo-frame {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2;
-  width: min(80%, 280px); /* Largura contida baseada no respiro lateral */
-  aspect-ratio: 9 / 14; /* Proporção vertical do Fluxo 1 */
-  background: var(--bg); /* Fundo navy interno */
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  border-radius: var(--radius-sm); /* Mais minimalista */
 }
 
-/* Imagem Única e Contida dentro da moldura */
 .invite__photo-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover !important; /* Preenche o retângulo sem vazar */
-  position: relative;
+  object-fit: cover !important;
+  object-position: center top; /* Foca no rosto da mulher */
+  display: block;
 }
 
-/* Marca d'água sutil (reaproveitando a logo CDT invertida) */
 .invite__logo-mark {
   position: absolute;
-  bottom: 20px; /* Canto inferior direito sutil */
-  right: 20px;
-  width: 120px;
-  z-index: 1;
-  /* Marca d'água muito sutil invertida */
-  filter: brightness(0) invert(1) opacity(0.04) !important;
-  animation: none; /* Remove flutuação */
+  bottom: 32px;
+  left: 32px; /* Movido para a ESQUERDA, longe do rosto dela */
+  width: 140px;
+  z-index: 10;
+  filter: none !important; 
+  animation: none;
 }
 
-/* Removemos elementos flutuantes anteriores que não fazem parte do estilo Fluxo 1 Contido */
 .invite__visual-deco { display: none !important; }
 
 @media (max-width: 880px) {
-  .invite__visual { min-height: 480px; border-left: none; border-top: 1px solid var(--line); padding: 32px; }
-  .invite__logo-mark { bottom: 16px; right: 16px; width: 100px; }
-  .invite__photo-frame { width: 70%; max-width: 240px; }
+  .invite__visual { min-height: 480px; border-left: none; border-top: 1px solid var(--line); padding: 0; }
+  .invite__logo-mark { bottom: 20px; left: 20px; width: 110px; }
+  .invite__photo-frame { position: relative; height: 100%; }
 }
 
 /* =========================================================
@@ -535,10 +524,9 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   border-top: 1px solid var(--line);
   margin-top: 32px;
 }
-.aside__signature-logo { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; }
+.aside__signature-logo { height: 32px; width: auto; filter: none !important; }
 .aside__signature-divider { width: 1px; height: 24px; background: var(--line); }
 
-/* Fundo sutil invertido */
 .aside__pipe-bg {
   position: absolute;
   bottom: -40px;
@@ -900,7 +888,7 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
               <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Personagem_Mulher.png" alt="Arquiteta Connection" />
             </div>
             
-            <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Marca.png" class="invite__logo-mark" alt="" aria-hidden="true" />
+            <img src="connection2026/assets/Coonection_Casa_dos_Tubos_-_Marca.png" class="invite__logo-mark" alt="Connection 2026" />
           </div>
 
         </div>
