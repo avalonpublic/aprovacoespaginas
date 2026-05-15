@@ -39,6 +39,13 @@
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* Bloqueia o deslize lateral indesejado em todo o site */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+   
 /* ============================================================
    RESET & BASE
    ============================================================ */
@@ -459,28 +466,27 @@ a { text-decoration: none; color: inherit; }
 /* --- AJUSTE SEARCH BAR MOBILE (2x2 + Botão) --- */
 @media (max-width: 768px) {
   .hero-search {
-    /* Transforma o container em uma grade */
     display: grid !important;
-    /* Cria duas colunas iguais */
     grid-template-columns: 1fr 1fr !important;
-    /* Arredondamento menos agressivo para o grid */
     border-radius: 20px !important;
     padding: 15px !important;
     gap: 10px !important;
+    
+    /* Ajustes para matar o bug do fundo branco */
     width: calc(100% - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+    box-sizing: border-box !important; 
+    
     margin: -40px auto 0 !important;
     height: auto !important;
   }
 
   .search-field {
-    /* Remove a borda lateral que separa os campos no desktop */
     border-right: none !important;
-    /* Adiciona uma borda leve no fundo para separar as linhas */
     border-bottom: 1px solid rgba(21, 17, 48, 0.08) !important;
     padding: 8px 5px !important;
   }
 
-  /* Faz o botão de busca ocupar as duas colunas inteiras na última linha */
   .search-btn {
     grid-column: span 2 !important;
     width: 100% !important;
@@ -489,7 +495,6 @@ a { text-decoration: none; color: inherit; }
     padding: 15px !important;
   }
 
-  /* Ajuste visual para os inputs não ficarem apertados */
   .search-field input {
     font-size: 14px !important;
   }
@@ -755,9 +760,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 .dest-track-wrap { 
-  overflow: hidden; 
+  overflow: hidden !important; 
   width: 100%;
   position: relative;
+  /* Garante que o conteúdo que "sobra" para a direita não seja computado como largura da página */
 }
 
 .dest-track {
@@ -1402,10 +1408,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Track */
-.galeria-track-wrap {
-  overflow: hidden;
+..galeria-track-wrap {
+  overflow: hidden !important;
   width: 100%;
-  cursor: grab;
 }
 .galeria-track-wrap:active { cursor: grabbing; }
 .galeria-track {
