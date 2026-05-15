@@ -2179,6 +2179,71 @@ a { text-decoration: none; color: inherit; }
     top: 0 !important;
 }
 
+/* Estilo do Botão Hambúrguer */
+.menu-toggle {
+  display: none; /* Escondido no Desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--cmt-white);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Regras para Mobile (Abaixo de 1024px) */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: flex; /* Aparece no Mobile */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Começa escondido fora da tela */
+    width: 80%;
+    height: 100vh;
+    background: var(--cmt-green);
+    flex-direction: column; /* Itens um abaixo do outro */
+    justify-content: center;
+    gap: 20px;
+    transition: right 0.4s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    z-index: 1050;
+  }
+
+  .nav-links.active {
+    right: 0; /* Desliza para dentro da tela */
+  }
+
+  .nav-links li a {
+    font-size: 20px; /* Fonte maior para facilitar o toque */
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Animação do X quando o menu abre */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+   
 </style>
 </head>
 <body>
@@ -2198,7 +2263,13 @@ a { text-decoration: none; color: inherit; }
     <img src="logo.svg" alt="Logótipo CMT">
   </a>
 
-  <ul class="nav-links">
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="#cat-minas">Minas Gerais</a></li>
     <li><a href="#cat-nacional">Nacional</a></li>
     <li><a href="#cat-americas">Américas</a></li>
@@ -3295,6 +3366,25 @@ function trocarRoteiro(cardClicado) {
     mainCard.style.opacity = '1';
   }, 150);
 }
+
+   const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+const navItems = document.querySelectorAll('.nav-links li a');
+
+// Abre e fecha o menu ao clicar no hambúrguer
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Fecha o menu automaticamente ao clicar em um link (para navegar até a seção)
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+   
 </script>
 
 <script>
