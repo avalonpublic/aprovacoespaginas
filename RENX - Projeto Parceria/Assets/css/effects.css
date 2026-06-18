@@ -1,0 +1,283 @@
+/*
+ * RENX Design System — effects.css
+ * Backgrounds, glows, scanlines, gradientes, glassmorphism, padrões decorativos
+ * Extraído das referências: axion-ai (grid, scanlines, CRT) + instagram-slides (glass, border-gradient)
+ */
+
+/* ═══════════════════════════════════════════════
+   BACKGROUND GRID (axion-ai industrial)
+═══════════════════════════════════════════════ */
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(213,180,120,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(213,180,120,0.03) 1px, transparent 1px);
+}
+
+.bg-grid-sm {
+  background-size: 24px 24px;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* Dot grid (instagram-slides) */
+.bg-dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-dot-grid-gold {
+  background-image: radial-gradient(circle at 1px 1px, rgba(213,180,120,0.06) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* ═══════════════════════════════════════════════
+   SCANLINES — efeito CRT (axion-ai)
+═══════════════════════════════════════════════ */
+
+.scanlines {
+  background-image:
+    linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.2) 50%),
+    linear-gradient(90deg, rgba(255,0,0,0.04), rgba(0,255,0,0.02), rgba(0,0,255,0.04));
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════
+   GLASSMORPHISM
+═══════════════════════════════════════════════ */
+
+.glass {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.glass-gold {
+  background: rgba(213,180,120,0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(213,180,120,0.12);
+}
+
+.glass-dark {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ═══════════════════════════════════════════════
+   GRADIENT BORDERS (instagram-slides trick)
+   Usando ::before com mask-composite
+═══════════════════════════════════════════════ */
+
+.border-gradient-gold {
+  position: relative;
+  border: 1px solid transparent;
+}
+.border-gradient-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(213,180,120,0.5), rgba(213,180,120,0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.border-gradient-v {
+  position: relative;
+}
+.border-gradient-v::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════
+   GLOWS — halos e brilhos ambiente
+═══════════════════════════════════════════════ */
+
+.glow-gold {
+  box-shadow: 0 0 80px rgba(213,180,120,0.08), 0 0 160px rgba(213,180,120,0.04);
+}
+.glow-green {
+  box-shadow: 0 0 80px rgba(24,124,76,0.12), 0 0 160px rgba(24,124,76,0.06);
+}
+
+/* Glow como pseudo-elemento radial (fundo de seção) */
+.section-glow-gold {
+  position: relative;
+}
+.section-glow-gold::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(213,180,120,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-glow-green {
+  position: relative;
+}
+.section-glow-green::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(ellipse, rgba(24,124,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   MASK GRADIENTS — desvanecer bordas
+═══════════════════════════════════════════════ */
+
+.mask-left {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%);
+  mask-image: linear-gradient(to right, transparent, black 20%);
+}
+.mask-right {
+  -webkit-mask-image: linear-gradient(to left, transparent, black 20%);
+  mask-image: linear-gradient(to left, transparent, black 20%);
+}
+.mask-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+  mask-image: linear-gradient(to bottom, black 60%, transparent);
+}
+.mask-top {
+  -webkit-mask-image: linear-gradient(to top, black 60%, transparent);
+  mask-image: linear-gradient(to top, black 60%, transparent);
+}
+.mask-h-edges {
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+.mask-diagonal {
+  -webkit-mask-image: linear-gradient(280deg, transparent, black 45%, black 100%, transparent);
+  mask-image: linear-gradient(280deg, transparent, black 45%, black 100%, transparent);
+}
+
+/* ═══════════════════════════════════════════════
+   GRADIENTE DE TEXTO
+═══════════════════════════════════════════════ */
+
+.text-gold-gradient {
+  background: var(--grad-gold-h);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gold-shimmer {
+  background: linear-gradient(90deg, #7F6137, #FCD995, #D5B478, #7F6137);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════
+   DATA VISUALIZATION BARS (axion-ai)
+═══════════════════════════════════════════════ */
+
+.data-bar-track {
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.data-bar-fill {
+  height: 100%;
+  background: var(--grad-gold-h);
+  transition: width 2.4s var(--ease-spring);
+  width: 0;
+}
+.data-bar-fill.active {
+  width: var(--target-width, 50%);
+}
+
+/* Chart bars (abstract visualization) */
+.chart-bar {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  transition: background var(--duration-base);
+  cursor: default;
+}
+.chart-bar:hover { background: var(--renx-gold-dark); }
+.chart-bar.highlight { background: var(--renx-gold-base); }
+
+/* ═══════════════════════════════════════════════
+   OVERLAY DE IMAGEM
+═══════════════════════════════════════════════ */
+
+.img-overlay-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7), transparent 60%);
+  pointer-events: none;
+}
+
+.img-overlay-full::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════
+   LINHAS DECORATIVAS HORIZONTAIS
+═══════════════════════════════════════════════ */
+
+.line-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--renx-gold-dark), transparent);
+  opacity: 0.4;
+}
+.line-full {
+  height: 1px;
+  background: var(--surface-border-dim);
+}
+.line-v {
+  width: 1px;
+  background: var(--surface-border-dim);
+  flex-shrink: 0;
+}
+.line-v-gold {
+  width: 2px;
+  background: var(--renx-gold-dark);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   PARALLAX HELPERS
+═══════════════════════════════════════════════ */
+
+.parallax-element { will-change: transform; }
+.parallax-img     { will-change: transform; }

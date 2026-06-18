@@ -1,0 +1,254 @@
+/*
+ * RENX Design System — animations.css
+ * Keyframes, classes de reveal, transições e efeitos de entrada
+ * Extraído e adaptado das referências: digital-architect + axion-ai + instagram-slides
+ */
+
+/* ═══════════════════════════════════════════════
+   KEYFRAMES
+═══════════════════════════════════════════════ */
+
+/* Entrada principal — opacity + slide + blur */
+@keyframes animationIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* Marquee horizontal infinito */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* Rotação lenta (ícone decorativo) */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Efeito flicker tipo CRT */
+@keyframes flicker {
+  0%   { opacity: 0.08; }
+  6%   { opacity: 1; }
+  12%  { opacity: 0.08; }
+  18%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* Pulse suave */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* Beam de luz (botão) */
+@keyframes beam {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Border beam conic-gradient (spin) */
+@keyframes borderSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Card stack cycle — 3 cards em loop */
+@keyframes cardStackCycle {
+  0%, 25% {
+    transform: translateY(0) scale(1);
+    z-index: 30;
+    opacity: 1;
+    filter: blur(0px);
+  }
+  33%, 58% {
+    transform: translateY(-60px) scale(0.85);
+    z-index: 10;
+    opacity: 0.5;
+    filter: blur(2px);
+  }
+  66%, 91% {
+    transform: translateY(-30px) scale(0.92);
+    z-index: 20;
+    opacity: 0.75;
+    filter: blur(1px);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    z-index: 30;
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Clip-path reveal vertical */
+@keyframes clipReveal {
+  0%   { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+/* Ken Burns — zoom suave em imagens */
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* Fade in simples */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Gradiente em movimento (texto animado) */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ═══════════════════════════════════════════════
+   REVEAL — Scroll-triggered (IntersectionObserver)
+═══════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition:
+      opacity var(--duration-crawl) var(--ease-out-expo),
+      transform var(--duration-crawl) var(--ease-out-expo);
+  }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* Variantes de direção */
+  .reveal-up    { opacity: 0; transform: translateY(34px); }
+  .reveal-left  { opacity: 0; transform: translateX(-34px); }
+  .reveal-right { opacity: 0; transform: translateX(34px); }
+  .reveal-scale { opacity: 0; transform: scale(0.92); }
+  .reveal-blur  { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+
+  .reveal-up.active,
+  .reveal-left.active,
+  .reveal-right.active,
+  .reveal-scale.active,
+  .reveal-blur.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+    filter: blur(0);
+    transition:
+      opacity var(--duration-crawl) var(--ease-out-expo),
+      transform var(--duration-crawl) var(--ease-out-expo),
+      filter var(--duration-crawl) ease-out;
+  }
+
+  /* Delays de stagger */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
+  .delay-600 { transition-delay: 600ms; }
+  .delay-700 { transition-delay: 700ms; }
+  .delay-800 { transition-delay: 800ms; }
+
+  /* Flicker reveal (CRT style) */
+  .reveal-flicker {
+    animation: flicker 2.4s linear forwards;
+    opacity: 0;
+  }
+  .reveal-flicker.active { opacity: 1; }
+
+  /* Bar fill progressivo */
+  .bar-fill {
+    transition: width 2.4s var(--ease-spring);
+    width: 0 !important;
+  }
+  .bar-fill.active { width: var(--target-width) !important; }
+}
+
+/* ═══════════════════════════════════════════════
+   TEXT REVEAL — Máscara de baixo para cima
+═══════════════════════════════════════════════ */
+
+.text-reveal-wrapper {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.text-reveal-content {
+  display: block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition:
+    transform 1.2s var(--ease-out-expo),
+    opacity 1.2s ease;
+}
+.reveal-active .text-reveal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   ANIMATE ON SCROLL — Instagram Slides pattern
+═══════════════════════════════════════════════ */
+
+.animate-on-scroll { animation-play-state: paused !important; }
+.animate-on-scroll.animate { animation-play-state: running !important; }
+
+/* ═══════════════════════════════════════════════
+   UTILITY — Classes de animação direta
+═══════════════════════════════════════════════ */
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 40s linear infinite;
+}
+.animate-spin-slow  { animation: spinSlow 8s linear infinite; }
+.animate-pulse      { animation: pulse 2s ease-in-out infinite; }
+.animate-beam       { animation: beam 2s var(--ease-in-out) infinite; }
+.animate-flicker    { animation: flicker 2.4s linear forwards; }
+.animate-fade-in    { animation: fadeIn 1s ease both; }
+.animate-shimmer    {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+.animate-ken-burns  { animation: kenBurns 10s ease-out forwards; }
+
+/* Carousel slide (digital-architect) */
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+}
+.carousel-slide.active { opacity: 1; }
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 10s ease-out;
+}
+.carousel-slide.active img { transform: scale(1.08); }
+
+/* Card stack cycle */
+.card-stack-cycle {
+  animation: cardStackCycle 12s infinite ease-in-out;
+}
+
+/* Nav load animation */
+.nav-load {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.8s ease-out;
+}
+.nav-load.loaded { opacity: 1; transform: translateY(0); }

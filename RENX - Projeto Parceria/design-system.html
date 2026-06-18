@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RENX — Design System v1.0</title>
+<meta name="description" content="Sistema de design premium para RENX/RENXBET. Tokens de marca, componentes, animações e padrões de layout."/>
+
+<!-- fonts — Geologica (display + body) + Space Mono (mono/labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"/>
+
+<!-- css — tokens globais: cores, tipografia, espaçamento, variáveis -->
+<link rel="stylesheet" href="Assets/css/tokens.css"/>
+<!-- css — animações: keyframes, reveal classes, stagger delays -->
+<link rel="stylesheet" href="Assets/css/animations.css"/>
+<!-- css — componentes: botões, cards, badges, inputs, stats -->
+<link rel="stylesheet" href="Assets/css/components.css"/>
+<!-- css — layout: grid 12-col, módulos, sidebar, marquee, footer -->
+<link rel="stylesheet" href="Assets/css/layout.css"/>
+<!-- css — efeitos: glassmorphism, glows, scanlines, gradientes, masks -->
+<link rel="stylesheet" href="Assets/css/effects.css"/>
+
+<!-- head js — Lucide icons runtime (renderiza <i data-lucide>) -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  SITE-HEADER                             ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<header class="site-header nav-load" id="main-header">
+<!-- Logo module -->
+<div style="display:flex;align-items:center;padding:0 1.5rem;border-right:1px solid rgba(213,180,120,0.12);gap:0.75rem;flex-shrink:0;">
+<img src="Assets/Marca Final - Quadricromia.png" alt="RENX" style="height:28px;width:auto;object-fit:contain;"/>
+<div style="width:6px;height:6px;background:var(--renx-gold-base);border-radius:50%;animation:pulse 2s ease-in-out infinite;"></div>
+</div>
+<!-- Nav modules -->
+<nav style="display:flex;align-items:stretch;flex:1;">
+<a href="#tokens" style="display:flex;align-items:center;padding:0 2rem;border-right:1px solid rgba(213,180,120,0.08);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='rgba(213,180,120,0.04)';this.style.color='var(--renx-gold-light)'" onmouseout="this.style.background='';this.style.color='rgba(255,255,255,0.4)'"><span style="color:var(--renx-gold-dark);margin-right:0.5rem;">01.</span>Tokens</a>
+<a href="#components" style="display:flex;align-items:center;padding:0 2rem;border-right:1px solid rgba(213,180,120,0.08);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='rgba(213,180,120,0.04)';this.style.color='var(--renx-gold-light)'" onmouseout="this.style.background='';this.style.color='rgba(255,255,255,0.4)'"><span style="color:rgba(255,255,255,0.15);margin-right:0.5rem;">02.</span>Componentes</a>
+<a href="#layout" style="display:flex;align-items:center;padding:0 2rem;border-right:1px solid rgba(213,180,120,0.08);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='rgba(213,180,120,0.04)';this.style.color='var(--renx-gold-light)'" onmouseout="this.style.background='';this.style.color='rgba(255,255,255,0.4)'"><span style="color:rgba(255,255,255,0.15);margin-right:0.5rem;">03.</span>Layout</a>
+<a href="#effects" style="display:flex;align-items:center;padding:0 2rem;font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='rgba(213,180,120,0.04)';this.style.color='var(--renx-gold-light)'" onmouseout="this.style.background='';this.style.color='rgba(255,255,255,0.4)'"><span style="color:rgba(255,255,255,0.15);margin-right:0.5rem;">04.</span>Efeitos</a>
+</nav>
+<!-- Status module -->
+<div style="display:flex;align-items:center;border-left:1px solid rgba(213,180,120,0.08);padding:0 1.5rem;gap:0.5rem;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);">v1.0</span>
+<div style="width:6px;height:6px;background:#4ADE80;border-radius:50%;animation:pulse 2s ease-in-out infinite;"></div>
+</div>
+</header>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  HERO — RENX Premium Design System       ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section style="position:relative;min-height:92vh;display:grid;grid-template-columns:1fr;overflow:hidden;border-bottom:1px solid rgba(213,180,120,0.08);">
+<!-- Background grid -->
+<div class="bg-grid" style="position:absolute;inset:0;pointer-events:none;opacity:1;z-index:0;"></div>
+<!-- Gold glow ambiente -->
+<div style="position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(213,180,120,0.07) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
+<div style="position:absolute;top:60%;left:20%;width:300px;height:300px;background:radial-gradient(ellipse,rgba(24,124,76,0.05) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
+<!-- Content -->
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;justify-content:space-between;padding:5rem 3rem 4rem;max-width:var(--container-max);margin:0 auto;width:100%;">
+<!-- Eyebrow -->
+<div style="display:flex;align-items:center;gap:1rem;" class="reveal">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--renx-gold-dark);">// Sistema Iniciado</span>
+<div style="height:1px;flex:1;background:linear-gradient(90deg,var(--renx-gold-dark),transparent);opacity:0.4;"></div>
+<span class="badge badge-green"><span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block;animation:pulse 2s ease-in-out infinite;margin-right:4px;"></span>Ativo</span>
+</div>
+<!-- Hero title -->
+<div style="margin-top:auto;">
+<h1 id="hero-title" style="font-family:var(--font-display);font-size:clamp(4rem,10vw,12rem);font-weight:900;letter-spacing:-0.04em;line-height:0.9;color:var(--renx-white);margin-bottom:2rem;">
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-200">RENX</span></span>
+<br/>
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-300" style="background:var(--grad-gold-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Design</span></span>
+<br/>
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-400" style="color:rgba(255,255,255,0.15);">System</span></span>
+</h1>
+<div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;" class="hero-badge reveal delay-500">
+<span class="badge badge-gold">Geologica — Display</span>
+<span class="badge badge-outline">Space Mono — UI</span>
+<span class="badge badge-outline">#000000 · #D5B478 · #187C4C</span>
+</div>
+</div>
+<!-- Stats row (digital-architect sidebar pattern, horizontal aqui) -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(213,180,120,0.08);margin-top:4rem;" class="hero-badge reveal delay-500">
+<div class="stat-block" style="border-right:1px solid rgba(213,180,120,0.08);">
+<i data-lucide="layers" style="color:rgba(213,180,120,0.4);width:24px;height:24px;"></i>
+<div><div class="stat-number">5</div><div class="stat-label">Arquivos CSS</div></div>
+</div>
+<div class="stat-block" style="border-right:1px solid rgba(213,180,120,0.08);">
+<i data-lucide="zap" style="color:rgba(213,180,120,0.4);width:24px;height:24px;"></i>
+<div><div class="stat-number">4</div><div class="stat-label">Módulos JS</div></div>
+</div>
+<div class="stat-block">
+<i data-lucide="palette" style="color:rgba(213,180,120,0.4);width:24px;height:24px;"></i>
+<div><div class="stat-number">12+</div><div class="stat-label">Componentes</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  MARQUEE TICKER                          ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<div class="marquee-container" aria-hidden="true">
+<div class="marquee-track">
+<span class="marquee-item">RENXBET</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Parceria Premium</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Comunidade de Elite</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Resultados Reais</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Design System v1.0</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Premium · Adulto · Moderno</span><span class="marquee-dot">◆</span>
+</div>
+<div class="marquee-track" aria-hidden="true">
+<span class="marquee-item">RENXBET</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Parceria Premium</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Comunidade de Elite</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Resultados Reais</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Design System v1.0</span><span class="marquee-dot">◆</span>
+<span class="marquee-item">Premium · Adulto · Moderno</span><span class="marquee-dot">◆</span>
+</div>
+</div>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  TOKENS — CORES                          ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="tokens" style="border-bottom:1px solid rgba(213,180,120,0.08);">
+<!-- Section header (digital-architect pattern) -->
+<div style="display:grid;grid-template-columns:4fr 8fr;border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="padding:3rem;border-right:1px solid rgba(213,180,120,0.08);display:flex;flex-direction:column;justify-content:space-between;min-height:220px;" class="reveal">
+<div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);display:block;margin-bottom:0.5rem;">01 / Tokens</span>
+<h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:300;letter-spacing:var(--tracking-tight);color:var(--renx-white);">Paleta<br/>de Cores</h2>
+</div>
+<i data-lucide="droplets" style="color:rgba(213,180,120,0.3);width:40px;height:40px;"></i>
+</div>
+<div style="padding:3rem;display:flex;flex-direction:column;justify-content:center;" class="reveal delay-100">
+<p style="font-size:var(--text-lg);line-height:var(--leading-relaxed);color:rgba(255,255,255,0.5);max-width:40rem;">Paleta construída em torno do preto absoluto como base, com acentos em ouro metálico que comunicam <span style="color:var(--renx-gold-base);">exclusividade e conquista</span>, e verde estratégico para indicadores de sucesso e resultados.</p>
+</div>
+</div>
+<!-- Color swatches -->
+<div style="display:grid;grid-template-columns:repeat(5,1fr);">
+<!-- Black -->
+<div style="display:flex;flex-direction:column;border-right:1px solid rgba(213,180,120,0.08);" class="reveal">
+<div style="height:180px;background:#000000;border-bottom:1px solid rgba(213,180,120,0.08);"></div>
+<div style="padding:1.5rem;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);margin-bottom:0.25rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">--renx-black</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-sm);color:rgba(255,255,255,0.6);">#000000</div>
+<div style="font-size:var(--text-xs);color:rgba(255,255,255,0.25);margin-top:0.25rem;">Fundo base</div>
+</div>
+</div>
+<!-- Gold Light -->
+<div style="display:flex;flex-direction:column;border-right:1px solid rgba(213,180,120,0.08);" class="reveal delay-100">
+<div style="height:180px;background:#FCD995;border-bottom:1px solid rgba(213,180,120,0.08);"></div>
+<div style="padding:1.5rem;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);margin-bottom:0.25rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">--renx-gold-light</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-sm);color:rgba(255,255,255,0.6);">#FCD995</div>
+<div style="font-size:var(--text-xs);color:rgba(255,255,255,0.25);margin-top:0.25rem;">Ouro Conquista — Claro</div>
+</div>
+</div>
+<!-- Gold Base -->
+<div style="display:flex;flex-direction:column;border-right:1px solid rgba(213,180,120,0.08);" class="reveal delay-200">
+<div style="height:180px;background:#D5B478;border-bottom:1px solid rgba(213,180,120,0.08);"></div>
+<div style="padding:1.5rem;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);margin-bottom:0.25rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">--renx-gold-base</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-sm);color:rgba(255,255,255,0.6);">#D5B478</div>
+<div style="font-size:var(--text-xs);color:rgba(255,255,255,0.25);margin-top:0.25rem;">Ouro Conquista — Base</div>
+</div>
+</div>
+<!-- Gold Dark -->
+<div style="display:flex;flex-direction:column;border-right:1px solid rgba(213,180,120,0.08);" class="reveal delay-300">
+<div style="height:180px;background:#7F6137;border-bottom:1px solid rgba(213,180,120,0.08);"></div>
+<div style="padding:1.5rem;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);margin-bottom:0.25rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">--renx-gold-dark</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-sm);color:rgba(255,255,255,0.6);">#7F6137</div>
+<div style="font-size:var(--text-xs);color:rgba(255,255,255,0.25);margin-top:0.25rem;">Ouro Conquista — Escuro</div>
+</div>
+</div>
+<!-- Green -->
+<div style="display:flex;flex-direction:column;" class="reveal delay-400">
+<div style="height:180px;background:#187C4C;border-bottom:1px solid rgba(213,180,120,0.08);"></div>
+<div style="padding:1.5rem;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);margin-bottom:0.25rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">--renx-green</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-sm);color:rgba(255,255,255,0.6);">#187C4C</div>
+<div style="font-size:var(--text-xs);color:rgba(255,255,255,0.25);margin-top:0.25rem;">Verde Estratégico</div>
+</div>
+</div>
+</div>
+<!-- Gradient row -->
+<div style="padding:3rem;border-top:1px solid rgba(213,180,120,0.08);" class="reveal">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:1.5rem;">Gradientes de Marca</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem 1rem;">
+<!-- Ouro -->
+<div>
+<div style="height:64px;border-radius:2px;background:var(--grad-gold-h);margin-bottom:0.5rem;"></div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">--grad-gold-h · Ouro Horizontal</div>
+</div>
+<div>
+<div style="height:64px;border-radius:2px;background:var(--grad-gold-diag);margin-bottom:0.5rem;"></div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">--grad-gold-diag · Ouro Profundidade</div>
+</div>
+<div>
+<div style="height:64px;border-radius:2px;background:var(--grad-gold-v);margin-bottom:0.5rem;"></div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">--grad-gold-v · Ouro Vertical</div>
+</div>
+<!-- Verde -->
+<div>
+<div style="height:64px;border-radius:2px;background:var(--grad-green-h);margin-bottom:0.5rem;"></div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">--grad-green-h · Verde Estratégico H</div>
+</div>
+<div>
+<div style="height:64px;border-radius:2px;background:var(--grad-green-v);margin-bottom:0.5rem;"></div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">--grad-green-v · Verde Estratégico V</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  TYPOGRAPHY BANNER                       ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section class="typo-banner" style="background:var(--renx-black);position:relative;overflow:hidden;">
+<div class="bg-dot-grid-gold" style="position:absolute;inset:0;pointer-events:none;opacity:0.5;"></div>
+<div style="position:relative;z-index:1;text-align:center;width:100%;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);display:block;margin-bottom:2rem;" class="reveal">Escala Tipográfica · Geologica</span>
+<h2 style="font-family:var(--font-display);font-size:clamp(5rem,12vw,14rem);font-weight:900;letter-spacing:-0.04em;line-height:0.85;color:var(--renx-white);margin-bottom:0;" class="reveal">
+<span class="text-reveal-wrapper"><span class="text-reveal-content">RENX</span></span>
+</h2>
+<h2 style="font-family:var(--font-display);font-size:clamp(5rem,12vw,14rem);font-weight:900;letter-spacing:-0.04em;line-height:0.85;background:var(--grad-gold-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" class="reveal delay-100">
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-100">BET</span></span>
+</h2>
+<div style="height:1px;width:100%;background:linear-gradient(90deg,transparent,rgba(213,180,120,0.2),transparent);margin:3rem 0;"></div>
+<!-- Type scale samples -->
+<div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem 2rem;text-align:left;max-width:800px;margin:0 auto;" class="reveal delay-200">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);align-self:center;text-transform:uppercase;letter-spacing:var(--tracking-widest);">9xl · 160px</span>
+<span style="font-family:var(--font-display);font-size:var(--text-9xl);font-weight:900;color:var(--renx-white);line-height:1;">Aa</span>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);align-self:center;text-transform:uppercase;letter-spacing:var(--tracking-widest);">7xl · 96px</span>
+<span style="font-family:var(--font-display);font-size:var(--text-7xl);font-weight:700;color:rgba(255,255,255,0.7);line-height:1;">Headline</span>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);align-self:center;text-transform:uppercase;letter-spacing:var(--tracking-widest);">4xl · 40px</span>
+<span style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:400;color:rgba(255,255,255,0.5);line-height:1.2;">Subheadline de seção</span>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);align-self:center;text-transform:uppercase;letter-spacing:var(--tracking-widest);">base · 14px</span>
+<span style="font-family:var(--font-display);font-size:var(--text-base);font-weight:400;color:rgba(255,255,255,0.4);line-height:1.7;">Texto de corpo para parágrafos, descrições e conteúdo de apoio do RENXBET.</span>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);align-self:center;text-transform:uppercase;letter-spacing:var(--tracking-widest);">mono · 10px</span>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);">IDENTIFICADOR TÉCNICO · STATUS: ATIVO · SYS.INIT</span>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  COMPONENTS — BOTÕES                     ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="components" style="border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="display:grid;grid-template-columns:4fr 8fr;border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="padding:3rem;border-right:1px solid rgba(213,180,120,0.08);display:flex;flex-direction:column;justify-content:space-between;min-height:180px;" class="reveal">
+<div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);display:block;margin-bottom:0.5rem;">02 / Componentes</span>
+<h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:300;letter-spacing:var(--tracking-tight);color:var(--renx-white);">Botões</h2>
+</div>
+<i data-lucide="mouse-pointer-click" style="color:rgba(213,180,120,0.3);width:40px;height:40px;"></i>
+</div>
+<div style="padding:3rem;display:flex;align-items:center;flex-wrap:wrap;gap:1.5rem;" class="reveal delay-100">
+<button class="btn btn-primary">Aderir Agora <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+<button class="btn btn-secondary">Saiba Mais <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+<button class="btn btn-ghost">Ver Detalhes</button>
+<div class="btn-beam">
+<span class="btn-beam-border"></span>
+<span class="btn-beam-static"></span>
+<span class="btn-beam-surface">Solicitar Acesso <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+</div>
+</div>
+</div>
+<!-- Botões com ícone e variações -->
+<div style="display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="padding:3rem;border-right:1px solid rgba(213,180,120,0.08);" class="reveal">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:1.5rem;">// btn-primary</div>
+<div style="display:flex;flex-direction:column;gap:1rem;">
+<button class="btn btn-primary" style="font-size:var(--text-xs);">Tamanho Pequeno</button>
+<button class="btn btn-primary">Tamanho Médio — Padrão</button>
+<button class="btn btn-primary" style="font-size:var(--text-md);padding:1.25rem 2.5rem;">Tamanho Grande</button>
+</div>
+</div>
+<div style="padding:3rem;" class="reveal delay-100">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:1.5rem;">// btn-secondary · btn-ghost</div>
+<div style="display:flex;flex-direction:column;gap:1rem;">
+<button class="btn btn-secondary" style="font-size:var(--text-xs);">Secundário Pequeno</button>
+<button class="btn btn-secondary">Secundário Médio — Padrão</button>
+<button class="btn btn-ghost">Ghost sem destaque <i data-lucide="external-link" style="width:14px;height:14px;"></i></button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  COMPONENTS — BADGES & CARDS             ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section style="border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="display:grid;grid-template-columns:repeat(2,1fr);">
+<!-- Badges -->
+<div style="padding:3rem;border-right:1px solid rgba(213,180,120,0.08);" class="reveal">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:1.5rem;">// Badges e Tags</div>
+<div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+<span class="badge badge-gold">Premium</span>
+<span class="badge badge-green"><span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block;animation:pulse 2s ease-in-out infinite;"></span>Ativo</span>
+<span class="badge badge-outline">Exclusivo</span>
+<span class="badge badge-solid">RENXBET</span>
+<span class="badge badge-gold">Parceria</span>
+<span class="badge badge-outline">B2B</span>
+<span class="badge badge-green">Disponível</span>
+<span class="badge badge-outline">Resultado</span>
+</div>
+</div>
+<!-- Stats -->
+<div style="display:grid;grid-template-rows:repeat(2,1fr);" class="reveal delay-100">
+<div class="stat-block" style="border-bottom:1px solid rgba(213,180,120,0.08);border-left:1px solid rgba(213,180,120,0.08);">
+<i data-lucide="trending-up" style="color:rgba(213,180,120,0.3);width:24px;height:24px;"></i>
+<div><div class="stat-number">98%</div><div class="stat-label">Taxa de Satisfação</div></div>
+</div>
+<div class="stat-block" style="border-left:1px solid rgba(213,180,120,0.08);">
+<i data-lucide="users" style="color:rgba(213,180,120,0.3);width:24px;height:24px;"></i>
+<div><div class="stat-number">10K+</div><div class="stat-label">Membros Ativos</div></div>
+</div>
+</div>
+</div>
+<!-- Cards -->
+<div style="padding:3rem;border-top:1px solid rgba(213,180,120,0.08);" class="reveal">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:1.5rem;">// Cards — variações de superfície</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+<!-- Card padrão -->
+<div class="card card-flashlight module-corners" style="padding:1.5rem;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);margin-bottom:1rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">Card Padrão</div>
+<h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;color:var(--renx-white);margin-bottom:0.5rem;">Acesso Total</h3>
+<p style="font-size:var(--text-sm);color:rgba(255,255,255,0.3);line-height:1.6;">Desbloqueie análises, sinais e estratégias da comunidade RENX.</p>
+<div style="margin-top:1.5rem;"><span class="badge badge-gold">Premium</span></div>
+</div>
+<!-- Card glass -->
+<div class="card-glass card-flashlight" style="padding:1.5rem;border-radius:4px;position:relative;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);margin-bottom:1rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">Card Glass</div>
+<h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;background:var(--grad-gold-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem;">Sinais VIP</h3>
+<p style="font-size:var(--text-sm);color:rgba(255,255,255,0.3);line-height:1.6;">Acesso antecipado a oportunidades identificadas pela cúpula da RENX.</p>
+<div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:var(--tracking-widest);">Exclusivo</span>
+<i data-lucide="arrow-right" style="width:16px;height:16px;color:rgba(213,180,120,0.5);"></i>
+</div>
+</div>
+<!-- Card premium (border-gradient) -->
+<div class="card-premium card-flashlight" style="padding:1.5rem;border-radius:4px;position:relative;">
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--renx-gold-dark);margin-bottom:1rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">// Card Premium</div>
+<h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;color:var(--renx-white);margin-bottom:0.5rem;">Mentoria Direta</h3>
+<p style="font-size:var(--text-sm);color:rgba(255,255,255,0.3);line-height:1.6;">Contato direto com os analistas e estrategistas da RENXBET.</p>
+<div style="margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+<span class="badge badge-gold">Elite</span>
+<i data-lucide="shield-check" style="width:16px;height:16px;color:rgba(213,180,120,0.4);"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  LAYOUT — MÓDULOS INDUSTRIAIS            ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="layout" style="border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="display:grid;grid-template-columns:4fr 8fr;border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="padding:3rem;border-right:1px solid rgba(213,180,120,0.08);display:flex;flex-direction:column;justify-content:space-between;min-height:180px;" class="reveal">
+<div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);display:block;margin-bottom:0.5rem;">03 / Layout</span>
+<h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:300;letter-spacing:var(--tracking-tight);color:var(--renx-white);">Módulos<br/>e Grid</h2>
+</div>
+<i data-lucide="layout-grid" style="color:rgba(213,180,120,0.3);width:40px;height:40px;"></i>
+</div>
+<div style="padding:3rem;" class="reveal delay-100">
+<p style="font-size:var(--text-lg);line-height:var(--leading-relaxed);color:rgba(255,255,255,0.5);max-width:40rem;">Sistema de grid <span style="color:var(--renx-gold-base);">12 colunas</span> com módulos delimitados por bordas finas. Cada bloco é um componente autônomo que combina com vizinhos por justaposição.</p>
+</div>
+</div>
+<!-- Feature grid (axion-ai 4-col) -->
+<div class="features-grid">
+<!-- Feature 1 -->
+<div style="padding:2rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:background 0.3s;" class="reveal" onmouseover="this.style.background='rgba(213,180,120,0.02)'" onmouseout="this.style.background=''">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.06);padding:0.25rem 0.5rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">FIG. 01</span>
+<i data-lucide="cpu" style="width:24px;height:24px;color:rgba(213,180,120,0.4);"></i>
+</div>
+<div>
+<h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);text-transform:uppercase;letter-spacing:var(--tracking-tight);margin-bottom:0.5rem;">Análise em Tempo Real</h3>
+<p style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);line-height:1.8;">Sinais processados e entregues em segundos com alta precisão.</p>
+</div>
+<div style="height:1px;background:rgba(213,180,120,0.1);transition:background 0.3s;"></div>
+</div>
+<!-- Feature 2 -->
+<div style="padding:2rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:background 0.3s;" class="reveal delay-100" onmouseover="this.style.background='rgba(213,180,120,0.02)'" onmouseout="this.style.background=''">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.06);padding:0.25rem 0.5rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">FIG. 02</span>
+<i data-lucide="shield-check" style="width:24px;height:24px;color:rgba(213,180,120,0.4);"></i>
+</div>
+<div>
+<h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);text-transform:uppercase;letter-spacing:var(--tracking-tight);margin-bottom:0.5rem;">Segurança Total</h3>
+<p style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);line-height:1.8;">Plataforma auditada com práticas de compliance e proteção.</p>
+</div>
+<div>
+<div class="feature-row"><span>COMPLIANCE</span><span class="feature-ok" style="font-family:var(--font-mono);font-size:var(--text-xs);">[OK]</span></div>
+<div class="feature-row"><span>AUDITORIA</span><span class="feature-value">ATIVA</span></div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div style="padding:2rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:background 0.3s;" class="reveal delay-200" onmouseover="this.style.background='rgba(213,180,120,0.02)'" onmouseout="this.style.background=''">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.06);padding:0.25rem 0.5rem;text-transform:uppercase;letter-spacing:var(--tracking-widest);">FIG. 03</span>
+<i data-lucide="users" style="width:24px;height:24px;color:rgba(213,180,120,0.4);"></i>
+</div>
+<div>
+<h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);text-transform:uppercase;letter-spacing:var(--tracking-tight);margin-bottom:0.5rem;">Comunidade Elite</h3>
+<p style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);line-height:1.8;">Rede curada de parceiros orientados a resultados.</p>
+</div>
+<div style="height:1px;background:rgba(213,180,120,0.1);"></div>
+</div>
+<!-- Feature 4 — data viz -->
+<div style="padding:2rem;display:flex;flex-direction:column;background:rgba(213,180,120,0.01);" class="reveal delay-300">
+<div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.04);padding-bottom:0.75rem;margin-bottom:0.75rem;">
+<div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--renx-gold-dark);text-transform:uppercase;letter-spacing:var(--tracking-widest);">Índice de Performance</div>
+<div style="font-family:var(--font-mono);font-size:0.5rem;color:rgba(255,255,255,0.2);text-transform:uppercase;margin-top:2px;">Telemetria em Tempo Real</div>
+</div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--renx-white);">98.4%</span>
+</div>
+<div style="flex:1;display:flex;align-items:flex-end;gap:0.25rem;height:120px;">
+<div class="chart-bar" style="flex:1;height:40%;"></div>
+<div class="chart-bar" style="flex:1;height:60%;"></div>
+<div class="chart-bar" style="flex:1;height:30%;"></div>
+<div class="chart-bar highlight" style="flex:1;height:80%;"></div>
+<div class="chart-bar" style="flex:1;height:50%;"></div>
+<div class="chart-bar highlight" style="flex:1;height:90%;"></div>
+<div class="chart-bar" style="flex:1;height:70%;"></div>
+<div class="chart-bar highlight" style="flex:1;height:100%;"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  SLIDE SECTION (instagram-slides)        ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section style="padding:5rem 0;border-bottom:1px solid rgba(213,180,120,0.08);background:var(--renx-black-soft);position:relative;">
+<div class="bg-dot-grid" style="position:absolute;inset:0;pointer-events:none;opacity:0.3;"></div>
+<div style="padding:0 3rem;margin-bottom:2rem;display:flex;align-items:center;justify-content:space-between;position:relative;">
+<div class="reveal">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);display:block;margin-bottom:0.5rem;">Vantagens RENX</span>
+<h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:300;letter-spacing:var(--tracking-tight);color:var(--renx-white);">Por que a RENX?</h2>
+</div>
+<!-- Pagination dots -->
+<div style="display:flex;gap:0.5rem;align-items:center;" id="ds-pagination">
+<div class="pagination-dot active" data-index="0"></div>
+<div class="pagination-dot" data-index="1"></div>
+<div class="pagination-dot" data-index="2"></div>
+</div>
+</div>
+<div class="h-scroll no-scrollbar" id="ds-slider">
+<!-- Slide 1 -->
+<div class="slide-container" id="ds-slide-0" style="width:340px;background:var(--renx-black);border:1px solid rgba(213,180,120,0.1);display:flex;flex-direction:column;padding:2rem;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;" class="animate-on-scroll" style="animation:animationIn 0.8s ease-out 0.1s both;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);">[01/03]</span>
+<i data-lucide="trending-up" style="width:20px;height:20px;color:rgba(213,180,120,0.4);"></i>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.5rem;" class="animate-on-scroll" style="animation:animationIn 0.8s ease-out 0.3s both;">
+<h3 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:700;letter-spacing:var(--tracking-tighter);color:var(--renx-white);line-height:0.9;">
+Resultados
+<span style="display:block;background:var(--grad-gold-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Reais</span>
+</h3>
+<p style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);line-height:1.8;border-left:2px solid var(--renx-gold-dark);padding-left:1rem;">Taxa de acerto acima da média do mercado, com estratégias testadas e validadas em operações reais.</p>
+</div>
+<div style="padding-top:1rem;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;" class="animate-on-scroll" style="animation:animationIn 0.8s ease-out 0.5s both;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:var(--tracking-widest);color:rgba(255,255,255,0.2);">Parceria</span>
+<div style="width:36px;height:36px;border-radius:50%;background:var(--grad-gold-h);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+<i data-lucide="arrow-right" style="width:16px;height:16px;color:var(--renx-black);"></i>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="slide-container" id="ds-slide-1" style="width:340px;background:rgba(24,124,76,0.05);border:1px solid rgba(24,124,76,0.15);display:flex;flex-direction:column;padding:2rem;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);">[02/03]</span>
+<i data-lucide="users" style="width:20px;height:20px;color:rgba(24,124,76,0.6);"></i>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.5rem;">
+<h3 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:700;letter-spacing:var(--tracking-tighter);color:var(--renx-white);line-height:0.9;">
+Comunidade
+<span style="display:block;color:#4ADE80;">de Elite</span>
+</h3>
+<p style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);line-height:1.8;border-left:2px solid #187C4C;padding-left:1rem;">Acesso a um grupo seleto de investidores e operadores com mentalidade de alta performance.</p>
+</div>
+<div style="padding-top:1rem;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:var(--tracking-widest);color:rgba(255,255,255,0.2);">10K+ Membros</span>
+<div style="width:36px;height:36px;border-radius:50%;background:var(--renx-green);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+<i data-lucide="arrow-right" style="width:16px;height:16px;color:white;"></i>
+</div>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="slide-container" id="ds-slide-2" style="width:340px;background:rgba(213,180,120,0.03);border:1px solid rgba(213,180,120,0.15);display:flex;flex-direction:column;padding:2rem;position:relative;">
+<div class="bg-dot-grid-gold" style="position:absolute;inset:0;pointer-events:none;opacity:0.5;"></div>
+<div style="position:relative;display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);">[03/03]</span>
+<i data-lucide="star" style="width:20px;height:20px;color:rgba(213,180,120,0.5);"></i>
+</div>
+<div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.5rem;">
+<h3 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:700;letter-spacing:var(--tracking-tighter);color:var(--renx-white);line-height:0.9;">
+Suporte
+<span style="display:block;background:var(--grad-gold-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Premium</span>
+</h3>
+<p style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);line-height:1.8;border-left:2px solid var(--renx-gold-dark);padding-left:1rem;">Atendimento dedicado, materiais exclusivos e acompanhamento personalizado da equipe RENX.</p>
+</div>
+<div style="position:relative;padding-top:1rem;border-top:1px solid rgba(213,180,120,0.08);display:flex;justify-content:space-between;align-items:center;">
+<span class="badge badge-gold">VIP</span>
+<div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--grad-gold-h);">
+<i data-lucide="arrow-right" style="width:16px;height:16px;color:var(--renx-black);"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  EFFECTS GALLERY                         ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="effects" style="border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="display:grid;grid-template-columns:4fr 8fr;border-bottom:1px solid rgba(213,180,120,0.08);">
+<div style="padding:3rem;border-right:1px solid rgba(213,180,120,0.08);display:flex;flex-direction:column;justify-content:space-between;min-height:180px;" class="reveal">
+<div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);display:block;margin-bottom:0.5rem;">04 / Efeitos</span>
+<h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:300;letter-spacing:var(--tracking-tight);color:var(--renx-white);">Efeitos<br/>Visuais</h2>
+</div>
+<i data-lucide="sparkles" style="color:rgba(213,180,120,0.3);width:40px;height:40px;"></i>
+</div>
+<div style="padding:3rem;" class="reveal delay-100">
+<p style="font-size:var(--text-lg);line-height:var(--leading-relaxed);color:rgba(255,255,255,0.5);max-width:40rem;">Biblioteca de efeitos premium: glassmorphism, <span style="color:var(--renx-gold-base);">glows metálicos</span>, scanlines CRT e gradientes de borda — para transmitir exclusividade em cada detalhe.</p>
+</div>
+</div>
+<!-- Effects grid -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:0;">
+<!-- Glassmorphism -->
+<div style="padding:2.5rem;border-right:1px solid rgba(213,180,120,0.08);border-bottom:1px solid rgba(213,180,120,0.08);position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(135deg,#0A0A0A,#050505);" class="reveal">
+<div class="bg-dot-grid" style="position:absolute;inset:0;pointer-events:none;"></div>
+<div class="glass" style="position:relative;padding:1.25rem;border-radius:8px;z-index:1;margin-bottom:1rem;">
+<div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);margin-bottom:0.25rem;">Glassmorphism</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">backdrop-filter: blur(20px)</div>
+</div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:var(--tracking-widest);position:relative;z-index:1;">.glass</span>
+</div>
+<!-- Gold glow -->
+<div style="padding:2.5rem;border-right:1px solid rgba(213,180,120,0.08);border-bottom:1px solid rgba(213,180,120,0.08);position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;" class="reveal delay-100">
+<div style="position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;background:radial-gradient(ellipse,rgba(213,180,120,0.2) 0%,transparent 70%);pointer-events:none;"></div>
+<div style="position:relative;z-index:1;margin-bottom:1rem;">
+<div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);margin-bottom:0.25rem;">Gold Glow</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">radial-gradient · ambient</div>
+</div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:var(--tracking-widest);">.glow-gold</span>
+</div>
+<!-- Scanlines -->
+<div style="padding:2.5rem;border-bottom:1px solid rgba(213,180,120,0.08);position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;" class="reveal delay-200">
+<div class="scanlines" style="position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.8;"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(213,180,120,0.03),transparent);"></div>
+<div style="position:relative;z-index:2;margin-bottom:1rem;">
+<div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);margin-bottom:0.25rem;">Scanlines CRT</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">linear-gradient · repeating</div>
+</div>
+<span style="position:relative;z-index:2;font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:var(--tracking-widest);">.scanlines</span>
+</div>
+<!-- Border gradient gold -->
+<div style="padding:2.5rem;border-right:1px solid rgba(213,180,120,0.08);position:relative;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;" class="reveal">
+<div class="border-gradient-gold" style="position:relative;padding:1.25rem;border-radius:8px;background:var(--surface-raised);z-index:1;margin-bottom:1rem;">
+<div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);margin-bottom:0.25rem;">Border Gradient</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">mask-composite: exclude</div>
+</div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:var(--tracking-widest);">.border-gradient-gold</span>
+</div>
+<!-- Shimmer text -->
+<div style="padding:2.5rem;border-right:1px solid rgba(213,180,120,0.08);position:relative;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;" class="reveal delay-100">
+<div style="position:relative;z-index:1;margin-bottom:1rem;">
+<div class="text-gold-shimmer" style="font-family:var(--font-display);font-size:var(--text-5xl);font-weight:900;letter-spacing:var(--tracking-tighter);line-height:1;">RENX</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);margin-top:0.5rem;">shimmer animation</div>
+</div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:var(--tracking-widest);">.text-gold-shimmer</span>
+</div>
+<!-- Bg grid -->
+<div style="padding:2.5rem;position:relative;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;" class="reveal delay-200">
+<div class="bg-grid" style="position:absolute;inset:0;pointer-events:none;"></div>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100px;height:100px;background:radial-gradient(ellipse,rgba(213,180,120,0.08) 0%,transparent 70%);"></div>
+<div style="position:relative;z-index:1;margin-bottom:1rem;">
+<div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;color:var(--renx-white);margin-bottom:0.25rem;">Background Grid</div>
+<div style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.3);">linear-gradient repeating</div>
+</div>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:var(--tracking-widest);">.bg-grid</span>
+</div>
+</div>
+</section>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  CTA / FOOTER                            ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<footer class="site-footer">
+<div class="bg-grid" style="position:absolute;inset:0;pointer-events:none;opacity:0.5;"></div>
+<div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--renx-gold-dark),transparent);opacity:0.4;"></div>
+<!-- CTA -->
+<div style="text-align:center;padding:0 2rem 6rem;position:relative;z-index:1;" class="reveal">
+<h2 style="font-family:var(--font-display);font-size:clamp(3rem,8vw,8rem);font-weight:900;letter-spacing:var(--tracking-tightest);color:var(--renx-white);line-height:0.9;margin-bottom:3rem;">
+Pronto para<br/>
+<span style="background:var(--grad-gold-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">resultados.</span>
+</h2>
+<div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+<button class="btn btn-primary" style="font-size:var(--text-md);padding:1.25rem 3rem;">Fazer Parceria <i data-lucide="arrow-right" style="width:18px;height:18px;"></i></button>
+<button class="btn btn-secondary" style="font-size:var(--text-md);padding:1.25rem 3rem;">Conhecer a RENX</button>
+</div>
+</div>
+<div style="height:1px;background:linear-gradient(90deg,transparent,rgba(213,180,120,0.12),transparent);margin:0 2rem;"></div>
+<!-- Footer grid -->
+<div style="display:grid;grid-template-columns:3fr 3fr 3fr 3fr;padding:3rem 3rem 0;gap:3rem;position:relative;z-index:1;">
+<div>
+<img src="Assets/Marca Final - Quadricromia.png" alt="RENX" style="height:32px;width:auto;margin-bottom:1.5rem;filter:brightness(0.9);"/>
+<p style="font-size:var(--text-sm);color:rgba(255,255,255,0.25);line-height:1.8;max-width:200px;">Sistema de design premium para a comunidade RENXBET.</p>
+</div>
+<div>
+<h4 style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:1.5rem;">Navegação</h4>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+<li><a href="#tokens" class="link-underline">Tokens</a></li>
+<li><a href="#components" class="link-underline">Componentes</a></li>
+<li><a href="#layout" class="link-underline">Layout</a></li>
+<li><a href="#effects" class="link-underline">Efeitos</a></li>
+</ul>
+</div>
+<div>
+<h4 style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:1.5rem;">Arquivos CSS</h4>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+<li class="link-underline" style="cursor:default;">tokens.css</li>
+<li class="link-underline" style="cursor:default;">animations.css</li>
+<li class="link-underline" style="cursor:default;">components.css</li>
+<li class="link-underline" style="cursor:default;">layout.css</li>
+<li class="link-underline" style="cursor:default;">effects.css</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;justify-content:space-between;">
+<div style="text-align:right;">
+<i data-lucide="globe" style="width:32px;height:32px;color:rgba(213,180,120,0.1);"></i>
+</div>
+<div style="text-align:right;">
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.15);display:block;">© 2026 RENX. Todos os direitos reservados.</span>
+<span style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,0.1);display:block;margin-top:0.25rem;">Design System v1.0</span>
+</div>
+</div>
+</div>
+<!-- Big text decorativo -->
+<div class="footer-big-text" aria-hidden="true">RENXBET</div>
+</footer>
+
+<!-- js — scroll reveal para .reveal e text-reveal -->
+<script src="Assets/js/scroll-reveal.js"></script>
+<!-- js — carousel hero com ken burns e crossfade -->
+<script src="Assets/js/carousel.js"></script>
+<!-- js — parallax, flashlight de mouse, bar fills -->
+<script src="Assets/js/interactions.js"></script>
+<!-- js — slider horizontal com snap, paginação e swipe -->
+<script src="Assets/js/slider-pagination.js"></script>
+
+</body>
+</html>
