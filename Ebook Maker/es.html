@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EbookMaker → Ebook GPT | La Nueva Era de Creación de E-books</title>
+  <meta name="description"
+    content="EbookMaker ha evolucionado. Conoce Ebook GPT — la plataforma de creación de e-books más potente del mundo. Migra ahora gratis." />
+  <meta name="theme-color" content="#0B0813" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Ambient particles canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Sticky Header Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="header-logo">
+        <span class="logo-legacy">EbookMaker</span>
+        <svg class="logo-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M10 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-new">Ebook GPT</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#evolution" class="nav-link">Evolución</a>
+        <a href="#video-showcase" class="nav-link">Demostración</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-selector">
+          <a href="index.html" class="lang-link" title="Português">🇧🇷</a>
+          <a href="eng.html" class="lang-link" title="English">🇺🇸</a>
+          <a href="es.html" class="lang-link active" title="Español">🇪🇸</a>
+        </div>
+        <div class="header-cta">
+          <a href="https://ebookgpt.com" class="nav-cta-btn" target="_blank" rel="noopener noreferrer">
+            <span>Acceder a Ebook GPT</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 1: HERO ANNOUNCEMENT                       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="hero" class="hero-section">
+    <div class="hero-backdrop-glow"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-secondary"></div>
+    <div class="hero-orbital hero-orbital--1"></div>
+    <div class="hero-orbital hero-orbital--2"></div>
+
+    <div class="container hero-container">
+      <div class="hero-content-grid">
+        <!-- Left: Text Content -->
+        <div class="hero-text-col">
+          <div class="badge-slogan" id="badge-slogan">
+            <span class="badge-dot"></span><span>LA NUEVA GENERACIÓN HA LLEGADO.</span>
+          </div>
+          <h1 class="hero-headline" id="hero-headline">
+            Gracias por escribir esta <span class="text-gradient">historia</span> con nosotros.
+          </h1>
+          <p class="hero-body" id="hero-body">
+            Más de <strong class="stat-highlight">899.293</strong> personas transformaron sus ideas en libros digitales en EbookMaker. Juntos, facilitamos la creación de contenido en más de <strong class="stat-highlight">193 países</strong>. Pero para ayudarte a llegar más lejos, hemos evolucionado.
+          </p>
+          <p class="hero-sub" id="hero-sub">
+            EbookMaker cumplió su misión. Para entregarte herramientas más fáciles, audiolibros y un centro de distribución para que vendas tus libros, las creaciones aquí han terminado. Bienvenido a la nueva era.
+          </p>
+        </div>
+
+        <!-- Right: Hero Illustration -->
+        <div class="hero-visual-col">
+          <div class="hero-visual-wrapper">
+            <div class="hero-visual-glow"></div>
+            <img src="Assets/hero-illustration.png"
+              alt="E-book holográfico futurista flotando en el espacio con partículas de IA" class="hero-illustration"
+              id="hero-illustration" />
+            <div class="hero-visual-ring hero-visual-ring--1"></div>
+            <div class="hero-visual-ring hero-visual-ring--2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Stats Bar -->
+      <div class="hero-stats-bar" id="hero-stats-bar">
+        <div class="hero-stat">
+          <div class="hero-stat__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#9D4EDD" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M2 17l10 5 10-5" stroke="#9D4EDD" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.5" />
+              <path d="M2 12l10 5 10-5" stroke="#9D4EDD" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.7" />
+            </svg>
+          </div>
+          <div class="hero-stat__content">
+            <span class="hero-stat__number" data-target="899293">0</span>
+            <span class="hero-stat__label">Total de Creadores</span>
+          </div>
+        </div>
+        <div class="hero-stat__divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="#9D4EDD" stroke-width="1.5" opacity="0.6" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"
+                stroke="#9D4EDD" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="hero-stat__content">
+            <span class="hero-stat__number" data-target="193">0</span>
+            <span class="hero-stat__label">Países Alcanzados</span>
+          </div>
+        </div>
+        <div class="hero-stat__divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#9D4EDD" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#9D4EDD" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 7h6M9 11h4" stroke="#9D4EDD" stroke-width="1.2" stroke-linecap="round" opacity="0.5" />
+            </svg>
+          </div>
+          <div class="hero-stat__content">
+            <span class="hero-stat__number" data-target="742222">0</span>
+            <span class="hero-stat__label">Contenidos Generados</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TRUST BAR / SOCIAL PROOF                           -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="trust-bar" id="trust-bar">
+    <div class="container">
+      <div class="trust-bar__inner">
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 1l2.47 5.01L18 6.88l-4 3.9.94 5.5L10 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.87L10 1z"
+              fill="#9D4EDD" opacity="0.8" />
+          </svg>
+          <span>4.1 de valoración</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="4" width="16" height="12" rx="2" stroke="#9D4EDD" stroke-width="1.3" opacity="0.8" />
+            <path d="M6 8h2v4H6zM9 6h2v6H9zM12 9h2v3h-2z" fill="#9D4EDD" opacity="0.5" />
+          </svg>
+          <span>#1 en IA para e-books</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 2: EVOLUTION BRIDGE                        -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="evolution" class="evolution-section">
+    <div class="evolution-section-glow"></div>
+    <div class="container">
+      <div class="evolution-header">
+        <span class="section-label">La Evolución</span>
+        <h2 class="section-title">De dónde venimos. Hacia dónde vamos.</h2>
+        <p class="section-subtitle">Mira por qué la nueva plataforma es perfecta para ti.</p>
+      </div>
+
+      <div class="evolution-layout">
+        <!-- Left: Cards Column -->
+        <div class="evolution-cards-col">
+          <div class="evolution-grid">
+            <!-- Legacy Card -->
+            <div class="evo-card evo-card--legacy" id="card-legacy">
+              <div class="evo-card__icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="legacy-glow" x="-4" y="-4" width="56" height="56">
+                      <feGaussianBlur stdDeviation="2" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+                  <rect x="10" y="6" width="28" height="36" rx="3" stroke="#A29BFE" stroke-width="1.5" opacity="0.5"
+                    filter="url(#legacy-glow)" />
+                  <rect x="10" y="6" width="28" height="36" rx="3" stroke="#A29BFE" stroke-width="1.5" opacity="0.3" />
+                  <line x1="16" y1="16" x2="32" y2="16" stroke="#A29BFE" stroke-width="1.2" opacity="0.35"
+                    stroke-linecap="round" />
+                  <line x1="16" y1="21" x2="28" y2="21" stroke="#A29BFE" stroke-width="1.2" opacity="0.25"
+                    stroke-linecap="round" />
+                  <line x1="16" y1="26" x2="30" y2="26" stroke="#A29BFE" stroke-width="1.2" opacity="0.2"
+                    stroke-linecap="round" />
+                  <line x1="16" y1="31" x2="24" y2="31" stroke="#A29BFE" stroke-width="1.2" opacity="0.15"
+                    stroke-linecap="round" />
+                  <path d="M30 6L38 6L38 14" stroke="#A29BFE" stroke-width="1" opacity="0.2" />
+                  <path d="M30 6L30 14L38 14" fill="rgba(162,155,254,0.05)" stroke="#A29BFE" stroke-width="1"
+                    opacity="0.2" />
+                </svg>
+              </div>
+              <div class="evo-card__tag">
+                <span class="tag-dot tag-dot--legacy"></span>EbookMaker.ai (2023 – 2026)
+              </div>
+              <h3 class="evo-card__title">Cómo era antes</h3>
+              <ul class="evo-card__points">
+                <li><svg class="bullet-svg bullet-svg--legacy" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9L7.5 12.5L14 5.5" stroke="#A29BFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg><span>Creabas e-books simples a partir de un título.</span></li>
+                <li><svg class="bullet-svg bullet-svg--legacy" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9L7.5 12.5L14 5.5" stroke="#A29BFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg><span>Formatos y visuales básicos, sin mucha libertad para alterar.</span></li>
+                <li><svg class="bullet-svg bullet-svg--legacy" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9L7.5 12.5L14 5.5" stroke="#A29BFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg><span>Ayudó a miles de personas a lanzar sus primeros materiales.</span></li>
+              </ul>
+              <div class="evo-card__fade-overlay"></div>
+            </div>
+
+            <!-- Divider Arrow -->
+            <div class="evolution-arrow" id="evolution-arrow">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="23" stroke="url(#arrow-grad)" stroke-width="2" />
+                <path d="M18 24H30M30 24L25 19M30 24L25 29" stroke="url(#arrow-grad)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <defs>
+                  <linearGradient id="arrow-grad" x1="0" y1="0" x2="48" y2="48">
+                    <stop stop-color="#9D4EDD" />
+                    <stop offset="1" stop-color="#5A189A" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <!-- New Gen Card -->
+            <div class="evo-card evo-card--new" id="card-new">
+              <div class="evo-card__glow"></div>
+              <div class="live-badge" id="live-badge">
+                <span class="live-badge__dot"></span>
+                EN VIVO ACTIVO
+              </div>
+              <div class="evo-card__icon evo-card__icon--new">
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="ai-core-grad" x1="0" y1="0" x2="56" y2="56">
+                      <stop stop-color="#FFFFFF" />
+                      <stop offset="1" stop-color="#9D4EDD" />
+                    </linearGradient>
+                    <filter id="ai-glow" x="-8" y="-8" width="72" height="72">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                    <linearGradient id="ring-grad" x1="0" y1="0" x2="56" y2="56">
+                      <stop stop-color="#9D4EDD" stop-opacity="0.6" />
+                      <stop offset="1" stop-color="#5A189A" stop-opacity="0.2" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="28" cy="28" r="26" stroke="url(#ring-grad)" stroke-width="1" stroke-dasharray="4 6"
+                    class="ai-ring ai-ring--outer" />
+                  <circle cx="28" cy="28" r="20" stroke="url(#ring-grad)" stroke-width="0.8" stroke-dasharray="3 5"
+                    class="ai-ring ai-ring--middle" />
+                  <path d="M28 12L39.3 19V33L28 40L16.7 33V19L28 12Z" stroke="url(#ai-core-grad)" stroke-width="1.5"
+                    fill="none" filter="url(#ai-glow)" class="ai-core-hex" />
+                  <path d="M28 22L33 28L28 34L23 28Z" fill="url(#ai-core-grad)" opacity="0.3" />
+                  <path d="M28 22L33 28L28 34L23 28Z" stroke="url(#ai-core-grad)" stroke-width="1" />
+                  <circle cx="10" cy="20" r="1.5" fill="#9D4EDD" opacity="0.5" class="ai-particle ai-particle--1" />
+                  <circle cx="46" cy="36" r="1.2" fill="#FFFFFF" opacity="0.4" class="ai-particle ai-particle--2" />
+                  <circle cx="42" cy="14" r="1" fill="#9D4EDD" opacity="0.3" class="ai-particle ai-particle--3" />
+                  <circle cx="14" cy="42" r="1.3" fill="#FFFFFF" opacity="0.35" class="ai-particle ai-particle--4" />
+                </svg>
+              </div>
+              <div class="evo-card__tag">
+                <span class="tag-dot tag-dot--new"></span>Ebook GPT (Nueva Generación)
+              </div>
+              <h3 class="evo-card__title">Lo que obtienes ahora</h3>
+              <ul class="evo-card__points">
+                <li><svg class="bullet-svg bullet-svg--new" width="18" height="18" viewBox="0 0 18 18" fill="none"><defs><linearGradient id="b1" x1="0" y1="0" x2="18" y2="18"><stop stop-color="#FFFFFF" stop-opacity="0.9"/><stop offset="1" stop-color="#9D4EDD"/></linearGradient></defs><path d="M5 9H13M13 9L10 6M13 9L10 12" stroke="url(#b1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>La IA escribe, ilustra y formatea el e-book en los estilos Infantil, Recetas, Manga, Ficción o Informativo.</span></li>
+                <li><svg class="bullet-svg bullet-svg--new" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9H13M13 9L10 6M13 9L10 12" stroke="url(#b1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pon imágenes en las ilustraciones de tu historia, manual o infoproducto.</span></li>
+                <li><svg class="bullet-svg bullet-svg--new" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9H13M13 9L10 6M13 9L10 12" stroke="url(#b1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Crea Audiolibros y descárgalos en los formatos listos para publicar y vender directo en Amazon, Hotmart, Kirvano, Kiwify, CartPanda y muchas otras.</span></li>
+              </ul>
+              <span class="evo-card__badge-new">NUEVA PLATAFORMA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Mockups Column -->
+        <div class="evolution-mockups-col mockup-col">
+          <div class="evolution-grid">
+            <!-- Legacy Mockup (Simple rigid editor) -->
+            <div class="mockup-frame mockup-frame--legacy" id="mockup-legacy">
+              <div class="mockup-chrome">
+                <span class="mockup-chrome__dot mockup-chrome__dot--red"></span>
+                <span class="mockup-chrome__dot mockup-chrome__dot--yellow"></span>
+                <span class="mockup-chrome__dot mockup-chrome__dot--green"></span>
+                <span class="mockup-chrome__title">EbookMaker.ai — Editor Estático</span>
+              </div>
+              <div class="mockup-body mockup-body--legacy">
+                <div class="legacy-form">
+                  <div class="legacy-form-group">
+                    <label>Título del Libro</label>
+                    <input type="text" value="Mi Viaje Con E-books" disabled />
+                  </div>
+                  <div class="legacy-form-group">
+                    <label>Capítulo 1: Introducción</label>
+                    <textarea
+                      disabled>Esta era una interfaz de formulario estática. La edición de texto requería formularios lineales, sin control visual dinámico en tiempo real de arrastrar y soltar.</textarea>
+                  </div>
+                  <div class="legacy-form-actions">
+                    <div class="legacy-btn">Guardar Cambios</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spacer to align with Left Arrow -->
+            <div class="evolution-arrow-spacer" style="height: 52px;"></div>
+
+            <!-- Ebook GPT Mockup (Advanced editor) -->
+            <div class="mockup-frame" id="mockup-new">
+              <div class="mockup-frame__glow"></div>
+              <div class="mockup-chrome">
+                <span class="mockup-chrome__dot mockup-chrome__dot--red"></span>
+                <span class="mockup-chrome__dot mockup-chrome__dot--yellow"></span>
+                <span class="mockup-chrome__dot mockup-chrome__dot--green"></span>
+                <span class="mockup-chrome__title">Ebook GPT — Editor</span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-sidebar">
+                  <div class="mockup-sidebar__item mockup-sidebar__item--active">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <rect x="1" y="1" width="5" height="5" rx="1" fill="#9D4EDD" opacity="0.7" />
+                      <rect x="8" y="1" width="5" height="5" rx="1" fill="#9D4EDD" opacity="0.4" />
+                      <rect x="1" y="8" width="5" height="5" rx="1" fill="#9D4EDD" opacity="0.4" />
+                      <rect x="8" y="8" width="5" height="5" rx="1" fill="#9D4EDD" opacity="0.2" />
+                    </svg>
+                    <span>Capítulos</span>
+                  </div>
+                  <div class="mockup-sidebar__item">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 4h10M2 7h7M2 10h9" stroke="#A29BFE" stroke-width="1.2" stroke-linecap="round"
+                        opacity="0.4" />
+                    </svg>
+                    <span>Design</span>
+                  </div>
+                  <div class="mockup-sidebar__item">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <circle cx="7" cy="7" r="5" stroke="#A29BFE" stroke-width="1.2" opacity="0.4" />
+                      <path d="M7 4v3l2 2" stroke="#A29BFE" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+                    </svg>
+                    <span>Audio</span>
+                  </div>
+                  <div class="mockup-sidebar__item">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M3 11V5l4-3 4 3v6a1 1 0 01-1 1H4a1 1 0 01-1-1z" stroke="#A29BFE" stroke-width="1.2"
+                        opacity="0.4" />
+                    </svg>
+                    <span>Exportar</span>
+                  </div>
+                </div>
+                <div class="mockup-editor">
+                  <div class="mockup-block mockup-block--heading">
+                    <div class="mockup-block__handle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <circle cx="3" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="3" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                      </svg></div>
+                    <div class="mockup-block__type">H1</div>
+                    <div class="mockup-block__content mockup-block__content--wide"></div>
+                  </div>
+                  <div class="mockup-block mockup-block--text">
+                    <div class="mockup-block__handle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <circle cx="3" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="3" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                      </svg></div>
+                    <div class="mockup-block__type">¶</div>
+                    <div class="mockup-block__lines">
+                      <div class="mockup-line mockup-line--full"></div>
+                      <div class="mockup-line mockup-line--80"></div>
+                      <div class="mockup-line mockup-line--90"></div>
+                    </div>
+                  </div>
+                  <div class="mockup-block mockup-block--image">
+                    <div class="mockup-block__handle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <circle cx="3" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="3" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                      </svg></div>
+                    <div class="mockup-block__type"><svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <rect x="1" y="2" width="10" height="8" rx="1.5" stroke="#9D4EDD" stroke-width="1"
+                          opacity="0.6" />
+                        <circle cx="4" cy="5" r="1" fill="#9D4EDD" opacity="0.4" />
+                        <path d="M1 9l3-3 2 2 2-2 3 3" stroke="#9D4EDD" stroke-width="0.8" opacity="0.4" />
+                      </svg></div>
+                    <div class="mockup-image-placeholder">
+                      <div class="mockup-image-placeholder__shimmer"></div>
+                    </div>
+                  </div>
+                  <div class="mockup-block mockup-block--text">
+                    <div class="mockup-block__handle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <circle cx="3" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="3" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                      </svg></div>
+                    <div class="mockup-block__type">¶</div>
+                    <div class="mockup-block__lines">
+                      <div class="mockup-line mockup-line--full"></div>
+                      <div class="mockup-line mockup-line--70"></div>
+                    </div>
+                  </div>
+                  <div class="mockup-block mockup-block--audio">
+                    <div class="mockup-block__handle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <circle cx="3" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="3" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="3" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                        <circle cx="7" cy="7" r="1" fill="#A29BFE" opacity="0.3" />
+                      </svg></div>
+                    <div class="mockup-block__type"><svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 4.5v3a1 1 0 001 1h1l3 2V2.5L5 4.5H4a1 1 0 00-1 1z" stroke="#9D4EDD" stroke-width="1"
+                          opacity="0.6" />
+                        <path d="M9 4.5c.5.5.8 1 .8 1.5s-.3 1-.8 1.5" stroke="#9D4EDD" stroke-width="0.8"
+                          stroke-linecap="round" opacity="0.4" />
+                      </svg></div>
+                    <div class="mockup-audio-waveform">
+                      <div class="wave-bar" style="height:40%"></div>
+                      <div class="wave-bar" style="height:70%"></div>
+                      <div class="wave-bar" style="height:55%"></div>
+                      <div class="wave-bar" style="height:90%"></div>
+                      <div class="wave-bar" style="height:45%"></div>
+                      <div class="wave-bar" style="height:80%"></div>
+                      <div class="wave-bar" style="height:60%"></div>
+                      <div class="wave-bar" style="height:35%"></div>
+                      <div class="wave-bar" style="height:75%"></div>
+                      <div class="wave-bar" style="height:50%"></div>
+                      <div class="wave-bar" style="height:85%"></div>
+                      <div class="wave-bar" style="height:40%"></div>
+                      <div class="wave-bar" style="height:65%"></div>
+                      <div class="wave-bar" style="height:55%"></div>
+                      <div class="wave-bar" style="height:70%"></div>
+                      <div class="wave-bar" style="height:45%"></div>
+                    </div>
+                  </div>
+                  <div class="mockup-cursor"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 3: MIGRATION CTA                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="migration-cta" class="cta-section">
+    <div class="container">
+      <div class="cta-container" id="cta-container">
+        <div class="cta-glow-orb cta-glow-orb--1"></div>
+        <div class="cta-glow-orb cta-glow-orb--2"></div>
+        <div class="cta-glow-orb cta-glow-orb--3"></div>
+        <div class="cta-inner">
+          <div class="cta-corner cta-corner--tl"></div>
+          <div class="cta-corner cta-corner--br"></div>
+          <h2 class="cta-headline" id="cta-headline">
+            Tu nueva casa de creación y ventas está lista.<br />
+            <span class="cta-headline-accent">Y es gratis para empezar.</span>
+          </h2>
+          <p class="cta-supporting" id="cta-supporting">
+            Todos los nuevos proyectos ahora viven en Ebook GPT. Haz clic abajo para conocer la plataforma donde creas, publicas y distribuyes tus e-books y audiolibros de forma sencilla.
+          </p>
+          <a href="https://ebookgpt.com" class="cta-button" id="cta-button" target="_blank" rel="noopener noreferrer">
+            <span class="cta-button__text">Probar Ebook GPT Gratis</span>
+            <span class="cta-button__arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="cta-button__shimmer"></div>
+          </a>
+          <p class="cta-footnote">Acceso inmediato.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 4: VIDEO SHOWCASE                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="video-showcase" class="video-section">
+    <div class="video-section-glow"></div>
+    <div class="container">
+      <div class="video-header">
+        <span class="section-label">Ebook GPT</span>
+        <h2 class="section-title">Dale vida a tu imaginación.</h2>
+        <p class="section-subtitle">Únete a miles de creadores que utilizan EbookGPT para crear y distribuir sus E-books y Audiobooks.</p>
+      </div>
+      <div class="video-showcase-layout">
+        <div class="video-container" id="video-container">
+          <div class="video-container__glow"></div>
+          <div class="video-container__border-glow"></div>
+          <video id="showcase-video" class="showcase-video" src="Assets/WhatsApp Video 2026-06-18 at 20.16.01.mp4"
+            autoplay muted loop playsinline preload="auto"></video>
+          <div class="video-overlay-badge">
+            <span class="video-overlay-badge__dot"></span>
+            EBOOK GPT
+          </div>
+        </div>
+        <!-- Side decorative feature cards -->
+        <div class="video-features">
+          <div class="video-feature-card">
+            <div class="video-feature-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 3L3 9l11 6 11-6-11-6z" fill="none" stroke="#9D4EDD" stroke-width="1.5"
+                  stroke-linejoin="round" />
+                <path d="M3 19l11 6 11-6" stroke="#9D4EDD" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" opacity="0.5" />
+                <path d="M3 14l11 6 11-6" stroke="#9D4EDD" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" opacity="0.7" />
+              </svg>
+            </div>
+            <h4 class="video-feature-card__title">Muy Fácil de Usar</h4>
+            <p class="video-feature-card__desc">Arrastra, suelta y cambia los textos o imágenes de tu libro sin ninguna complicación técnica.</p>
+          </div>
+          <div class="video-feature-card">
+            <div class="video-feature-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="11" stroke="#9D4EDD" stroke-width="1.5" opacity="0.6" />
+                <path d="M10 14l3 3 5-6" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h4 class="video-feature-card__title">A Tu Manera</h4>
+            <p class="video-feature-card__desc">Elige entre más de 20 estilos, como Acuarela, Disney o Manga, y la IA hace la magia.</p>
+          </div>
+          <div class="video-feature-card">
+            <div class="video-feature-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M7 10.5v7a2 2 0 002 2h2l5 4V6.5l-5 4H9a2 2 0 00-2 2z" stroke="#9D4EDD" stroke-width="1.5" />
+                <path d="M19 10c1 1 1.6 2 1.6 4s-.6 3-1.6 4" stroke="#9D4EDD" stroke-width="1.5" stroke-linecap="round"
+                  opacity="0.6" />
+                <path d="M22 8c1.5 1.5 2.5 3.5 2.5 6s-1 4.5-2.5 6" stroke="#9D4EDD" stroke-width="1.2"
+                  stroke-linecap="round" opacity="0.3" />
+              </svg>
+            </div>
+            <h4 class="video-feature-card__title">Listo para Vender</h4>
+            <p class="video-feature-card__desc">Exporta tu libro en PDF, Kindle o Audiolibro y empieza a lucrar con tus historias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- FOOTER                                             -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <footer id="footer" class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-legacy">ebookmaker.ai</span>
+        <span class="footer-divider">·</span>
+        <span class="footer-powered">Powered EbookGPT</span>
+      </div>
+      <div class="footer-cta-mini">
+        <a href="https://ebookgpt.com" target="_blank" rel="noopener noreferrer" class="footer-link"
+          id="footer-cta-link">
+          Ir a Ebook GPT →
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
