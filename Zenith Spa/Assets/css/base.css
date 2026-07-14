@@ -1,0 +1,272 @@
+/* ===== BASE & RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-beige-nude: #DFC0A6;       /* Nude skin tone */
+  --color-medium-brown: #876546;      /* Medium brown for lines and accents */
+  --color-cream-bg: #FDF4E5;          /* Warm cream background */
+  --color-ice-white: #F4F7F6;         /* Ice white background */
+  --color-gold: #D9A036;              /* Gold for luxury accents */
+  --color-dark-brown: #4D3114;        /* Dark chocolate brown for main typography/dark sections */
+  --color-deep-brown: #4D3E3A;        /* Dark grayish brown for header and footer */
+  --color-moss-green: #344537;        /* Earthy deep green */
+  --color-moss-light: #E8EFE9;        /* Soft calming green background */
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  --transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --font-sans: 'DM Sans', 'Poppins', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Poppins', 'DM Sans', sans-serif;
+  --font-display: 'Fraunces', 'Times New Roman', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-medium-brown) var(--color-cream-bg);
+}
+
+/* Custom Scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-medium-brown);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-brown);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream-bg);
+  color: var(--color-dark-brown);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s var(--transition);
+}
+
+/* ===== SPA ROUTER SECTIONS ===== */
+.spa-section {
+  display: none;
+}
+.spa-section.active {
+  display: block;
+}
+
+/* ===== PAGE LOAD OVERLAY ===== */
+#page-load {
+  position: fixed;
+  inset: 0;
+  background: var(--color-dark-brown);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+#page-load.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+.load-logo {
+  color: var(--color-cream-bg);
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.15em;
+  font-family: var(--font-display);
+  font-weight: 300;
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* ===== CUSTOM CURSOR ===== */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  mix-blend-mode: difference;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-brown);
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cursor-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+body.hovering-link #custom-cursor {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-beige-nude);
+  opacity: 0.5;
+}
+body.hovering-attenuated #custom-cursor {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-beige-nude);
+  opacity: 0.4;
+  box-shadow: 0 0 20px rgba(223, 192, 166, 0.45);
+}
+body.hovering-carousel #custom-cursor {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-gold);
+  opacity: 0.85;
+  mix-blend-mode: normal; /* Normal mode so text and color show clearly */
+}
+body.hovering-carousel #custom-cursor .cursor-text {
+  opacity: 1;
+}
+@media (hover: none) {
+  #custom-cursor {
+    display: none !important;
+  }
+}
+
+/* ===== POPPINS UTILITY CLASSES ===== */
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}

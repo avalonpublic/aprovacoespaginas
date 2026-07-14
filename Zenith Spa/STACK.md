@@ -1,0 +1,5 @@
+- **Google Fonts** — web typography service providing premium fonts (Fraunces, Manrope, Inter) used for styling headings and copy
+- **Lucide** — svg icon library used for delivering modern, lightweight iconography across cards and navigation elements
+- **HTML5 Video/Audio API** — browser native APIs used for playing the background hero video and managing volume toggles
+- **Vanilla Javascript** — core programming language used to build the SPA router, parallax movement, custom cursor, smooth carousel scroll (Lerp), and accordion selectors
+- **Vanilla CSS3** — core styling language used to declare custom properties, morphing blob borders, neon spin animations, and layouts
