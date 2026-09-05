@@ -1,14 +1,16 @@
 # Seções da LP IkiApp
 
+Ordem do storytelling: **Propósito → Disciplina → Recompensas → Seu Iki**
+
 | id | Atmosfera | Conteúdo |
 |----|-----------|----------|
-| `nav-bar` | glass deep | logo real + links |
-| `hero-ascent` | full-bleed night | marca, Ascensão, Iki Coruja |
-| `produto` | lavanda | phones reais (home + hábitos) |
-| `ikis` | deep | galeria coleção origami |
-| `features-grid` | deep | streak / Kairos / companheiro |
-| `kairos` | lavanda | Roda Kairos + 3 passos |
-| `metric-bar` | deep | vagas / 12 áreas / 7 Ikis |
-| `beta` | lavanda | escassez do ciclo |
-| `cta-bottom` | deep glass | waitlist |
-| `footer-bar` | deep | links + marca |
+| `nav-bar` | glass deep | lockup + âncoras do storytelling |
+| `hero-ascent` | full-bleed | marca, headline, CTA, Iki |
+| `jornada` | lavanda | Roda da Vida + 4 passos |
+| `produto` | deep | telas reais (disciplina) |
+| `recompensas` | lavanda | o que a constância devolve |
+| `ikis` | deep | galeria (o Iki surge) |
+| `features-grid` | deep | por que existe |
+| `metric-bar` | deep | números |
+| `beta` / `cta-bottom` | lavanda / deep | lista |
+| `footer-bar` | deep | links |

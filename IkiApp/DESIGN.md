@@ -16,7 +16,7 @@
 - `scene-night.jpg` — hero
 - `screens/*.jpg` — home + atividades (front aprovado)
 - `ikis/*.png` — coleção origami
-- `kairos.png` — Roda Kairos
+- `kairos.png` — Roda da Vida
 
 ## Tom de copy
 Life OS · Ascensão · disciplina real · Beta fechado. Sem stock Unsplash.
