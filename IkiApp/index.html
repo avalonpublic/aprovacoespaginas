@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IkiApp — O Jogo da Sua Vida Real</title>
+    <meta
+      name="description"
+      content="Organize sua rotina, cumpra suas metas e evolua um guardião origami com a sua disciplina. Beta fechado do IkiApp."
+    />
+    <meta name="theme-color" content="#1e1833" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./variables.css?v=iki-1" />
+    <link rel="stylesheet" href="./style.css?v=iki-1" />
+    <link rel="stylesheet" href="./iki-theme.css?v=iki-1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSWV2CQ4Y6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WSWV2CQ4Y6");
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "1546551013869737");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1546551013869737&ev=PageView&noscript=1"
+    /></noscript>
+  </head>
+  <body class="ds-saas">
+    <a class="skip" href="#topo">Ir para o conteúdo</a>
+
+    <!-- ========== data-section: nav-bar ========== -->
+    <header class="nav-bar" data-section="nav-bar" id="sec-nav-bar">
+      <div class="wrap nav-bar__inner">
+        <a class="nav-bar__brand" href="#topo">Iki</a>
+        <button
+          class="nav-bar__toggle"
+          type="button"
+          data-menu-toggle
+          aria-controls="menu-iki"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          Menu
+        </button>
+        <div class="nav-bar__menu" id="menu-iki" data-menu data-open="false">
+          <nav class="nav-bar__links" aria-label="Produto">
+            <a class="nav-bar__link" href="#sec-features-grid">O jogo</a>
+            <a class="nav-bar__link" href="#sec-dashboard-preview">Como funciona</a>
+            <a class="nav-bar__link" href="#sec-light-inversion">Beta</a>
+          </nav>
+          <div class="nav-bar__actions">
+            <a class="btn btn--ghost btn--sm" href="https://app.ikiapp.co/login">Entrar</a>
+            <a class="btn btn--cyan btn--sm" href="#sec-cta-bottom">Quero minha vaga</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="topo">
+      <!-- ========== data-section: hero-split ========== -->
+      <section
+        class="wrap hero-split hero-split--iki reveal"
+        data-section="hero-split"
+        id="sec-hero-split"
+      >
+        <div>
+          <span class="iki-badge">⚡️ Fase Beta Fechada · Restam vagas limitadas para o primeiro ciclo</span>
+          <h1 class="saas-display mb-16">
+            Organize sua rotina, cumpra suas metas e crie um
+            <span class="hl">guardião virtual</span> que evolui com a sua disciplina.
+          </h1>
+          <p class="saas-body">
+            Chega de planejar e não fazer nada. Monitore seus treinos, estudos e tarefas
+            enquanto choca e evolui um mascote de origami que reage ao seu foco de
+            verdade.
+          </p>
+          <div class="hero-split__actions">
+            <a class="btn btn--cyan" href="#sec-cta-bottom">Quero garantir minha vaga no Beta</a>
+          </div>
+          <p class="hero-split__note">
+            100% gratuito. Sem cartão de crédito. Acesso restrito para manter o servidor
+            estável.
+          </p>
+        </div>
+        <div class="ph ph--dash" data-asset="hero-atmosphere" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=1200&q=80"
+            alt=""
+            fetchpriority="high"
+          />
+        </div>
+      </section>
+
+      <!-- ========== data-section: logo-cloud ========== -->
+      <section
+        class="pearl-band padded-section reveal"
+        data-section="logo-cloud"
+        id="sec-logo-cloud"
+      >
+        <div class="wrap text-center">
+          <span class="saas-eyebrow">Pilares do ecossistema</span>
+          <div class="logo-row">
+            <div class="logo-chip">Kaizen</div>
+            <div class="logo-chip">Ikigai</div>
+            <div class="logo-chip">Roda da vida</div>
+            <div class="logo-chip">Foco</div>
+            <div class="logo-chip">Origami Iki</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== data-section: features-grid ========== -->
+      <section
+        class="padded-section reveal"
+        data-section="features-grid"
+        id="sec-features-grid"
+      >
+        <div class="wrap">
+          <div class="text-center mb-40">
+            <span class="saas-eyebrow">Problema → solução</span>
+            <h2 class="saas-h1">Por que a maioria dos apps de produtividade falha?</h2>
+            <p class="saas-body" style="margin-inline: auto; margin-top: 1rem">
+              Eles tratam sua vida como uma planilha fria e chata. O IkiApp transforma o
+              seu dia a dia em um <strong>RPG de alta performance</strong>.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">01</div>
+              <h3 class="saas-h2">O Foguinho de Frequência</h3>
+              <p class="saas-body">
+                Mantenha o ritmo nos seus hábitos sem pirar. Se você fizer, acumula
+                poder; se falhar, o app te ajuda a retomar o eixo.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">02</div>
+              <h3 class="saas-h2">O Painel de Controle Real</h3>
+              <p class="saas-body">
+                Visualize de forma simples onde você está gastando sua energia e o que
+                falta para equilibrar seus dias.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">03</div>
+              <h3 class="saas-h2">Seu Mascote Vivo</h3>
+              <p class="saas-body">
+                Cada tarefa cumprida dá XP. Seu origami cresce, ganha armaduras e evolui
+                com base no que você <em>realmente</em> executa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== data-section: dashboard-preview ========== -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="dashboard-preview"
+        id="sec-dashboard-preview"
+      >
+        <div class="mb-40 text-center" style="max-width: 40rem; margin-inline: auto">
+          <span class="saas-eyebrow">Como funciona</span>
+          <h2 class="saas-h1">Três passos para dominar seu próprio jogo</h2>
+        </div>
+        <div class="step-list">
+          <article class="step-card">
+            <div class="step-card__num">1</div>
+            <h3 class="saas-h2">Escolha o que importa</h3>
+            <p class="saas-body">
+              Cadastre seus hábitos, treinos, estudos ou metas de longo prazo. O
+              sistema organiza tudo para você.
+            </p>
+          </article>
+          <article class="step-card">
+            <div class="step-card__num">2</div>
+            <h3 class="saas-h2">Execute e ganhe XP</h3>
+            <p class="saas-body">
+              Marcou o checklist do dia? Sua barra de experiência sobe e os recursos do
+              seu ecossistema são desbloqueados.
+            </p>
+          </article>
+          <article class="step-card">
+            <div class="step-card__num">3</div>
+            <h3 class="saas-h2">Evolua o seu Iki</h3>
+            <p class="saas-body">
+              Assista ao seu origami bruto se transformar em um guardião lendário
+              (como um Ronin ou uma Coruja) e gaste seus tokens em itens exclusivos.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========== data-section: metric-bar ========== -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="metric-bar"
+        id="sec-metric-bar"
+      >
+        <div class="metric-grid">
+          <article class="metric-card">
+            <div class="metric-card__num">100</div>
+            <p class="saas-body">vagas máximas no ciclo Beta</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-card__num">1<span class="saas-mint">º</span></div>
+            <p class="saas-body">ciclo fechado antes das lojas</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-card__num">0<span class="saas-cyan">$</span></div>
+            <p class="saas-body">sem cartão · 100% gratuito no Beta</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-card__num">XP</div>
+            <p class="saas-body">disciplina real alimenta o origami</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========== data-section: light-inversion ========== -->
+      <section
+        class="pearl-band padded-section reveal"
+        data-section="light-inversion"
+        id="sec-light-inversion"
+      >
+        <div class="wrap text-center">
+          <span class="saas-eyebrow">Escassez do MVP</span>
+          <h2 class="saas-h1 mb-16">Por que este acesso é fechado?</h2>
+          <p class="saas-body saas-body--dark" style="margin-inline: auto">
+            Estamos rodando o primeiro ciclo de testes do IkiApp para um grupo
+            restrito de pessoas. Queremos garantir que a experiência seja impecável
+            antes de abrir as portas para o mundo e lançar nas lojas oficiais.
+          </p>
+          <div class="scarcity-grid">
+            <div class="compliance-card">
+              <strong>Vagas do Ciclo Beta</strong><br />
+              100 usuários máximos
+            </div>
+            <div class="compliance-card">
+              <strong>Status atual</strong><br />
+              Servidor otimizado · vagas por lote
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== data-section: cta-bottom ========== -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="cta-bottom"
+        id="sec-cta-bottom"
+      >
+        <div class="cta-panel">
+          <h2 class="saas-h1 mb-16">Pronto para entrar no jogo?</h2>
+          <p class="saas-body">
+            Garante seu acesso antecipado agora mesmo antes que o lote feche.
+          </p>
+          <form class="iki-waitlist" id="waitlist-form" novalidate>
+            <label class="visually-hidden" for="waitlist-email">E-mail</label>
+            <input
+              id="waitlist-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="Digite seu melhor e-mail..."
+            />
+            <button class="btn btn--cyan" type="submit">Entrar na Lista de Espera</button>
+            <p class="iki-waitlist__msg" id="waitlist-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ========== data-section: footer-bar ========== -->
+      <footer class="saas-footer" data-section="footer-bar" id="sec-footer-bar">
+        <div class="wrap saas-footer__grid">
+          <div class="saas-footer__brand">
+            <a class="nav-bar__brand" href="#topo">Iki</a>
+            <p class="saas-caption" style="margin-top: 0.75rem">
+              IkiApp · Dê sentido a cada hábito.
+            </p>
+          </div>
+          <div>
+            <span class="saas-caption">Produto</span>
+            <ul>
+              <li><a href="#sec-features-grid">O jogo</a></li>
+              <li><a href="#sec-dashboard-preview">Como funciona</a></li>
+              <li><a href="#sec-light-inversion">Beta</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="saas-caption">Acesso</span>
+            <ul>
+              <li><a href="https://app.ikiapp.co/login">Entrar no app</a></li>
+              <li><a href="#sec-cta-bottom">Lista de espera</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="wrap" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center">
+          <span class="saas-caption">© 2026 IkiApp</span>
+          <a class="saas-caption" href="#topo">Voltar ao topo</a>
+        </div>
+        <div class="wrap">
+          <p class="methz-credit">
+            <a href="https://methz.com.br/" target="_blank" rel="noopener noreferrer"
+              >Feito com Methz</a
+            >
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./motion.js?v=iki-1"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        async function sendToBackend(eventName, userData = {}, customData = {}) {
+          try {
+            await fetch("/api/track", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                eventName,
+                userData: {
+                  ...userData,
+                  userAgent: navigator.userAgent,
+                },
+                customData,
+              }),
+            });
+          } catch (_) {
+            /* tracking best-effort */
+          }
+        }
+
+        document.querySelectorAll(".hero-split__actions .btn, .nav-bar__actions .btn--cyan").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            if (typeof fbq === "function") fbq("track", "InitiateCheckout");
+            if (typeof gtag === "function") gtag("event", "begin_checkout");
+            sendToBackend("InitiateCheckout");
+          });
+        });
+
+        const form = document.getElementById("waitlist-form");
+        const msg = document.getElementById("waitlist-msg");
+        form?.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const emailInput = document.getElementById("waitlist-email");
+          const email = (emailInput?.value || "").trim().toLowerCase();
+          if (!email || !email.includes("@")) {
+            if (msg) msg.textContent = "Digite um e-mail válido.";
+            return;
+          }
+          try {
+            const key = "iki.waitlist";
+            const prev = JSON.parse(localStorage.getItem(key) || "[]");
+            if (!prev.includes(email)) prev.push(email);
+            localStorage.setItem(key, JSON.stringify(prev));
+          } catch (_) {
+            /* ignore */
+          }
+          if (typeof fbq === "function") fbq("track", "Lead");
+          if (typeof gtag === "function") gtag("event", "generate_lead");
+          sendToBackend("Lead", { email });
+          if (msg) msg.textContent = "Você entrou na lista. Bem-vindo ao jogo.";
+          form.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
