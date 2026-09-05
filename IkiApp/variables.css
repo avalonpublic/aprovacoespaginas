@@ -1,40 +1,57 @@
 :root {
-  /* IkiApp — Deep Zen Night + lavanda / mint (espelha o app) */
-  --color-iris: oklch(0.19 0.045 285);
-  --color-iris-shadow: oklch(0.24 0.05 288);
-  --color-iris-glow: oklch(0.42 0.16 292);
-  --color-iris-pulse: oklch(0.52 0.18 292);
-  --color-iris-border: oklch(0.72 0.09 295 / 45%);
-  --color-lilac: oklch(0.78 0.07 295);
-  --color-cyan: oklch(0.78 0.12 178);
-  --color-mint: oklch(0.82 0.12 178);
-  --color-white: #ffffff;
-  --color-pearl: oklch(0.96 0.012 300);
-  --color-ash: oklch(0.86 0.02 295);
-  --color-fog: oklch(0.72 0.03 295);
+  /* Iki Ascent Ethereal — DESIGN_ASCENT + Deep Zen */
+  --ascent-deep: #1a1f4a;
+  --ascent-mid: #2f6f7a;
+  --ascent-peak: #f7f9fc;
+  --peak-glow: #ffd9a8;
+  --lavender-field: #e8e6f5;
+  --lavender-mid: #d8d4ee;
+  --primary: #7b76c4;
+  --primary-soft: #c5c1f0;
+  --secondary: #3d9b9b;
+  --secondary-soft: #b8e8e4;
+  --on-surface: #1c1b2e;
+  --on-surface-variant: #5c5a72;
+  --status-streak: #e8a878;
+  --status-xp: #7b76c4;
+  --status-tokens: #d4b56a;
 
-  --font-display: "Baloo 2", "Nunito", ui-rounded, system-ui, sans-serif;
-  --font-sans: "Nunito", ui-rounded, system-ui, sans-serif;
+  --color-iris: var(--ascent-deep);
+  --color-iris-shadow: #151938;
+  --color-iris-glow: var(--primary);
+  --color-iris-pulse: var(--primary-soft);
+  --color-iris-border: rgba(197, 193, 240, 0.45);
+  --color-lilac: var(--primary-soft);
+  --color-cyan: var(--secondary);
+  --color-mint: var(--secondary-soft);
+  --color-white: #ffffff;
+  --color-pearl: var(--ascent-peak);
+  --color-ash: #cfcce0;
+  --color-fog: #9b98b0;
+
+  --font-display: "Manrope", "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito", "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   --text-caption: 0.75rem;
   --text-body: 1.0625rem;
-  --text-h2: clamp(1.5rem, 2.5vw, 1.85rem);
-  --text-h1: clamp(2.1rem, 4.5vw, 3.2rem);
-  --text-display: clamp(2.5rem, 6vw, 4rem);
+  --text-h2: clamp(1.35rem, 2.2vw, 1.65rem);
+  --text-h1: clamp(2rem, 4.2vw, 3rem);
+  --text-display: clamp(2.6rem, 6.5vw, 4.4rem);
 
   --tracking-display: -0.03em;
   --tracking-h1: -0.025em;
 
-  --section-gap: clamp(4rem, 9vw, 6.5rem);
+  --section-gap: clamp(4.5rem, 10vw, 7.5rem);
   --wrap: 1120px;
   --gutter: clamp(1.25rem, 4vw, 2rem);
-  --nav-h: 68px;
+  --nav-h: 72px;
 
   --radius-btn: 9999px;
-  --radius-card: 24px;
-  --radius-lg: 32px;
+  --radius-card: 28px;
+  --radius-lg: 36px;
 
-  --shadow-violet: 0 24px 60px -20px oklch(0.12 0.06 285 / 70%);
-  --glass: oklch(1 0 0 / 8%);
-  --glass-border: oklch(1 0 0 / 16%);
+  --shadow-violet: 0 28px 70px -28px rgba(26, 31, 74, 0.65);
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-strong: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.22);
 }

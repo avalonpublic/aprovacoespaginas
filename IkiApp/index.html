@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IkiApp — O Jogo da Sua Vida Real</title>
+    <title>IkiApp — Sua Ascensão</title>
     <meta
       name="description"
-      content="Organize sua rotina, cumpra suas metas e evolua um guardião origami com a sua disciplina. Beta fechado do IkiApp."
+      content="Life OS com Roda Kairos, hábitos e um companheiro origami que evolui com a disciplina que você realmente cumpre. Beta fechado."
     />
-    <meta name="theme-color" content="#1e1833" />
+    <meta name="theme-color" content="#1A1F4A" />
+    <link rel="icon" href="./media/logo.png" type="image/png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./variables.css?v=iki-1" />
-    <link rel="stylesheet" href="./style.css?v=iki-1" />
-    <link rel="stylesheet" href="./iki-theme.css?v=iki-1" />
+    <link rel="stylesheet" href="./variables.css?v=iki-2" />
+    <link rel="stylesheet" href="./style.css?v=iki-2" />
+    <link rel="stylesheet" href="./iki-theme.css?v=iki-2" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSWV2CQ4Y6"></script>
@@ -64,10 +65,11 @@
   <body class="ds-saas">
     <a class="skip" href="#topo">Ir para o conteúdo</a>
 
-    <!-- ========== data-section: nav-bar ========== -->
     <header class="nav-bar" data-section="nav-bar" id="sec-nav-bar">
       <div class="wrap nav-bar__inner">
-        <a class="nav-bar__brand" href="#topo">Iki</a>
+        <a class="nav-bar__brand" href="#topo" aria-label="IkiApp">
+          <img src="./media/logo.png" alt="iki app" width="140" height="36" />
+        </a>
         <button
           class="nav-bar__toggle"
           type="button"
@@ -80,154 +82,275 @@
         </button>
         <div class="nav-bar__menu" id="menu-iki" data-menu data-open="false">
           <nav class="nav-bar__links" aria-label="Produto">
-            <a class="nav-bar__link" href="#sec-features-grid">O jogo</a>
-            <a class="nav-bar__link" href="#sec-dashboard-preview">Como funciona</a>
-            <a class="nav-bar__link" href="#sec-light-inversion">Beta</a>
+            <a class="nav-bar__link" href="#sec-produto">O app</a>
+            <a class="nav-bar__link" href="#sec-ikis">Ikis</a>
+            <a class="nav-bar__link" href="#sec-kairos">Kairos</a>
+            <a class="nav-bar__link" href="#sec-beta">Beta</a>
           </nav>
           <div class="nav-bar__actions">
             <a class="btn btn--ghost btn--sm" href="https://app.ikiapp.co/login">Entrar</a>
-            <a class="btn btn--cyan btn--sm" href="#sec-cta-bottom">Quero minha vaga</a>
+            <a class="btn btn--cyan btn--sm" href="#sec-cta-bottom">Entrar na lista</a>
           </div>
         </div>
       </div>
     </header>
 
     <main id="topo">
-      <!-- ========== data-section: hero-split ========== -->
-      <section
-        class="wrap hero-split hero-split--iki reveal"
-        data-section="hero-split"
-        id="sec-hero-split"
-      >
-        <div>
-          <span class="iki-badge">⚡️ Fase Beta Fechada · Restam vagas limitadas para o primeiro ciclo</span>
-          <h1 class="saas-display mb-16">
-            Organize sua rotina, cumpra suas metas e crie um
-            <span class="hl">guardião virtual</span> que evolui com a sua disciplina.
-          </h1>
-          <p class="saas-body">
-            Chega de planejar e não fazer nada. Monitore seus treinos, estudos e tarefas
-            enquanto choca e evolui um mascote de origami que reage ao seu foco de
-            verdade.
-          </p>
-          <div class="hero-split__actions">
-            <a class="btn btn--cyan" href="#sec-cta-bottom">Quero garantir minha vaga no Beta</a>
-          </div>
-          <p class="hero-split__note">
-            100% gratuito. Sem cartão de crédito. Acesso restrito para manter o servidor
-            estável.
-          </p>
-        </div>
-        <div class="ph ph--dash" data-asset="hero-atmosphere" aria-hidden="true">
+      <!-- Hero: brand + one headline + one sentence + CTA + real Iki -->
+      <section class="hero-ascent" data-section="hero-ascent" id="sec-hero-ascent" aria-label="Início">
+        <div class="hero-ascent__bg" aria-hidden="true">
           <img
-            src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=1200&q=80"
+            src="./media/scene-night.jpg"
             alt=""
             fetchpriority="high"
+            width="1600"
+            height="900"
           />
         </div>
-      </section>
-
-      <!-- ========== data-section: logo-cloud ========== -->
-      <section
-        class="pearl-band padded-section reveal"
-        data-section="logo-cloud"
-        id="sec-logo-cloud"
-      >
-        <div class="wrap text-center">
-          <span class="saas-eyebrow">Pilares do ecossistema</span>
-          <div class="logo-row">
-            <div class="logo-chip">Kaizen</div>
-            <div class="logo-chip">Ikigai</div>
-            <div class="logo-chip">Roda da vida</div>
-            <div class="logo-chip">Foco</div>
-            <div class="logo-chip">Origami Iki</div>
+        <div class="hero-ascent__veil" aria-hidden="true"></div>
+        <div class="wrap hero-ascent__inner">
+          <div class="hero-ascent__copy reveal">
+            <img
+              class="hero-ascent__brand"
+              src="./media/logo-lockup.png"
+              alt="iki app"
+              width="220"
+              height="64"
+            />
+            <p class="hero-ascent__kicker">Beta fechado · Life OS</p>
+            <h1 class="saas-display">
+              Sua <span class="hl">Ascensão</span> começa na rotina que você cumpre.
+            </h1>
+            <p class="saas-body">
+              Organize hábitos, leia a Roda Kairos e evolua um companheiro origami —
+              alimentado pela disciplina real, não por checklists vazios.
+            </p>
+            <div class="hero-ascent__actions">
+              <a class="btn btn--cyan" href="#sec-cta-bottom">Quero minha vaga no Beta</a>
+              <a class="btn btn--ghost" href="#sec-produto">Ver o app de verdade</a>
+            </div>
+            <p class="hero-ascent__note">
+              Gratuito no Beta · Sem cartão · Vagas limitadas para manter o servidor estável
+            </p>
+          </div>
+          <div class="hero-ascent__stage reveal" aria-hidden="true">
+            <div class="hero-ascent__glow"></div>
+            <img
+              class="hero-ascent__iki"
+              src="./media/ikis/coruja-hero.png"
+              alt=""
+              width="420"
+              height="420"
+            />
           </div>
         </div>
       </section>
 
-      <!-- ========== data-section: features-grid ========== -->
+      <!-- Product reality: real screens -->
       <section
-        class="padded-section reveal"
+        class="lav-band padded-section reveal"
+        data-section="produto"
+        id="sec-produto"
+      >
+        <div class="wrap product-proof">
+          <div class="phone-stack" aria-label="Telas reais do IkiApp">
+            <figure class="phone phone--back">
+              <img
+                src="./media/screens/habitos.jpg"
+                alt="Tela de Atividades do IkiApp com hábitos e horas no mês"
+                width="450"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="phone phone--front">
+              <img
+                src="./media/screens/home.jpg"
+                alt="Home do IkiApp com companheiro origami Coruja"
+                width="450"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+          <div>
+            <span class="saas-eyebrow">O produto, não a promessa</span>
+            <h2 class="saas-h1">Um jardim Kaizen para a vida inteira</h2>
+            <p class="saas-body" style="margin-top: 0.85rem">
+              O IkiApp é o seu Life OS: streak, XP e tokens nascem do que você
+              executa — meditação, treino, leitura, idiomas, planejamento.
+              O companheiro no centro reage ao seu ritmo.
+            </p>
+            <div class="proof-list">
+              <article class="proof-item">
+                <div class="proof-item__icon" aria-hidden="true">01</div>
+                <div>
+                  <h3>Home viva</h3>
+                  <p>
+                    Seu Iki no cenário do dia. Troque companheiros, veja streak e
+                    saldo — a disciplina tem rosto.
+                  </p>
+                </div>
+              </article>
+              <article class="proof-item">
+                <div class="proof-item__icon" aria-hidden="true">02</div>
+                <div>
+                  <h3>Atividades com densidade</h3>
+                  <p>
+                    Hábitos com horas reais no mês. Sem gamificação vazia: o
+                    painel mostra onde sua energia foi.
+                  </p>
+                </div>
+              </article>
+              <article class="proof-item">
+                <div class="proof-item__icon" aria-hidden="true">03</div>
+                <div>
+                  <h3>XP = moeda do marketplace</h3>
+                  <p>
+                    O que você cumpre vira progresso e desbloqueia itens para
+                    lapidar o Iki — Ronin, Gueixa, Dragão e mais.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ikis collection -->
+      <section class="padded-section wrap reveal" data-section="ikis" id="sec-ikis">
+        <div class="text-center mb-40">
+          <span class="saas-eyebrow">Companheiros origami</span>
+          <h2 class="saas-h1">Os Ikis evoluem com você</h2>
+          <p class="saas-body section-lead">
+            Cada figura é um arquétipo. Você equipa, lapida e carrega no jardim —
+            prova visual de consistência, não de intenção.
+          </p>
+        </div>
+        <div class="iki-gallery">
+          <figure class="iki-tile">
+            <img src="./media/ikis/ronin.png" alt="Iki Ronin" loading="lazy" width="320" height="320" />
+            <span>Ronin</span>
+          </figure>
+          <figure class="iki-tile">
+            <img src="./media/ikis/coruja.png" alt="Iki Coruja" loading="lazy" width="320" height="320" />
+            <span>Coruja</span>
+          </figure>
+          <figure class="iki-tile">
+            <img src="./media/ikis/gueixa.png" alt="Iki Gueixa" loading="lazy" width="320" height="320" />
+            <span>Gueixa</span>
+          </figure>
+          <figure class="iki-tile">
+            <img src="./media/ikis/dragao.png" alt="Iki Dragão" loading="lazy" width="320" height="320" />
+            <span>Dragão</span>
+          </figure>
+          <figure class="iki-tile">
+            <img src="./media/ikis/bonsai.png" alt="Iki Bonsai" loading="lazy" width="320" height="320" />
+            <span>Bonsai</span>
+          </figure>
+          <figure class="iki-tile">
+            <img src="./media/ikis/lobo.png" alt="Iki Lobo" loading="lazy" width="320" height="320" />
+            <span>Lobo</span>
+          </figure>
+          <figure class="iki-tile">
+            <img src="./media/ikis/cavalo.png" alt="Iki Cavalo" loading="lazy" width="320" height="320" />
+            <span>Cavalo</span>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Why / pillars -->
+      <section
+        class="padded-section wrap reveal"
         data-section="features-grid"
         id="sec-features-grid"
       >
-        <div class="wrap">
-          <div class="text-center mb-40">
-            <span class="saas-eyebrow">Problema → solução</span>
-            <h2 class="saas-h1">Por que a maioria dos apps de produtividade falha?</h2>
-            <p class="saas-body" style="margin-inline: auto; margin-top: 1rem">
-              Eles tratam sua vida como uma planilha fria e chata. O IkiApp transforma o
-              seu dia a dia em um <strong>RPG de alta performance</strong>.
+        <div class="text-center mb-40">
+          <span class="saas-eyebrow">Por que existe</span>
+          <h2 class="saas-h1">Apps de hábito falham quando viram planilha</h2>
+          <p class="saas-body section-lead">
+            O IkiApp trata consistência como ascensão: calma, visual, com um
+            companheiro que só cresce se você crescer.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🔥</div>
+            <h3 class="saas-h2">Streak com perdão</h3>
+            <p class="saas-body">
+              O foguinho premia ritmo — e o sistema te ajuda a retomar o eixo
+              quando a vida atrapalha, sem drama de “zerou tudo”.
             </p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <div class="feature-icon" aria-hidden="true">01</div>
-              <h3 class="saas-h2">O Foguinho de Frequência</h3>
-              <p class="saas-body">
-                Mantenha o ritmo nos seus hábitos sem pirar. Se você fizer, acumula
-                poder; se falhar, o app te ajuda a retomar o eixo.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon" aria-hidden="true">02</div>
-              <h3 class="saas-h2">O Painel de Controle Real</h3>
-              <p class="saas-body">
-                Visualize de forma simples onde você está gastando sua energia e o que
-                falta para equilibrar seus dias.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon" aria-hidden="true">03</div>
-              <h3 class="saas-h2">Seu Mascote Vivo</h3>
-              <p class="saas-body">
-                Cada tarefa cumprida dá XP. Seu origami cresce, ganha armaduras e evolui
-                com base no que você <em>realmente</em> executa.
-              </p>
-            </article>
-          </div>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <h3 class="saas-h2">Roda Kairos</h3>
+            <p class="saas-body">
+              Doze áreas da vida num relance. Você enxerga desequilíbrio antes
+              dele virar culpa — e escolhe o próximo passo com intenção.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">✦</div>
+            <h3 class="saas-h2">Companheiro vivo</h3>
+            <p class="saas-body">
+              O origami no centro não é decoração: é espelho. XP, glow e
+              marketplace amarram estética à execução.
+            </p>
+          </article>
         </div>
       </section>
 
-      <!-- ========== data-section: dashboard-preview ========== -->
+      <!-- Kairos + steps -->
       <section
-        class="padded-section wrap reveal"
-        data-section="dashboard-preview"
-        id="sec-dashboard-preview"
+        class="lav-band padded-section reveal"
+        data-section="kairos"
+        id="sec-kairos"
       >
-        <div class="mb-40 text-center" style="max-width: 40rem; margin-inline: auto">
-          <span class="saas-eyebrow">Como funciona</span>
-          <h2 class="saas-h1">Três passos para dominar seu próprio jogo</h2>
-        </div>
-        <div class="step-list">
-          <article class="step-card">
-            <div class="step-card__num">1</div>
-            <h3 class="saas-h2">Escolha o que importa</h3>
-            <p class="saas-body">
-              Cadastre seus hábitos, treinos, estudos ou metas de longo prazo. O
-              sistema organiza tudo para você.
-            </p>
-          </article>
-          <article class="step-card">
-            <div class="step-card__num">2</div>
-            <h3 class="saas-h2">Execute e ganhe XP</h3>
-            <p class="saas-body">
-              Marcou o checklist do dia? Sua barra de experiência sobe e os recursos do
-              seu ecossistema são desbloqueados.
-            </p>
-          </article>
-          <article class="step-card">
-            <div class="step-card__num">3</div>
-            <h3 class="saas-h2">Evolua o seu Iki</h3>
-            <p class="saas-body">
-              Assista ao seu origami bruto se transformar em um guardião lendário
-              (como um Ronin ou uma Coruja) e gaste seus tokens em itens exclusivos.
-            </p>
-          </article>
+        <div class="wrap ascent-split">
+          <div class="kairos-frame">
+            <img
+              src="./media/kairos.png"
+              alt="Roda Kairos — Roda da Vida com doze áreas"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <span class="saas-eyebrow">Como sobe a montanha</span>
+            <h2 class="saas-h1">Três gestos. Um caminho.</h2>
+            <div class="step-list">
+              <article class="step-card">
+                <div class="step-card__num">1</div>
+                <h3 class="saas-h2">Mapeie o que importa</h3>
+                <p class="saas-body">
+                  Cadastre hábitos e leia a Roda Kairos. O app mostra onde a vida
+                  está cheia — e onde está oca.
+                </p>
+              </article>
+              <article class="step-card">
+                <div class="step-card__num">2</div>
+                <h3 class="saas-h2">Execute e registre</h3>
+                <p class="saas-body">
+                  Cada check vira XP e horas reais. Streak e tokens acompanham o
+                  ritmo, não a fantasia.
+                </p>
+              </article>
+              <article class="step-card">
+                <div class="step-card__num">3</div>
+                <h3 class="saas-h2">Evolua o Iki</h3>
+                <p class="saas-body">
+                  Equipe, lapide e troque companheiros. O jardim vira prova
+                  quieta de que você esteve presente.
+                </p>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- ========== data-section: metric-bar ========== -->
+      <!-- Metrics -->
       <section
         class="padded-section wrap reveal"
         data-section="metric-bar"
@@ -236,60 +359,59 @@
         <div class="metric-grid">
           <article class="metric-card">
             <div class="metric-card__num">100</div>
-            <p class="saas-body">vagas máximas no ciclo Beta</p>
+            <p class="saas-body">vagas no primeiro ciclo Beta</p>
           </article>
           <article class="metric-card">
-            <div class="metric-card__num">1<span class="saas-mint">º</span></div>
-            <p class="saas-body">ciclo fechado antes das lojas</p>
+            <div class="metric-card__num">12</div>
+            <p class="saas-body">áreas na Roda Kairos</p>
           </article>
           <article class="metric-card">
-            <div class="metric-card__num">0<span class="saas-cyan">$</span></div>
-            <p class="saas-body">sem cartão · 100% gratuito no Beta</p>
+            <div class="metric-card__num">7</div>
+            <p class="saas-body">Ikis no jardim inicial</p>
           </article>
           <article class="metric-card">
-            <div class="metric-card__num">XP</div>
-            <p class="saas-body">disciplina real alimenta o origami</p>
+            <div class="metric-card__num">0$</div>
+            <p class="saas-body">sem cartão no Beta</p>
           </article>
         </div>
       </section>
 
-      <!-- ========== data-section: light-inversion ========== -->
+      <!-- Beta scarcity -->
       <section
-        class="pearl-band padded-section reveal"
-        data-section="light-inversion"
-        id="sec-light-inversion"
+        class="lav-band padded-section reveal"
+        data-section="beta"
+        id="sec-beta"
       >
         <div class="wrap text-center">
-          <span class="saas-eyebrow">Escassez do MVP</span>
-          <h2 class="saas-h1 mb-16">Por que este acesso é fechado?</h2>
-          <p class="saas-body saas-body--dark" style="margin-inline: auto">
-            Estamos rodando o primeiro ciclo de testes do IkiApp para um grupo
-            restrito de pessoas. Queremos garantir que a experiência seja impecável
-            antes de abrir as portas para o mundo e lançar nas lojas oficiais.
+          <span class="saas-eyebrow">Acesso restrito</span>
+          <h2 class="saas-h1 mb-16">Por que o Beta é fechado?</h2>
+          <p class="saas-body section-lead">
+            Estamos calibrando o Life OS com um grupo pequeno antes das lojas.
+            Queremos ascensão serena — não fila quebrada nem servidor no limite.
           </p>
           <div class="scarcity-grid">
             <div class="compliance-card">
-              <strong>Vagas do Ciclo Beta</strong><br />
-              100 usuários máximos
+              <strong>Ciclo atual</strong><br />
+              Até 100 pessoas · liberação por lote
             </div>
             <div class="compliance-card">
-              <strong>Status atual</strong><br />
-              Servidor otimizado · vagas por lote
+              <strong>O que você leva</strong><br />
+              Acesso antecipado · voz no produto · Iki desde o dia 1
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========== data-section: cta-bottom ========== -->
+      <!-- CTA waitlist -->
       <section
         class="padded-section wrap reveal"
         data-section="cta-bottom"
         id="sec-cta-bottom"
       >
         <div class="cta-panel">
-          <h2 class="saas-h1 mb-16">Pronto para entrar no jogo?</h2>
+          <h2 class="saas-h1 mb-16">Pronto para subir?</h2>
           <p class="saas-body">
-            Garante seu acesso antecipado agora mesmo antes que o lote feche.
+            Deixe o e-mail. Quando abrir o próximo lote, você entra primeiro.
           </p>
           <form class="iki-waitlist" id="waitlist-form" novalidate>
             <label class="visually-hidden" for="waitlist-email">E-mail</label>
@@ -299,29 +421,30 @@
               type="email"
               autocomplete="email"
               required
-              placeholder="Digite seu melhor e-mail..."
+              placeholder="seu melhor e-mail"
             />
-            <button class="btn btn--cyan" type="submit">Entrar na Lista de Espera</button>
+            <button class="btn btn--cyan" type="submit">Entrar na lista</button>
             <p class="iki-waitlist__msg" id="waitlist-msg" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
 
-      <!-- ========== data-section: footer-bar ========== -->
       <footer class="saas-footer" data-section="footer-bar" id="sec-footer-bar">
         <div class="wrap saas-footer__grid">
           <div class="saas-footer__brand">
-            <a class="nav-bar__brand" href="#topo">Iki</a>
-            <p class="saas-caption" style="margin-top: 0.75rem">
-              IkiApp · Dê sentido a cada hábito.
+            <a class="nav-bar__brand" href="#topo" aria-label="IkiApp">
+              <img src="./media/logo.png" alt="iki app" width="120" height="32" />
+            </a>
+            <p class="saas-caption" style="margin-top: 0.85rem">
+              IkiApp · disciplina com companhia.
             </p>
           </div>
           <div>
             <span class="saas-caption">Produto</span>
             <ul>
-              <li><a href="#sec-features-grid">O jogo</a></li>
-              <li><a href="#sec-dashboard-preview">Como funciona</a></li>
-              <li><a href="#sec-light-inversion">Beta</a></li>
+              <li><a href="#sec-produto">O app</a></li>
+              <li><a href="#sec-ikis">Ikis</a></li>
+              <li><a href="#sec-kairos">Kairos</a></li>
             </ul>
           </div>
           <div>
@@ -332,7 +455,17 @@
             </ul>
           </div>
         </div>
-        <div class="wrap" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center">
+        <div
+          class="wrap"
+          style="
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
           <span class="saas-caption">© 2026 IkiApp</span>
           <a class="saas-caption" href="#topo">Voltar ao topo</a>
         </div>
@@ -346,7 +479,7 @@
       </footer>
     </main>
 
-    <script src="./motion.js?v=iki-1"></script>
+    <script src="./motion.js?v=iki-2"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {
@@ -368,13 +501,15 @@
           }
         }
 
-        document.querySelectorAll(".hero-split__actions .btn, .nav-bar__actions .btn--cyan").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            if (typeof fbq === "function") fbq("track", "InitiateCheckout");
-            if (typeof gtag === "function") gtag("event", "begin_checkout");
-            sendToBackend("InitiateCheckout");
+        document
+          .querySelectorAll('.hero-ascent__actions .btn--cyan, .nav-bar__actions .btn--cyan')
+          .forEach((btn) => {
+            btn.addEventListener("click", () => {
+              if (typeof fbq === "function") fbq("track", "InitiateCheckout");
+              if (typeof gtag === "function") gtag("event", "begin_checkout");
+              sendToBackend("InitiateCheckout");
+            });
           });
-        });
 
         const form = document.getElementById("waitlist-form");
         const msg = document.getElementById("waitlist-msg");
@@ -397,7 +532,7 @@
           if (typeof fbq === "function") fbq("track", "Lead");
           if (typeof gtag === "function") gtag("event", "generate_lead");
           sendToBackend("Lead", { email });
-          if (msg) msg.textContent = "Você entrou na lista. Bem-vindo ao jogo.";
+          if (msg) msg.textContent = "Você entrou na lista. Te vemos na Ascensão.";
           form.reset();
         });
       });
