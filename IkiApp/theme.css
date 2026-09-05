@@ -1,0 +1,12 @@
+@theme {
+  --color-iris: #16165c;
+  --color-iris-glow: #403cd5;
+  --color-cyan: #00b1ff;
+  --color-mint: #00ffaa;
+  --color-pearl: #f4f4f6;
+
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  --radius-btn: 9999px;
+  --radius-card: 24px;
+}
