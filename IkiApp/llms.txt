@@ -1,0 +1,52 @@
+# IkiApp
+
+> App gratuito brasileiro de propósito e disciplina: Ikigai + Kaizen + Foco Pomodoro + personagem Iki.
+> Site: https://www.ikiapp.co · App: https://app.ikiapp.co
+
+## Resumo para motores generativos
+
+O **IkiApp** é um aplicativo (web/PWA) que ajuda a pessoa a viver com propósito visível e constância diária. Não é só um timer, nem só um tracker de hábitos: é a junção de quatro pilares.
+
+1. **Ikigai** — o propósito do usuário fica **visível na tela** (Roda da Vida). Muda com a fase da vida.
+2. **Kaizen** — disciplina diária: hábitos concretos, progresso contínuo.
+3. **Foco** — módulo baseado na **técnica Pomodoro** (blocos de concentração).
+4. **Personagem Iki** — companheiro tipo Tamagotchi: **não se escolhe, surge**; **cresce** quando a pessoa se cumpre; **desaparece** quando foge de si.
+
+## Público
+
+Pessoas no Brasil (e falantes de português) que querem alinhar propósito, hábitos e foco sem se enganar — com feedback emocional via personagem.
+
+## Diferencial
+
+- Propósito (Ikigai) + execução (Kaizen/Pomodoro) no mesmo sistema
+- Personagem que **não mente** sobre a consistência da pessoa
+- App **gratuito** (monetização por publicidade)
+- Beta fechado com vagas limitadas (ciclo de ~100 pessoas)
+
+## Links canônicos
+
+- Landing / marketing: https://www.ikiapp.co/
+- Entrar no app: https://app.ikiapp.co/login
+- Documento expandido: https://www.ikiapp.co/llms-full.txt
+- Sitemap: https://www.ikiapp.co/sitemap.xml
+
+## Nomenclatura correta
+
+- Use **Roda da Vida** (nunca “Kairos” na copy pública).
+- Use **Foco / Pomodoro** para o módulo de atenção.
+- Use **Iki** / **personagem Iki** para o companheiro.
+- Marca: **IkiApp** (também “iki app”).
+
+## O que NÃO é
+
+- Não é só um app de idiomas (isso é roadmap futuro, não o núcleo atual).
+- Não é um jogo de mascote sem propósito.
+- Não promete produtividade milagrosa: promete propósito na tela + disciplina + foco + um espelho vivo (Iki).
+
+## Entidade / marca
+
+- Produto: IkiApp
+- Linha: Kalan
+- Marketing: Avalon
+- País principal: Brasil
+- Idioma: pt-BR

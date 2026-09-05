@@ -1,15 +1,109 @@
 <!doctype html>
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR" dir="ltr" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IkiApp · Sua Ascensão</title>
+    <title>
+      IkiApp — Ikigai, Kaizen, Foco Pomodoro e personagem Iki | App gratuito
+    </title>
     <meta
       name="description"
-      content="Organize hábitos pelo seu propósito atual e cuide de um companheiro virtual alimentado pela disciplina de todos os dias. Beta fechado."
+      content="IkiApp une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre — e some quando foge de si. App gratuito. Beta fechado no Brasil."
     />
+    <meta
+      name="keywords"
+      content="IkiApp, Ikigai, Kaizen, Pomodoro, Foco Pomodoro, Roda da Vida, hábitos, disciplina, propósito, personagem Iki, Tamagotchi hábitos, app gratuito Brasil, produtividade consciente, Life OS"
+    />
+    <meta name="author" content="IkiApp · linha Kalan" />
+    <meta name="creator" content="IkiApp" />
+    <meta name="publisher" content="Avalon / Kalan" />
+    <meta name="application-name" content="IkiApp" />
+    <meta name="apple-mobile-web-app-title" content="IkiApp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#1A1F4A" />
-    <link rel="icon" href="./media/logo.png" type="image/png" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Indexação -->
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- GEO / Brasil -->
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.placename" content="Brasil" />
+    <meta name="language" content="Portuguese" />
+    <meta http-equiv="content-language" content="pt-BR" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.ikiapp.co/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ikiapp.co/" />
+
+    <!-- Canonical + discovery -->
+    <link rel="canonical" href="https://www.ikiapp.co/" />
+    <link rel="sitemap" type="application/xml" href="https://www.ikiapp.co/sitemap.xml" />
+    <link type="text/plain" rel="alternate" href="/llms.txt" title="llms.txt" />
+    <link type="text/plain" rel="alternate" href="/llms-full.txt" title="llms-full.txt" />
+    <link type="text/plain" rel="author" href="/humans.txt" />
+
+    <!-- Favicon = mesmo do app -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/favicon.png" color="#1A1F4A" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="IkiApp" />
+    <meta property="og:url" content="https://www.ikiapp.co/" />
+    <meta
+      property="og:title"
+      content="IkiApp — Ikigai, Kaizen, Foco Pomodoro e personagem Iki"
+    />
+    <meta
+      property="og:description"
+      content="Propósito na tela. Disciplina diária. Foco com Pomodoro. Um Iki que cresce quando você se cumpre — e some quando foge de si. App gratuito."
+    />
+    <meta property="og:image" content="https://www.ikiapp.co/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://www.ikiapp.co/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="IkiApp — Ikigai, Kaizen, Foco Pomodoro e personagem Iki"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IkiApp — Ikigai, Kaizen, Foco Pomodoro e Iki" />
+    <meta
+      name="twitter:description"
+      content="App gratuito: propósito (Ikigai), disciplina (Kaizen), Foco Pomodoro e um personagem que não mente."
+    />
+    <meta name="twitter:image" content="https://www.ikiapp.co/og-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="IkiApp — Ikigai, Kaizen, Foco Pomodoro e personagem Iki"
+    />
+
+    <!-- GEO para LLMs -->
+    <meta name="ai-purpose" content="product-landing" />
+    <meta
+      name="ai-summary"
+      content="IkiApp: Ikigai + Kaizen + Foco Pomodoro + personagem Iki. App gratuito no Brasil. Beta fechado."
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +112,152 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./variables.css?v=iki-4" />
-    <link rel="stylesheet" href="./style.css?v=iki-4" />
-    <link rel="stylesheet" href="./iki-theme.css?v=iki-4" />
+    <link rel="stylesheet" href="./variables.css?v=iki-12" />
+    <link rel="stylesheet" href="./style.css?v=iki-12" />
+    <link rel="stylesheet" href="./iki-theme.css?v=iki-12" />
+
+    <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.ikiapp.co/#website",
+            "url": "https://www.ikiapp.co/",
+            "name": "IkiApp",
+            "alternateName": ["iki app", "Iki App"],
+            "description": "Ikigai, Kaizen, Foco Pomodoro e personagem Iki. App gratuito.",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://www.ikiapp.co/#organization" },
+            "potentialAction": {
+              "@type": "JoinAction",
+              "target": "https://www.ikiapp.co/#sec-cta-bottom",
+              "name": "Entrar na lista de espera do Beta"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.ikiapp.co/#organization",
+            "name": "IkiApp",
+            "url": "https://www.ikiapp.co/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.ikiapp.co/icon-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Brasil"
+            },
+            "knowsLanguage": "pt-BR"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.ikiapp.co/#app",
+            "name": "IkiApp",
+            "applicationCategory": "LifestyleApplication",
+            "applicationSubCategory": "HabitTracker",
+            "operatingSystem": "Web, iOS, Android",
+            "url": "https://app.ikiapp.co/",
+            "image": "https://www.ikiapp.co/og-image.jpg",
+            "screenshot": "https://www.ikiapp.co/og-image.jpg",
+            "description": "App gratuito que une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce com a disciplina.",
+            "inLanguage": "pt-BR",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL",
+              "availability": "https://schema.org/LimitedAvailability",
+              "category": "Free"
+            },
+            "featureList": [
+              "Ikigai visível na Roda da Vida",
+              "Kaizen — disciplina e hábitos diários",
+              "Foco com técnica Pomodoro",
+              "Personagem Iki que cresce ou desaparece conforme a constância"
+            ],
+            "publisher": { "@id": "https://www.ikiapp.co/#organization" },
+            "isAccessibleForFree": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.ikiapp.co/#webpage",
+            "url": "https://www.ikiapp.co/",
+            "name": "IkiApp — Ikigai, Kaizen, Foco Pomodoro e personagem Iki",
+            "isPartOf": { "@id": "https://www.ikiapp.co/#website" },
+            "about": { "@id": "https://www.ikiapp.co/#app" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.ikiapp.co/og-image.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "inLanguage": "pt-BR",
+            "dateModified": "2026-09-05"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.ikiapp.co/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "IkiApp",
+                "item": "https://www.ikiapp.co/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.ikiapp.co/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "O que é o IkiApp?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O IkiApp é um app gratuito que une quatro pilares: Ikigai (propósito visível na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre e desaparece quando foge de si."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "O módulo de Foco do IkiApp usa Pomodoro?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. O módulo de Foco é baseado na técnica Pomodoro: blocos de concentração para proteger a atenção e executar o que importa."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como funciona o personagem Iki?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O Iki não se escolhe: ele surge. Cresce quando você se cumpre em Kaizen e Foco alinhados ao Ikigai, e some quando você foge de si — um espelho vivo da sua constância."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "O IkiApp é gratuito?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. O IkiApp é gratuito. O beta atual é fechado, com vagas limitadas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Onde baixar ou entrar no IkiApp?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A landing é https://www.ikiapp.co/. Para entrar no app: https://app.ikiapp.co/login. A lista de espera do beta fica na própria landing."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSWV2CQ4Y6"></script>
@@ -82,9 +319,9 @@
         </button>
         <div class="nav-bar__menu" id="menu-iki" data-menu data-open="false">
           <nav class="nav-bar__links" aria-label="Produto">
-            <a class="nav-bar__link" href="#sec-jornada">Propósito</a>
-            <a class="nav-bar__link" href="#sec-produto">Disciplina</a>
-            <a class="nav-bar__link" href="#sec-recompensas">Recompensas</a>
+            <a class="nav-bar__link" href="#sec-jornada">Ikigai</a>
+            <a class="nav-bar__link" href="#sec-produto">Kaizen</a>
+            <a class="nav-bar__link" href="#sec-foco">Foco</a>
             <a class="nav-bar__link" href="#sec-ikis">Seu Iki</a>
           </nav>
           <div class="nav-bar__actions">
@@ -112,11 +349,12 @@
           <div class="hero-ascent__copy reveal">
             <p class="hero-ascent__kicker">Beta fechado</p>
             <h1 class="saas-display">
-              Propósito claro. Disciplina diária. Um <span class="hl">companheiro</span> que vive disso.
+              Seu <span class="hl">Ikigai</span> na tela. Disciplina. Foco. Um Iki que não mente.
             </h1>
             <p class="saas-body">
-              Organize seus hábitos de acordo com seu propósito atual e tenha um
-              companheiro virtual alimentado pela sua disciplina real de todos os dias.
+              O IkiApp une propósito visível, Kaizen no dia a dia, sessões de Foco com
+              técnica Pomodoro e um personagem que cresce quando você se cumpre,
+              e some quando você foge de si.
             </p>
             <div class="hero-ascent__actions">
               <a class="btn btn--cyan" href="#sec-cta-bottom">Quero minha vaga no Beta</a>
@@ -132,15 +370,15 @@
               class="hero-ascent__iki"
               src="./media/ikis/coruja-hero.png"
               alt=""
-              width="420"
-              height="420"
+              width="680"
+              height="680"
             />
           </div>
         </div>
       </section>
 
 
-      <!-- 2. Storytelling: propósito → disciplina → recompensas → iki -->
+      <!-- 2. Storytelling: propósito → disciplina → iki -->
       <section
         class="lav-band padded-section reveal"
         data-section="jornada"
@@ -157,45 +395,31 @@
             />
           </div>
           <div>
-            <span class="saas-eyebrow">O caminho no IkiApp</span>
-            <h2 class="saas-h1">Propósito. Disciplina. Recompensas. Seu Iki.</h2>
-            <p class="saas-body" style="margin-top: 0.75rem">
-              A ordem é linear: primeiro você vê o momento da vida, depois pratica,
-              depois colhe o que a constância gera, e o companheiro reflete tudo isso.
-            </p>
-            <div class="step-list step-list--four">
+            <span class="saas-eyebrow">Até o personagem</span>
+            <h2 class="saas-h1">Ikigai. Kaizen. Foco.</h2>
+            <div class="step-list">
               <article class="step-card">
                 <div class="step-card__num">1</div>
-                <h3 class="saas-h2">O propósito</h3>
+                <h3 class="saas-h2">Ikigai</h3>
                 <p class="saas-body">
-                  A Roda da Vida mostra o que importa nesta fase. Propósito muda:
-                  com filhos, mudança de trabalho ou outra virada, as áreas se
-                  reordenam. O mapa acompanha você.
+                  Seu propósito atual fica visível na Roda da Vida. Quando a fase
+                  muda, o mapa muda com você.
                 </p>
               </article>
               <article class="step-card">
                 <div class="step-card__num">2</div>
-                <h3 class="saas-h2">Sua disciplina</h3>
+                <h3 class="saas-h2">Kaizen</h3>
                 <p class="saas-body">
-                  Clareza sem execução não basta. Você transforma o mapa em
-                  hábitos e avança com Kaizen: passos pequenos, diários, reais.
+                  Disciplina diária no concreto: hábitos pequenos, consistentes,
+                  alinhados ao que importa agora.
                 </p>
               </article>
               <article class="step-card">
                 <div class="step-card__num">3</div>
-                <h3 class="saas-h2">Suas recompensas</h3>
+                <h3 class="saas-h2">Foco</h3>
                 <p class="saas-body">
-                  O que você cumpre vira progresso visível: ritmo, XP e o que o
-                  app devolve pela constância. Não é fantasia de checklist.
-                </p>
-              </article>
-              <article class="step-card">
-                <div class="step-card__num">4</div>
-                <h3 class="saas-h2">Seu Iki</h3>
-                <p class="saas-body">
-                  O personagem não se escolhe: ele surge. Espelho leve da sua
-                  disciplina, mostra quando os hábitos estão firmes e quando
-                  estão ruins.
+                  Sessões com técnica Pomodoro para proteger a atenção e executar
+                  o que a Roda pediu, sem dispersão.
                 </p>
               </article>
             </div>
@@ -231,20 +455,20 @@
             </figure>
           </div>
           <div>
-            <span class="saas-eyebrow">Sua disciplina</span>
-            <h2 class="saas-h1">Hábitos alinhados ao que importa agora</h2>
+            <span class="saas-eyebrow">Kaizen</span>
+            <h2 class="saas-h1">Disciplina diária alinhada ao Ikigai</h2>
             <p class="saas-body" style="margin-top: 0.85rem">
-              Depois da Roda, o dia a dia: você registra o que fez e vê o ritmo
-              no mês. A prática sai do mapa e entra na rotina.
+              Depois de ver o propósito na tela, você pratica. O Kaizen transforma
+              o mapa em hábitos reais: registro, ritmo e avanço sem planilha fria.
             </p>
             <div class="proof-list">
               <article class="proof-item">
                 <div class="proof-item__icon" aria-hidden="true">01</div>
                 <div>
-                  <h3>Do mapa à prática</h3>
+                  <h3>Do Ikigai à prática</h3>
                   <p>
                     Os hábitos nascem do propósito desta fase, não de listas
-                    genéricas copiadas de outra pessoa.
+                    genéricas de outra pessoa.
                   </p>
                 </div>
               </article>
@@ -253,18 +477,18 @@
                 <div>
                   <h3>Registro concreto</h3>
                   <p>
-                    Meditação, treino, leitura, o que for seu. Horas e ritmo
-                    aparecem com o que você realmente cumpriu.
+                    Meditação, treino, leitura, o que for seu. O app mostra o que
+                    você realmente cumpriu no mês.
                   </p>
                 </div>
               </article>
               <article class="proof-item">
                 <div class="proof-item__icon" aria-hidden="true">03</div>
                 <div>
-                  <h3>Disciplina sem castigo</h3>
+                  <h3>Constância com leveza</h3>
                   <p>
-                    Constância de ferro, com leveza o bastante para você
-                    continuar. O objetivo é avançar, não se punir.
+                    Disciplina de ferro sem virar castigo. O objetivo é avançar
+                    e cuidar do próprio ritmo.
                   </p>
                 </div>
               </article>
@@ -273,43 +497,44 @@
         </div>
       </section>
 
-      <!-- Recompensas -->
+      <!-- Foco / Pomodoro -->
       <section
         class="lav-band padded-section reveal"
-        data-section="recompensas"
-        id="sec-recompensas"
+        data-section="foco"
+        id="sec-foco"
       >
         <div class="wrap text-center mb-40">
-          <span class="saas-eyebrow">Suas recompensas</span>
-          <h2 class="saas-h1">O que a disciplina devolve</h2>
+          <span class="saas-eyebrow">Foco</span>
+          <h2 class="saas-h1">Pomodoro para proteger a atenção</h2>
           <p class="saas-body section-lead">
-            Progresso que você sente no corpo da rotina e no vínculo com o Iki.
-            A constância gera retorno. A intenção sozinha, não.
+            O módulo de Foco usa a técnica Pomodoro: blocos de concentração
+            intercalados com pausas. É assim que o propósito vira execução,
+            sessão após sessão.
           </p>
         </div>
         <div class="wrap feature-grid">
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">◎</div>
-            <h3 class="saas-h2">Clareza renovada</h3>
+            <div class="feature-icon" aria-hidden="true">⏱</div>
+            <h3 class="saas-h2">Blocos de concentração</h3>
             <p class="saas-body">
-              A Roda atualiza o retrato da fase. Você vê onde avançou e o que
-              ainda pede atenção.
+              Você entra em Foco, trabalha o que importa agora e respeita o
+              ritmo do ciclo. Menos dispersão, mais presença.
             </p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">▲</div>
-            <h3 class="saas-h2">Ritmo e XP</h3>
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <h3 class="saas-h2">Ligação com o Ikigai</h3>
             <p class="saas-body">
-              Cada ato cumprido alimenta o progresso. Streak e XP acompanham o
-              que foi feito, não o que ficou no plano.
+              O timer não é genérico: serve ao que a Roda da Vida apontou nesta
+              fase da vida.
             </p>
           </article>
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">✦</div>
-            <h3 class="saas-h2">Vínculo com o Iki</h3>
+            <h3 class="saas-h2">Alimenta o Iki</h3>
             <p class="saas-body">
-              O companheiro reflete o estado dos hábitos. Firmes ou ruins: você
-              lê no visual, sem planilha.
+              Cada sessão cumprida fortalece a disciplina que o personagem
+              reflete. Fugir da sessão é fugir de si.
             </p>
           </article>
         </div>
@@ -318,11 +543,12 @@
       <!-- Seu Iki -->
       <section class="padded-section wrap reveal" data-section="ikis" id="sec-ikis">
         <div class="text-center mb-40">
-          <span class="saas-eyebrow">Seu Iki</span>
+          <span class="saas-eyebrow">Personagem Iki</span>
           <h2 class="saas-h1">O Iki não se escolhe. Ele surge.</h2>
           <p class="saas-body section-lead">
-            Ronin, Coruja, Gueixa, Dragão e os demais. Cada um aparece no caminho
-            e evolui com a disciplina que você cumpre no dia a dia.
+            Seu Tamagotchi de propósito: cresce quando você se cumpre em Kaizen e
+            Foco. Se você foge de si, ele some. Ronin, Coruja, Gueixa, Dragão e
+            os demais aparecem no caminho.
           </p>
         </div>
         <div class="iki-gallery">
@@ -364,39 +590,45 @@
         id="sec-features-grid"
       >
         <div class="text-center mb-40">
-          <span class="saas-eyebrow">Por que o IkiApp existe</span>
-          <h2 class="saas-h1">Ver o propósito. Cumprir. Sentir o ritmo.</h2>
+          <span class="saas-eyebrow">O que o IkiApp junta</span>
+          <h2 class="saas-h1">Quatro ideias. Um app.</h2>
           <p class="saas-body section-lead">
-            O app une clareza sobre o momento da vida, disciplina para avançar
-            e um companheiro que mostra, sem planilha, se você está bem ou não.
+            Ikigai, Kaizen, Foco Pomodoro e o personagem Iki. Propósito na tela,
+            disciplina no dia, atenção protegida e um espelho que não deixa você
+            mentir para si.
           </p>
         </div>
-        <div class="feature-grid">
+        <div class="feature-grid feature-grid--four">
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">◎</div>
-            <h3 class="saas-h2">Propósito atual</h3>
+            <h3 class="saas-h2">Ikigai</h3>
             <p class="saas-body">
-              A Roda da Vida deixa visível o que importa agora. Propósito não é
-              frase fixa: muda com a fase da vida. Quem tem filhos, por exemplo,
-              reordena áreas inteiras. O app acompanha esse mapa em movimento.
+              Seu propósito atual visível na Roda da Vida. Muda com a fase:
+              filhos, trabalho, outra virada. O mapa acompanha.
             </p>
           </article>
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">▲</div>
-            <h3 class="saas-h2">Objetivos com disciplina</h3>
+            <h3 class="saas-h2">Kaizen</h3>
             <p class="saas-body">
-              Clareza sem execução não leva a lugar nenhum. O IkiApp ajuda a
-              transformar o que a Roda mostrou em hábitos concretos e a avançar
-              com Kaizen: passos pequenos, consistentes, de verdade.
+              Disciplina diária em passos pequenos. Hábitos concretos alinhados
+              ao que a Roda mostrou agora.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⏱</div>
+            <h3 class="saas-h2">Foco</h3>
+            <p class="saas-body">
+              Técnica Pomodoro para executar com atenção. Blocos de concentração
+              que transformam intenção em presença.
             </p>
           </article>
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">✦</div>
-            <h3 class="saas-h2">Disciplina leve, de ferro</h3>
+            <h3 class="saas-h2">Personagem Iki</h3>
             <p class="saas-body">
-              A constância precisa ser séria, sem virar castigo. O personagem
-              existe para você cuidar do seu ritmo com leveza: um espelho visual
-              de quando os hábitos estão firmes e de quando estão ruins.
+              Surge no caminho. Cresce quando você se cumpre. Some quando você
+              foge de si. Espelho leve e honesto da sua disciplina.
             </p>
           </article>
         </div>
@@ -430,7 +662,7 @@
               </svg>
             </div>
             <div class="metric-card__num">12</div>
-            <p class="saas-body">áreas do propósito na Roda da Vida</p>
+            <p class="saas-body">áreas do Ikigai na Roda da Vida</p>
           </article>
           <article class="metric-card metric-card--alive">
             <div class="metric-card__icon" aria-hidden="true">
@@ -464,8 +696,8 @@
           <span class="saas-eyebrow">Beta fechado</span>
           <h2 class="saas-h1 mb-16">Cem pessoas. Só.</h2>
           <p class="saas-body section-lead">
-            Queremos acompanhar de perto quem entra primeiro: propósito, disciplina
-            e o Iki funcionando de verdade no dia a dia. Por isso o acesso é
+            Queremos acompanhar de perto quem entra primeiro: Ikigai, Kaizen,
+            Foco e o Iki funcionando de verdade no dia a dia. Por isso o acesso é
             limitado a 100 pessoas.
           </p>
           <div class="scarcity-grid">
@@ -478,6 +710,61 @@
               Acesso antecipado, voz no produto e seu Iki desde o primeiro dia
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- FAQ (visível = SEO + GEO) -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="faq"
+        id="sec-faq"
+        aria-labelledby="faq-title"
+      >
+        <div class="text-center">
+          <span class="saas-eyebrow">Perguntas</span>
+          <h2 class="saas-h1 mb-16" id="faq-title">O que as pessoas perguntam</h2>
+        </div>
+        <div class="iki-faq">
+          <details class="iki-faq__item">
+            <summary>O que é o IkiApp?</summary>
+            <p>
+              Um app gratuito que une Ikigai (propósito na tela), Kaizen
+              (disciplina diária), Foco com técnica Pomodoro e um personagem Iki
+              que cresce quando você se cumpre — e some quando foge de si.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>O módulo de Foco usa Pomodoro?</summary>
+            <p>
+              Sim. O Foco é baseado na técnica Pomodoro: blocos de concentração
+              para proteger a atenção e executar o que importa.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>Como funciona o personagem Iki?</summary>
+            <p>
+              O Iki não se escolhe: ele surge. Cresce com Kaizen e Foco alinhados
+              ao Ikigai, e desaparece se você foge de si — um espelho vivo da
+              constância.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>O app é gratuito?</summary>
+            <p>
+              Sim. O IkiApp é gratuito. O beta atual é fechado, com vagas
+              limitadas a 100 pessoas.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>Onde entro no app?</summary>
+            <p>
+              Pela landing
+              <a href="https://www.ikiapp.co/">ikiapp.co</a>
+              ou direto em
+              <a href="https://app.ikiapp.co/login">app.ikiapp.co/login</a>.
+              A lista de espera do beta fica nesta página.
+            </p>
+          </details>
         </div>
       </section>
 
@@ -515,19 +802,20 @@
               <img src="./media/logo-lockup.png" alt="iki app" width="128" height="36" />
             </a>
             <p class="saas-caption" style="margin-top: 0.85rem">
-              IkiApp · propósito, disciplina e companhia.
+              IkiApp · Ikigai, Kaizen, Foco e Iki.
             </p>
           </div>
-          <div>
+          <div class="saas-footer__col">
             <span class="saas-caption">Produto</span>
             <ul>
-              <li><a href="#sec-jornada">Propósito</a></li>
-              <li><a href="#sec-produto">Disciplina</a></li>
-              <li><a href="#sec-recompensas">Recompensas</a></li>
+              <li><a href="#sec-jornada">Ikigai</a></li>
+              <li><a href="#sec-produto">Kaizen</a></li>
+              <li><a href="#sec-foco">Foco</a></li>
               <li><a href="#sec-ikis">Seu Iki</a></li>
+              <li><a href="#sec-faq">FAQ</a></li>
             </ul>
           </div>
-          <div>
+          <div class="saas-footer__col">
             <span class="saas-caption">Acesso</span>
             <ul>
               <li><a href="https://app.ikiapp.co/login">Entrar no app</a></li>
@@ -535,17 +823,7 @@
             </ul>
           </div>
         </div>
-        <div
-          class="wrap"
-          style="
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: space-between;
-            align-items: center;
-          "
-        >
+        <div class="wrap saas-footer__meta">
           <span class="saas-caption">© 2026 IkiApp</span>
           <a class="saas-caption" href="#topo">Voltar ao topo</a>
         </div>
@@ -559,7 +837,7 @@
       </footer>
     </main>
 
-    <script src="./motion.js?v=iki-4"></script>
+    <script src="./motion.js?v=iki-12"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {

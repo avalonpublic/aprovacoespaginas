@@ -1,16 +1,13 @@
 # Seções da LP IkiApp
 
-Ordem do storytelling: **Propósito → Disciplina → Recompensas → Seu Iki**
+Pilares: **Ikigai · Kaizen · Foco (Pomodoro) · Personagem Iki**
 
-| id | Atmosfera | Conteúdo |
-|----|-----------|----------|
-| `nav-bar` | glass deep | lockup + âncoras do storytelling |
-| `hero-ascent` | full-bleed | marca, headline, CTA, Iki |
-| `jornada` | lavanda | Roda da Vida + 4 passos |
-| `produto` | deep | telas reais (disciplina) |
-| `recompensas` | lavanda | o que a constância devolve |
-| `ikis` | deep | galeria (o Iki surge) |
-| `features-grid` | deep | por que existe |
-| `metric-bar` | deep | números |
-| `beta` / `cta-bottom` | lavanda / deep | lista |
-| `footer-bar` | deep | links |
+| id | Conteúdo |
+|----|----------|
+| `hero-ascent` | headline dos 4 pilares |
+| `jornada` | Roda da Vida + Ikigai / Kaizen / Foco |
+| `produto` | Kaizen + telas |
+| `foco` | Pomodoro |
+| `ikis` | personagem (surge / cresce / some) |
+| `features-grid` | reforço dos 4 pilares |
+| `metric-bar` / `beta` / `faq` / `cta` | prova + FAQ SEO + ciclo 100 |

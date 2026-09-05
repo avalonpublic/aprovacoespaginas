@@ -1,0 +1,14 @@
+/* IkiApp humans.txt — https://www.ikiapp.co/ */
+
+/* TEAM */
+Produto: IkiApp (linha Kalan)
+Marketing: Avalon
+Site: https://www.ikiapp.co/
+App: https://app.ikiapp.co/
+
+/* PRODUCT */
+Ikigai + Kaizen + Foco Pomodoro + personagem Iki
+App gratuito · Beta fechado · pt-BR · Brasil
+
+/* THANKS */
+Feito com Methz: https://methz.com.br/
