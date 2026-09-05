@@ -6,7 +6,7 @@
     <title>IkiApp · Sua Ascensão</title>
     <meta
       name="description"
-      content="Roda Kairos, hábitos e um companheiro origami que evolui com a disciplina que você realmente cumpre. Beta fechado."
+      content="Organize hábitos pelo seu propósito atual e cuide de um companheiro virtual alimentado pela disciplina de todos os dias. Beta fechado."
     />
     <meta name="theme-color" content="#1A1F4A" />
     <link rel="icon" href="./media/logo.png" type="image/png" />
@@ -18,9 +18,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./variables.css?v=iki-3" />
-    <link rel="stylesheet" href="./style.css?v=iki-3" />
-    <link rel="stylesheet" href="./iki-theme.css?v=iki-3" />
+    <link rel="stylesheet" href="./variables.css?v=iki-4" />
+    <link rel="stylesheet" href="./style.css?v=iki-4" />
+    <link rel="stylesheet" href="./iki-theme.css?v=iki-4" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSWV2CQ4Y6"></script>
@@ -82,10 +82,10 @@
         </button>
         <div class="nav-bar__menu" id="menu-iki" data-menu data-open="false">
           <nav class="nav-bar__links" aria-label="Produto">
-            <a class="nav-bar__link" href="#sec-produto">O app</a>
-            <a class="nav-bar__link" href="#sec-ikis">Ikis</a>
-            <a class="nav-bar__link" href="#sec-kairos">Kairos</a>
-            <a class="nav-bar__link" href="#sec-beta">Beta</a>
+            <a class="nav-bar__link" href="#sec-jornada">Propósito</a>
+            <a class="nav-bar__link" href="#sec-produto">Disciplina</a>
+            <a class="nav-bar__link" href="#sec-recompensas">Recompensas</a>
+            <a class="nav-bar__link" href="#sec-ikis">Seu Iki</a>
           </nav>
           <div class="nav-bar__actions">
             <a class="btn btn--ghost btn--sm" href="https://app.ikiapp.co/login">Entrar</a>
@@ -112,18 +112,18 @@
           <div class="hero-ascent__copy reveal">
             <p class="hero-ascent__kicker">Beta fechado</p>
             <h1 class="saas-display">
-              Sua <span class="hl">Ascensão</span> começa na rotina que você cumpre.
+              Propósito claro. Disciplina diária. Um <span class="hl">companheiro</span> que vive disso.
             </h1>
             <p class="saas-body">
-              Organize hábitos, leia a Roda Kairos e evolua um companheiro origami,
-              alimentado pela disciplina real, não por checklists vazios.
+              Organize seus hábitos de acordo com seu propósito atual e tenha um
+              companheiro virtual alimentado pela sua disciplina real de todos os dias.
             </p>
             <div class="hero-ascent__actions">
               <a class="btn btn--cyan" href="#sec-cta-bottom">Quero minha vaga no Beta</a>
-              <a class="btn btn--ghost" href="#sec-produto">Ver o app de verdade</a>
+              <a class="btn btn--ghost" href="#sec-jornada">Ver como funciona</a>
             </div>
             <p class="hero-ascent__note">
-              Gratuito no Beta · Sem cartão · Vagas limitadas para manter o servidor estável
+              App gratuito · Vagas limitadas neste ciclo fechado
             </p>
           </div>
           <div class="hero-ascent__stage reveal" aria-hidden="true">
@@ -139,9 +139,73 @@
         </div>
       </section>
 
-      <!-- Product reality: real screens -->
+
+      <!-- 2. Storytelling: propósito → disciplina → recompensas → iki -->
       <section
         class="lav-band padded-section reveal"
+        data-section="jornada"
+        id="sec-jornada"
+      >
+        <div class="wrap ascent-split">
+          <div class="roda-frame">
+            <img
+              src="./media/roda-da-vida.png"
+              alt="Roda da Vida com doze áreas"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <span class="saas-eyebrow">O caminho no IkiApp</span>
+            <h2 class="saas-h1">Propósito. Disciplina. Recompensas. Seu Iki.</h2>
+            <p class="saas-body" style="margin-top: 0.75rem">
+              A ordem é linear: primeiro você vê o momento da vida, depois pratica,
+              depois colhe o que a constância gera, e o companheiro reflete tudo isso.
+            </p>
+            <div class="step-list step-list--four">
+              <article class="step-card">
+                <div class="step-card__num">1</div>
+                <h3 class="saas-h2">O propósito</h3>
+                <p class="saas-body">
+                  A Roda da Vida mostra o que importa nesta fase. Propósito muda:
+                  com filhos, mudança de trabalho ou outra virada, as áreas se
+                  reordenam. O mapa acompanha você.
+                </p>
+              </article>
+              <article class="step-card">
+                <div class="step-card__num">2</div>
+                <h3 class="saas-h2">Sua disciplina</h3>
+                <p class="saas-body">
+                  Clareza sem execução não basta. Você transforma o mapa em
+                  hábitos e avança com Kaizen: passos pequenos, diários, reais.
+                </p>
+              </article>
+              <article class="step-card">
+                <div class="step-card__num">3</div>
+                <h3 class="saas-h2">Suas recompensas</h3>
+                <p class="saas-body">
+                  O que você cumpre vira progresso visível: ritmo, XP e o que o
+                  app devolve pela constância. Não é fantasia de checklist.
+                </p>
+              </article>
+              <article class="step-card">
+                <div class="step-card__num">4</div>
+                <h3 class="saas-h2">Seu Iki</h3>
+                <p class="saas-body">
+                  O personagem não se escolhe: ele surge. Espelho leve da sua
+                  disciplina, mostra quando os hábitos estão firmes e quando
+                  estão ruins.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disciplina no app: telas reais -->
+      <section
+        class="padded-section reveal"
         data-section="produto"
         id="sec-produto"
       >
@@ -159,7 +223,7 @@
             <figure class="phone phone--front">
               <img
                 src="./media/screens/home.jpg"
-                alt="Home do IkiApp com companheiro origami Coruja"
+                alt="Home do IkiApp com o companheiro Iki Coruja"
                 width="450"
                 height="800"
                 loading="lazy"
@@ -167,41 +231,40 @@
             </figure>
           </div>
           <div>
-            <span class="saas-eyebrow">O produto, não a promessa</span>
-            <h2 class="saas-h1">Um jardim Kaizen para a vida inteira</h2>
+            <span class="saas-eyebrow">Sua disciplina</span>
+            <h2 class="saas-h1">Hábitos alinhados ao que importa agora</h2>
             <p class="saas-body" style="margin-top: 0.85rem">
-              O IkiApp organiza a sua rotina: streak, XP e tokens nascem do que você
-              executa: meditação, treino, leitura, idiomas, planejamento.
-              O companheiro no centro reage ao seu ritmo.
+              Depois da Roda, o dia a dia: você registra o que fez e vê o ritmo
+              no mês. A prática sai do mapa e entra na rotina.
             </p>
             <div class="proof-list">
               <article class="proof-item">
                 <div class="proof-item__icon" aria-hidden="true">01</div>
                 <div>
-                  <h3>Home viva</h3>
+                  <h3>Do mapa à prática</h3>
                   <p>
-                    Seu Iki no cenário do dia. Troque companheiros, veja streak e
-                    saldo. A disciplina tem rosto.
+                    Os hábitos nascem do propósito desta fase, não de listas
+                    genéricas copiadas de outra pessoa.
                   </p>
                 </div>
               </article>
               <article class="proof-item">
                 <div class="proof-item__icon" aria-hidden="true">02</div>
                 <div>
-                  <h3>Atividades com densidade</h3>
+                  <h3>Registro concreto</h3>
                   <p>
-                    Hábitos com horas reais no mês. Sem gamificação vazia: o
-                    painel mostra onde sua energia foi.
+                    Meditação, treino, leitura, o que for seu. Horas e ritmo
+                    aparecem com o que você realmente cumpriu.
                   </p>
                 </div>
               </article>
               <article class="proof-item">
                 <div class="proof-item__icon" aria-hidden="true">03</div>
                 <div>
-                  <h3>XP = moeda do marketplace</h3>
+                  <h3>Disciplina sem castigo</h3>
                   <p>
-                    O que você cumpre vira progresso e desbloqueia itens para
-                    lapidar o Iki: Ronin, Gueixa, Dragão e mais.
+                    Constância de ferro, com leveza o bastante para você
+                    continuar. O objetivo é avançar, não se punir.
                   </p>
                 </div>
               </article>
@@ -210,14 +273,56 @@
         </div>
       </section>
 
-      <!-- Ikis collection -->
+      <!-- Recompensas -->
+      <section
+        class="lav-band padded-section reveal"
+        data-section="recompensas"
+        id="sec-recompensas"
+      >
+        <div class="wrap text-center mb-40">
+          <span class="saas-eyebrow">Suas recompensas</span>
+          <h2 class="saas-h1">O que a disciplina devolve</h2>
+          <p class="saas-body section-lead">
+            Progresso que você sente no corpo da rotina e no vínculo com o Iki.
+            A constância gera retorno. A intenção sozinha, não.
+          </p>
+        </div>
+        <div class="wrap feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <h3 class="saas-h2">Clareza renovada</h3>
+            <p class="saas-body">
+              A Roda atualiza o retrato da fase. Você vê onde avançou e o que
+              ainda pede atenção.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">▲</div>
+            <h3 class="saas-h2">Ritmo e XP</h3>
+            <p class="saas-body">
+              Cada ato cumprido alimenta o progresso. Streak e XP acompanham o
+              que foi feito, não o que ficou no plano.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">✦</div>
+            <h3 class="saas-h2">Vínculo com o Iki</h3>
+            <p class="saas-body">
+              O companheiro reflete o estado dos hábitos. Firmes ou ruins: você
+              lê no visual, sem planilha.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Seu Iki -->
       <section class="padded-section wrap reveal" data-section="ikis" id="sec-ikis">
         <div class="text-center mb-40">
-          <span class="saas-eyebrow">Companheiros origami</span>
-          <h2 class="saas-h1">Os Ikis evoluem com você</h2>
+          <span class="saas-eyebrow">Seu Iki</span>
+          <h2 class="saas-h1">O Iki não se escolhe. Ele surge.</h2>
           <p class="saas-body section-lead">
-            Cada figura é um arquétipo. Você equipa, lapida e carrega no jardim.
-            Prova visual de consistência, não de intenção.
+            Ronin, Coruja, Gueixa, Dragão e os demais. Cada um aparece no caminho
+            e evolui com a disciplina que você cumpre no dia a dia.
           </p>
         </div>
         <div class="iki-gallery">
@@ -252,94 +357,48 @@
         </div>
       </section>
 
-      <!-- Why / pillars -->
+      <!-- Por que existe (reforço) -->
       <section
         class="padded-section wrap reveal"
         data-section="features-grid"
         id="sec-features-grid"
       >
         <div class="text-center mb-40">
-          <span class="saas-eyebrow">Por que existe</span>
-          <h2 class="saas-h1">Apps de hábito falham quando viram planilha</h2>
+          <span class="saas-eyebrow">Por que o IkiApp existe</span>
+          <h2 class="saas-h1">Ver o propósito. Cumprir. Sentir o ritmo.</h2>
           <p class="saas-body section-lead">
-            O IkiApp trata consistência como ascensão: calma, visual, com um
-            companheiro que só cresce se você crescer.
+            O app une clareza sobre o momento da vida, disciplina para avançar
+            e um companheiro que mostra, sem planilha, se você está bem ou não.
           </p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🔥</div>
-            <h3 class="saas-h2">Streak com perdão</h3>
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <h3 class="saas-h2">Propósito atual</h3>
             <p class="saas-body">
-              O foguinho premia ritmo, e o sistema te ajuda a retomar o eixo
-              quando a vida atrapalha, sem drama de “zerou tudo”.
+              A Roda da Vida deixa visível o que importa agora. Propósito não é
+              frase fixa: muda com a fase da vida. Quem tem filhos, por exemplo,
+              reordena áreas inteiras. O app acompanha esse mapa em movimento.
             </p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">◎</div>
-            <h3 class="saas-h2">Roda Kairos</h3>
+            <div class="feature-icon" aria-hidden="true">▲</div>
+            <h3 class="saas-h2">Objetivos com disciplina</h3>
             <p class="saas-body">
-              Doze áreas da vida num relance. Você enxerga desequilíbrio antes
-              dele virar culpa, e escolhe o próximo passo com intenção.
+              Clareza sem execução não leva a lugar nenhum. O IkiApp ajuda a
+              transformar o que a Roda mostrou em hábitos concretos e a avançar
+              com Kaizen: passos pequenos, consistentes, de verdade.
             </p>
           </article>
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">✦</div>
-            <h3 class="saas-h2">Companheiro vivo</h3>
+            <h3 class="saas-h2">Disciplina leve, de ferro</h3>
             <p class="saas-body">
-              O origami no centro não é decoração: é espelho. XP, glow e
-              marketplace amarram estética à execução.
+              A constância precisa ser séria, sem virar castigo. O personagem
+              existe para você cuidar do seu ritmo com leveza: um espelho visual
+              de quando os hábitos estão firmes e de quando estão ruins.
             </p>
           </article>
-        </div>
-      </section>
-
-      <!-- Kairos + steps -->
-      <section
-        class="lav-band padded-section reveal"
-        data-section="kairos"
-        id="sec-kairos"
-      >
-        <div class="wrap ascent-split">
-          <div class="kairos-frame">
-            <img
-              src="./media/kairos.png"
-              alt="Roda Kairos, Roda da Vida com doze áreas"
-              width="800"
-              height="800"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <span class="saas-eyebrow">Como sobe a montanha</span>
-            <h2 class="saas-h1">Três gestos. Um caminho.</h2>
-            <div class="step-list">
-              <article class="step-card">
-                <div class="step-card__num">1</div>
-                <h3 class="saas-h2">Mapeie o que importa</h3>
-                <p class="saas-body">
-                  Cadastre hábitos e leia a Roda Kairos. O app mostra onde a vida
-                  está cheia e onde está oca.
-                </p>
-              </article>
-              <article class="step-card">
-                <div class="step-card__num">2</div>
-                <h3 class="saas-h2">Execute e registre</h3>
-                <p class="saas-body">
-                  Cada check vira XP e horas reais. Streak e tokens acompanham o
-                  ritmo, não a fantasia.
-                </p>
-              </article>
-              <article class="step-card">
-                <div class="step-card__num">3</div>
-                <h3 class="saas-h2">Evolua o Iki</h3>
-                <p class="saas-body">
-                  Equipe, lapide e troque companheiros. O jardim vira prova
-                  quieta de que você esteve presente.
-                </p>
-              </article>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -350,21 +409,47 @@
         id="sec-metric-bar"
       >
         <div class="metric-grid">
-          <article class="metric-card">
+          <article class="metric-card metric-card--alive">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
             <div class="metric-card__num">100</div>
-            <p class="saas-body">vagas no primeiro ciclo Beta</p>
+            <p class="saas-body">pessoas neste ciclo fechado</p>
           </article>
-          <article class="metric-card">
+          <article class="metric-card metric-card--alive">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
+              </svg>
+            </div>
             <div class="metric-card__num">12</div>
-            <p class="saas-body">áreas na Roda Kairos</p>
+            <p class="saas-body">áreas do propósito na Roda da Vida</p>
           </article>
-          <article class="metric-card">
+          <article class="metric-card metric-card--alive">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M12 3l2.2 4.5L19 8.3l-3.5 3.4.8 4.8L12 14.8 7.7 16.5l.8-4.8L5 8.3l4.8-.8L12 3z" />
+              </svg>
+            </div>
             <div class="metric-card__num">7</div>
-            <p class="saas-body">Ikis no jardim inicial</p>
+            <p class="saas-body">Ikis que podem surgir no caminho</p>
           </article>
-          <article class="metric-card">
+          <article class="metric-card metric-card--alive">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />
+                <circle cx="12" cy="12" r="3.5" />
+              </svg>
+            </div>
             <div class="metric-card__num">0$</div>
-            <p class="saas-body">sem cartão no Beta</p>
+            <p class="saas-body">app gratuito, sem assinatura</p>
           </article>
         </div>
       </section>
@@ -376,20 +461,21 @@
         id="sec-beta"
       >
         <div class="wrap text-center">
-          <span class="saas-eyebrow">Acesso restrito</span>
-          <h2 class="saas-h1 mb-16">Por que o Beta é fechado?</h2>
+          <span class="saas-eyebrow">Beta fechado</span>
+          <h2 class="saas-h1 mb-16">Cem pessoas. Só.</h2>
           <p class="saas-body section-lead">
-            Estamos calibrando o IkiApp com um grupo pequeno antes das lojas.
-            Queremos ascensão serena, não fila quebrada nem servidor no limite.
+            Queremos acompanhar de perto quem entra primeiro: propósito, disciplina
+            e o Iki funcionando de verdade no dia a dia. Por isso o acesso é
+            limitado a 100 pessoas.
           </p>
           <div class="scarcity-grid">
             <div class="compliance-card">
-              <strong>Ciclo atual</strong><br />
-              Até 100 pessoas · liberação por lote
+              <strong>Limite</strong><br />
+              100 pessoas neste ciclo
             </div>
             <div class="compliance-card">
-              <strong>O que você leva</strong><br />
-              Acesso antecipado · voz no produto · Iki desde o dia 1
+              <strong>Se você entrar</strong><br />
+              Acesso antecipado, voz no produto e seu Iki desde o primeiro dia
             </div>
           </div>
         </div>
@@ -402,9 +488,9 @@
         id="sec-cta-bottom"
       >
         <div class="cta-panel">
-          <h2 class="saas-h1 mb-16">Pronto para subir?</h2>
+          <h2 class="saas-h1 mb-16">Quer estar entre as 100?</h2>
           <p class="saas-body">
-            Deixe o e-mail. Quando abrir o próximo lote, você entra primeiro.
+            Deixe seu e-mail. Se ainda houver lugar, a gente chama você.
           </p>
           <form class="iki-waitlist" id="waitlist-form" novalidate>
             <label class="visually-hidden" for="waitlist-email">E-mail</label>
@@ -429,15 +515,16 @@
               <img src="./media/logo-lockup.png" alt="iki app" width="128" height="36" />
             </a>
             <p class="saas-caption" style="margin-top: 0.85rem">
-              IkiApp · disciplina com companhia.
+              IkiApp · propósito, disciplina e companhia.
             </p>
           </div>
           <div>
             <span class="saas-caption">Produto</span>
             <ul>
-              <li><a href="#sec-produto">O app</a></li>
-              <li><a href="#sec-ikis">Ikis</a></li>
-              <li><a href="#sec-kairos">Kairos</a></li>
+              <li><a href="#sec-jornada">Propósito</a></li>
+              <li><a href="#sec-produto">Disciplina</a></li>
+              <li><a href="#sec-recompensas">Recompensas</a></li>
+              <li><a href="#sec-ikis">Seu Iki</a></li>
             </ul>
           </div>
           <div>
@@ -472,7 +559,7 @@
       </footer>
     </main>
 
-    <script src="./motion.js?v=iki-3"></script>
+    <script src="./motion.js?v=iki-4"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {
@@ -525,7 +612,7 @@
           if (typeof fbq === "function") fbq("track", "Lead");
           if (typeof gtag === "function") gtag("event", "generate_lead");
           sendToBackend("Lead", { email });
-          if (msg) msg.textContent = "Você entrou na lista. Te vemos na Ascensão.";
+          if (msg) msg.textContent = "Você entrou na lista. Te vemos no Iki.";
           form.reset();
         });
       });
