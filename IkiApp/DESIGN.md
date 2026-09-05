@@ -1,25 +1,22 @@
-# IkiApp — Style Reference (site MVP)
-> Deep Zen Night + lavanda / mint — DNA do app (não Impilo/Pulso)
+# IkiApp Landing — DESIGN
 
-**Theme:** night aurora glass  
-**Marca:** Iki
+> Fonte: `lifeos_backend/DESIGN_ASCENT.md` + assets reais do app.
 
-## Tokens — Colors (via `variables.css`)
+## Atmosfera
+- Hero: cena night do app + véu indigo → teal → deep zen
+- Bandas de conteúdo: campo lavanda (`#E8E6F5`)
+- Glass: branco translúcido + hairline
 
-| Name | Role |
-|------|------|
-| Iris night | fundo Deep Zen |
-| Iris glow / pulse | lavanda líquida (CTA secondary / glow) |
-| Cyan → mint | CTAs e status (mapeado p/ mint do app) |
-| Pearl | texto claro / pausa light-inversion |
+## Tipografia
+- Display: **Manrope**
+- Corpo: **Nunito**
 
-## Typography
+## Assets em `/media`
+- `logo.png` / `logo-lockup.png` — marca
+- `scene-night.jpg` — hero
+- `screens/*.jpg` — home + atividades (front aprovado)
+- `ikis/*.png` — coleção origami
+- `kairos.png` — Roda Kairos
 
-- **Baloo 2** — display / marca  
-- **Nunito** — corpo  
-
-## LP (esqueleto Methz + copy Iki)
-
-`nav-bar` → `hero-split` → `logo-cloud` → `features-grid` → `dashboard-preview` (passos) → `metric-bar` → `light-inversion` → `cta-bottom` → `footer-bar`
-
-Overrides finos: `iki-theme.css`
+## Tom de copy
+Life OS · Ascensão · disciplina real · Beta fechado. Sem stock Unsplash.
