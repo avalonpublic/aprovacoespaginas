@@ -1119,3 +1119,190 @@ body.ds-saas {
 .world-flags li {
   margin: 0;
 }
+
+/* ——— Mobile: header → footer ——— */
+@media (max-width: 800px) {
+  body.ds-saas {
+    padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
+  }
+
+  .nav-bar {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .nav-bar__brand img {
+    height: 28px;
+  }
+
+  .nav-bar__toggle {
+    min-width: 72px;
+    min-height: 42px;
+  }
+
+  .nav-bar__menu {
+    padding-top: 0.75rem;
+  }
+
+  .hero-ascent {
+    min-height: 0;
+    padding-block: 1.35rem 2rem;
+  }
+
+  .hero-ascent__inner {
+    gap: 1.25rem;
+  }
+
+  .hero-ascent__kicker {
+    margin-bottom: 0.7rem;
+  }
+
+  .hero-ascent .saas-display {
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-ascent .saas-body {
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  .hero-ascent__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    margin-top: 1.35rem;
+  }
+
+  .hero-ascent__actions .btn {
+    width: 100%;
+  }
+
+  .hero-ascent__note {
+    margin-top: 0.85rem;
+    text-align: center;
+  }
+
+  .hero-ascent__stage {
+    width: min(280px, 72vw);
+  }
+
+  .padded-section {
+    padding-block: 3rem;
+  }
+
+  .mb-40 {
+    margin-bottom: 1.75rem;
+  }
+
+  .saas-display,
+  .saas-h1,
+  .saas-h2 {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    line-height: 1.2;
+  }
+
+  .saas-body,
+  .section-lead,
+  .proof-item p,
+  .iki-faq__item p {
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+    line-height: 1.65;
+  }
+
+  .section-lead {
+    margin-top: 0.85rem;
+  }
+
+  .feature-grid,
+  .feature-grid--four,
+  .pricing-grid {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    overflow: visible;
+    padding: 0;
+    gap: 0.85rem;
+  }
+
+  .feature-card,
+  .price-card {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .phone-stack {
+    min-height: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .phone {
+    width: min(220px, 64vw);
+  }
+
+  .ascent-split .roda-live {
+    width: min(100%, 20.5rem);
+  }
+
+  .step-card,
+  .proof-item,
+  .feature-card {
+    padding: 1.05rem 1.1rem;
+  }
+
+  .section-cta {
+    margin-top: 1.5rem;
+  }
+
+  .section-cta .btn {
+    width: 100%;
+  }
+
+  .cta-panel {
+    padding: 1.75rem 1.15rem 1.6rem;
+  }
+
+  .cta-panel .saas-body {
+    line-height: 1.65;
+    margin-bottom: 0.35rem;
+  }
+
+  .iki-waitlist {
+    margin-top: 1.25rem;
+  }
+
+  .iki-faq {
+    margin-top: 1.35rem;
+  }
+
+  .iki-faq__item {
+    padding: 0.95rem 1rem;
+  }
+
+  .iki-faq__item p + p {
+    margin-top: 0.9rem;
+  }
+
+  .world-flags {
+    gap: 0.55rem 0.7rem;
+    font-size: 1.65rem;
+    margin-top: 1.35rem;
+  }
+
+  .scarcity-grid {
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+
+  .saas-footer {
+    padding-block: 2.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 420px) {
+  .iki-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+}
+
