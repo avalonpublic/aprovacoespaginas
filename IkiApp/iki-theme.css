@@ -806,16 +806,17 @@ body.ds-saas {
 
 .iki-waitlist {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
   width: 100%;
-  max-width: 30rem;
+  max-width: 28rem;
   margin-inline: auto;
   margin-top: 1.5rem;
 }
 
 .iki-waitlist input[type="email"] {
-  flex: 1 1 12rem;
+  width: 100%;
   min-height: 3.1rem;
   padding: 0.65rem 1.15rem;
   border-radius: var(--radius-btn);
@@ -823,6 +824,7 @@ body.ds-saas {
   background: rgba(255, 255, 255, 0.08);
   color: var(--color-pearl);
   outline: none;
+  box-sizing: border-box;
 }
 
 .iki-waitlist input::placeholder {
@@ -835,7 +837,10 @@ body.ds-saas {
 }
 
 .iki-waitlist .btn {
-  flex: 0 0 auto;
+  width: 100%;
+  justify-content: center;
+  white-space: normal;
+  text-align: center;
 }
 
 .iki-waitlist__msg {
