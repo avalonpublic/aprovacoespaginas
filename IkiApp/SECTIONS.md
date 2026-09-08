@@ -10,4 +10,5 @@ Pilares: **Ikigai · Kaizen · Foco (Pomodoro) · Personagem Iki**
 | `foco` | Pomodoro |
 | `ikis` | personagem (surge / cresce / some) |
 | `features-grid` | reforço dos 4 pilares |
-| `metric-bar` / `beta` / `faq` / `cta` | prova + FAQ SEO + ciclo 100 |
+| `world-langs` | “Feito para o mundo todo” + bandeiras dos 13 idiomas |
+| `beta` / `faq` / `cta` | ciclo 100 + FAQ SEO |

@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "IkiApp — Ikigai, Kaizen, Foco e Iki",
+  "name": "IkiApp — Seu propósito como jornada",
   "short_name": "IkiApp",
-  "description": "App gratuito que une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre.",
+  "description": "IkiApp une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre, mas some quando foge de si. App 100% gratuito.",
   "lang": "pt-BR",
   "dir": "ltr",
   "start_url": "/?utm_source=pwa",

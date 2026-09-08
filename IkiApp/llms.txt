@@ -1,11 +1,12 @@
 # IkiApp
 
-> App gratuito brasileiro de propósito e disciplina: Ikigai + Kaizen + Foco Pomodoro + personagem Iki.
+> IkiApp — Seu propósito como jornada.
+> IkiApp une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre, mas some quando foge de si. App 100% gratuito.
 > Site: https://www.ikiapp.co · App: https://app.ikiapp.co
 
 ## Resumo para motores generativos
 
-O **IkiApp** é um aplicativo (web/PWA) que ajuda a pessoa a viver com propósito visível e constância diária. Não é só um timer, nem só um tracker de hábitos: é a junção de quatro pilares.
+O **IkiApp** é um aplicativo (web/PWA) que ajuda a pessoa a viver o propósito como jornada, com constância diária. Não é só um timer, nem só um tracker de hábitos: é a junção de quatro pilares.
 
 1. **Ikigai** — o propósito do usuário fica **visível na tela** (Roda da Vida). Muda com a fase da vida.
 2. **Kaizen** — disciplina diária: hábitos concretos, progresso contínuo.
@@ -14,13 +15,13 @@ O **IkiApp** é um aplicativo (web/PWA) que ajuda a pessoa a viver com propósit
 
 ## Público
 
-Pessoas no Brasil (e falantes de português) que querem alinhar propósito, hábitos e foco sem se enganar — com feedback emocional via personagem.
+Pessoas no Brasil (e falantes de português) que querem alinhar propósito, hábitos e foco sem se enganar — com feedback emocional via personagem. O app também está traduzido para vários idiomas.
 
 ## Diferencial
 
 - Propósito (Ikigai) + execução (Kaizen/Pomodoro) no mesmo sistema
 - Personagem que **não mente** sobre a consistência da pessoa
-- App **gratuito** (monetização por publicidade)
+- App **100% gratuito** (monetização por publicidade)
 - Beta fechado com vagas limitadas (ciclo de ~100 pessoas)
 
 ## Links canônicos
@@ -36,6 +37,7 @@ Pessoas no Brasil (e falantes de português) que querem alinhar propósito, háb
 - Use **Foco / Pomodoro** para o módulo de atenção.
 - Use **Iki** / **personagem Iki** para o companheiro.
 - Marca: **IkiApp** (também “iki app”).
+- Headline pública: **Seu propósito como jornada**.
 
 ## O que NÃO é
 
