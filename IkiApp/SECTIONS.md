@@ -1,14 +1,14 @@
 # Seções da LP IkiApp
 
-Pilares: **Ikigai · Kaizen · Foco (Pomodoro) · Personagem Iki**
+Tom público atual: **O Jogo da Sua Vida Real**
 
 | id | Conteúdo |
 |----|----------|
-| `hero-ascent` | headline dos 4 pilares |
-| `jornada` | Roda da Vida + Ikigai / Kaizen / Foco |
-| `produto` | Kaizen + telas |
-| `foco` | Pomodoro |
-| `ikis` | personagem (surge / cresce / some) |
-| `features-grid` | reforço dos 4 pilares |
+| `hero-ascent` | rotina, metas, guardião virtual |
+| `jornada` | Roda da Vida + Propósito/Metas, Constância, Modo Foco |
+| `produto` | Rotina + telas |
+| `foco` | cronômetro / blocos 25 ou 50 |
+| `ikis` | guardião (surge / cresce / some) |
+| `features-grid` | 4 ferramentas |
 | `world-langs` | “Feito para o mundo todo” + bandeiras dos 13 idiomas |
 | `beta` / `faq` / `cta` | ciclo 100 + FAQ SEO |

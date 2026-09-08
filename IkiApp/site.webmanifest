@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "IkiApp — Seu propósito como jornada",
+  "name": "IkiApp — O Jogo da Sua Vida Real",
   "short_name": "IkiApp",
-  "description": "IkiApp une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre, mas some quando foge de si. App 100% gratuito.",
+  "description": "IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito.",
   "lang": "pt-BR",
   "dir": "ltr",
   "start_url": "/?utm_source=pwa",

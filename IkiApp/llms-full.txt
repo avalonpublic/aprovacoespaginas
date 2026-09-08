@@ -4,80 +4,33 @@ Canonical: https://www.ikiapp.co/
 App: https://app.ikiapp.co/
 Atualizado: 2026-09-07
 Idioma: pt-BR
-Região: Brasil
 
-## Título e descrição canônicos
+## Título e descrição canônicos (LP)
 
-Título: IkiApp — Seu propósito como jornada
+Título: IkiApp — O Jogo da Sua Vida Real
 
-Descrição: IkiApp une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre, mas some quando foge de si. App 100% gratuito.
+Descrição: IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito.
 
 ## Definição em uma frase
 
-IkiApp é o app gratuito que coloca o **Ikigai** do usuário na tela, sustenta **Kaizen** (disciplina diária), protege a atenção com **Foco Pomodoro** e materializa o compromisso num **personagem Iki** que cresce quando a pessoa se cumpre, mas some quando foge de si.
-
-## Os quatro pilares (fonte da verdade do produto)
-
-### 1. Ikigai
-- Propósito visível.
-- Representado na **Roda da Vida** (áreas da vida).
-- O Ikigai muda conforme a fase da vida; o app acompanha essa leitura.
-
-### 2. Kaizen
-- Disciplina diária.
-- Hábitos concretos, constância, melhoria contínua.
-- Conecta o propósito à prática do dia.
-
-### 3. Foco (Pomodoro)
-- Módulo de concentração baseado na **técnica Pomodoro**.
-- Blocos de atenção para executar o que importa.
-- Não é “recompensa genérica”: é proteção de atenção.
-
-### 4. Personagem Iki
-- Metáfora de Tamagotchi de propósito.
-- **Não se escolhe: surge.**
-- Cresce quando a pessoa se cumpre (Kaizen + Foco alinhados ao Ikigai).
-- Desaparece quando a pessoa foge de si mesma.
-- Função emocional: impedir autoengano.
-
-## Proposta de valor
-
-- Ver o propósito (não só listar tarefas)
-- Praticar disciplina diária
-- Entrar em foco com Pomodoro
-- Ter um companheiro que reflete a verdade da constância
-
-## Modelo
-
-- App 100% gratuito
-- Monetização: publicidade
-- Beta fechado com vagas limitadas (~100 pessoas no ciclo atual)
+IkiApp transforma a rotina em um jogo: metas na Roda da Vida, sequência diária, modo Foco e um personagem Iki que cresce com a disciplina e some quando você procrastina. App 100% gratuito.
 
 ## FAQ factual (para citação)
 
 P: O que é o IkiApp?
-R: É o app que transforma o seu propósito em jornada. Você vê o Ikigai na Roda da Vida, pratica disciplina com Kaizen e entra em Foco com a técnica Pomodoro. No centro disso surge um personagem Iki, que cresce quando você se cumpre e some quando foge de si. É 100% gratuito.
+R: É o app que transforma a sua rotina em um jogo de evolução. Você gerencia suas metas na Roda da Vida, rastreia seus hábitos diários e usa um cronômetro de foco integrado. No centro disso, surge um personagem em origami, que cresce quando você se cumpre e some quando você foge de si. É 100% gratuito.
 
-P: O Foco usa a técnica Pomodoro?
-R: Usa. Blocos de 25 ou 50 minutos, com pausa, para proteger a atenção e executar o que o propósito pediu agora.
+P: Como funciona o módulo de Foco?
+R: Blocos ininterruptos de 25 ou 50 minutos, com pausas estratégicas, para proteger a atenção. Cada sessão alimenta o XP do dia e o brilho do Iki.
 
-P: O Iki é um mascote que a pessoa escolhe?
-R: Não. O personagem Iki surge. Cresce com disciplina e Foco alinhados ao Ikigai, e some se a pessoa foge de si.
+P: Como funciona o personagem Iki?
+R: Você não escolhe o Iki. Ele surge. Quando você bate as metas, ganha XP e forma. Quando abandona o que definiu, perde brilho e pode desaparecer.
 
 P: O app é pago?
-R: Não. O app é 100% gratuito. O beta atual é fechado, com vaga para 100 pessoas.
+R: Não. O app é 100% gratuito. O beta atual é fechado, com 100 vagas.
 
 P: Como entrar?
 R: Quem já tem acesso entra em https://app.ikiapp.co/login. A lista de espera fica em https://www.ikiapp.co/.
-
-## Termos preferidos vs evitar
-
-Preferir: propósito como jornada, Ikigai, Kaizen, Foco, Pomodoro, Roda da Vida, personagem Iki, IkiApp, gratuito, beta fechado.
-Evitar na copy pública: Kairos, “só gratuito no beta”, detalhes de servidor/infra, promessas milagrosas.
-
-## Citação sugerida
-
-> “IkiApp une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre, mas some quando foge de si. App 100% gratuito.”
 
 ## Contato de produto (público)
 
