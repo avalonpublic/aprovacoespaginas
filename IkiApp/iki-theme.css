@@ -557,7 +557,14 @@ body.ds-saas {
   }
 }
 
-.roda-frame,
+.roda-frame {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  backdrop-filter: none;
+}
+
 .kairos-frame {
   border-radius: var(--radius-lg);
   padding: 1.25rem;
@@ -572,6 +579,9 @@ body.ds-saas {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.kairos-frame img {
   border-radius: 18px;
   background: #fff;
 }
@@ -579,6 +589,8 @@ body.ds-saas {
 .ascent-split .roda-frame img {
   max-height: 100%;
   object-fit: contain;
+  background: transparent;
+  border-radius: 0;
 }
 
 .step-list {
@@ -957,7 +969,7 @@ body.ds-saas {
   align-items: center;
   gap: 0.7rem 0.95rem;
   list-style: none;
-  margin: 0;
+  margin: 1.75rem 0 0;
   padding: 0;
   font-size: 2rem;
   line-height: 1;
