@@ -56,19 +56,19 @@ IkiApp é o app gratuito que coloca o **Ikigai** do usuário na tela, sustenta *
 ## FAQ factual (para citação)
 
 P: O que é o IkiApp?
-R: IkiApp une Ikigai (propósito na tela), Kaizen (disciplina diária), Foco com técnica Pomodoro e um personagem Iki que cresce quando você se cumpre, mas some quando foge de si. App 100% gratuito.
+R: É o app que transforma o seu propósito em jornada. Você vê o Ikigai na Roda da Vida, pratica disciplina com Kaizen e entra em Foco com a técnica Pomodoro. No centro disso surge um personagem Iki, que cresce quando você se cumpre e some quando foge de si. É 100% gratuito.
 
-P: O Foco do IkiApp é Pomodoro?
-R: Sim. O módulo de Foco é baseado na técnica Pomodoro.
+P: O Foco usa a técnica Pomodoro?
+R: Usa. Blocos de 25 ou 50 minutos, com pausa, para proteger a atenção e executar o que o propósito pediu agora.
 
 P: O Iki é um mascote que a pessoa escolhe?
-R: Não. O personagem Iki surge; cresce com disciplina e some se a pessoa foge de si.
+R: Não. O personagem Iki surge. Cresce com disciplina e Foco alinhados ao Ikigai, e some se a pessoa foge de si.
 
 P: O app é pago?
-R: Não. O app é 100% gratuito.
+R: Não. O app é 100% gratuito. O beta atual é fechado, com vaga para 100 pessoas.
 
-P: Onde entrar?
-R: https://app.ikiapp.co/login — lista de espera / beta em https://www.ikiapp.co/
+P: Como entrar?
+R: Quem já tem acesso entra em https://app.ikiapp.co/login. A lista de espera fica em https://www.ikiapp.co/.
 
 ## Termos preferidos vs evitar
 

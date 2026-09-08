@@ -225,6 +225,16 @@ body.ds-saas {
   display: none !important;
 }
 
+.br-desktop {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .br-desktop {
+    display: block;
+  }
+}
+
 /* ——— Soft lavender band ——— */
 .pearl-band,
 .lav-band {
@@ -254,6 +264,30 @@ body.ds-saas {
 
 .lav-band .saas-body,
 .pearl-band .saas-body {
+  color: var(--on-surface-variant);
+}
+
+/* ——— Mint / verde-água ——— */
+.mint-band {
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(184, 232, 228, 0.7), transparent 52%),
+    linear-gradient(180deg, #e4f4f2 0%, #c5e8e4 100%);
+  color: var(--on-surface);
+}
+
+.mint-band .saas-h1,
+.mint-band .saas-h2,
+.mint-band .saas-body,
+.mint-band .saas-eyebrow,
+.mint-band .saas-caption {
+  color: var(--on-surface);
+}
+
+.mint-band .saas-eyebrow {
+  color: var(--secondary);
+}
+
+.mint-band .saas-body {
   color: var(--on-surface-variant);
 }
 
@@ -487,14 +521,39 @@ body.ds-saas {
 /* ——— Steps + Roda da Vida ——— */
 .ascent-split {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem 3rem;
+  align-items: stretch;
+  grid-template-areas:
+    "copy"
+    "roda"
+    "steps";
+}
+
+.ascent-split__copy {
+  grid-area: copy;
+}
+
+.ascent-split .roda-frame {
+  grid-area: roda;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.ascent-split .step-list {
+  grid-area: steps;
+  margin-top: 0;
 }
 
 @media (min-width: 900px) {
   .ascent-split {
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-areas:
+      ".    copy"
+      "roda steps";
   }
 }
 
@@ -515,6 +574,11 @@ body.ds-saas {
   height: auto;
   border-radius: 18px;
   background: #fff;
+}
+
+.ascent-split .roda-frame img {
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .step-list {
@@ -864,6 +928,10 @@ body.ds-saas {
   color: var(--color-ash, #a8aec4);
   line-height: 1.55;
   font-size: 0.95rem;
+}
+
+.iki-faq__item p + p {
+  margin-top: 0.75rem;
 }
 
 .iki-faq__item a {
