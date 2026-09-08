@@ -6,15 +6,25 @@
 >
   <url>
     <loc>https://www.ikiapp.co/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.ikiapp.co/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ikiapp.co/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ikiapp.co/" />
     <image:image>
       <image:loc>https://www.ikiapp.co/og-image.jpg</image:loc>
       <image:title>IkiApp — O Jogo da Sua Vida Real</image:title>
       <image:caption>IkiApp transforma a rotina em um jogo: metas, foco e um personagem virtual. App 100% gratuito.</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.ikiapp.co/en/</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.ikiapp.co/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ikiapp.co/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ikiapp.co/" />
   </url>
 </urlset>

@@ -541,6 +541,8 @@ body.ds-saas {
   height: 100%;
   min-height: 0;
   box-sizing: border-box;
+  overflow: visible;
+  background: transparent;
 }
 
 .ascent-split .step-list {
@@ -586,11 +588,43 @@ body.ds-saas {
   background: #fff;
 }
 
-.ascent-split .roda-frame img {
+.ascent-split .roda-frame img,
+.ascent-split .roda-live {
   max-height: 100%;
   object-fit: contain;
   background: transparent;
   border-radius: 0;
+}
+
+.roda-live {
+  display: block;
+  width: min(100%, 34rem);
+  height: auto;
+  aspect-ratio: 1;
+  overflow: visible;
+  touch-action: none;
+  cursor: crosshair;
+  user-select: none;
+  -webkit-user-select: none;
+  background: transparent;
+}
+
+.roda-live text {
+  font-family: Manrope, Nunito, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  fill: #3a3168;
+  letter-spacing: 0.01em;
+}
+
+.roda-live path {
+  transition: fill 70ms linear, stroke 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roda-live path {
+    transition: none;
+  }
 }
 
 .step-list {
