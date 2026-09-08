@@ -111,9 +111,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../variables.css?v=iki-20" />
-    <link rel="stylesheet" href="../style.css?v=iki-20" />
-    <link rel="stylesheet" href="../iki-theme.css?v=iki-20" />
+    <link rel="stylesheet" href="../variables.css?v=iki-22" />
+    <link rel="stylesheet" href="../style.css?v=iki-22" />
+    <link rel="stylesheet" href="../iki-theme.css?v=iki-22" />
 
     <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
     <script type="application/ld+json">
@@ -564,6 +564,9 @@
             </p>
           </article>
         </div>
+        <div class="wrap section-cta">
+          <a class="btn btn--cyan" href="#sec-cta-bottom">Claim my Beta spot</a>
+        </div>
       </section>
 
       <!-- Seu Iki -->
@@ -579,25 +582,40 @@
         </div>
         <div class="iki-gallery">
           <figure class="iki-tile">
-            <img src="../media/ikis/ronin.png" alt="Iki Ronin" loading="lazy" width="320" height="320" />
+            <img src="../media/ikis/tsuru.png" alt="Iki Tsuru" loading="lazy" width="256" height="384" />
           </figure>
           <figure class="iki-tile">
-            <img src="../media/ikis/coruja.png" alt="Iki Coruja" loading="lazy" width="320" height="320" />
+            <img src="../media/ikis/kitsune.png" alt="Iki Kitsune" loading="lazy" width="256" height="384" />
           </figure>
           <figure class="iki-tile">
-            <img src="../media/ikis/gueixa.png" alt="Iki Gueixa" loading="lazy" width="320" height="320" />
+            <img src="../media/ikis/neko.png" alt="Iki Neko" loading="lazy" width="256" height="384" />
           </figure>
           <figure class="iki-tile">
-            <img src="../media/ikis/dragao.png" alt="Iki Dragão" loading="lazy" width="320" height="320" />
+            <img src="../media/ikis/panda.png" alt="Iki Panda" loading="lazy" width="256" height="384" />
           </figure>
           <figure class="iki-tile">
-            <img src="../media/ikis/bonsai.png" alt="Iki Bonsai" loading="lazy" width="320" height="320" />
+            <img src="../media/ikis/coruja.png" alt="Iki Owl" loading="lazy" width="256" height="384" />
           </figure>
           <figure class="iki-tile">
-            <img src="../media/ikis/lobo.png" alt="Iki Lobo" loading="lazy" width="320" height="320" />
+            <img src="../media/ikis/tiger.png" alt="Iki Tiger" loading="lazy" width="256" height="384" />
           </figure>
           <figure class="iki-tile">
-            <img src="../media/ikis/cavalo.png" alt="Iki Cavalo" loading="lazy" width="320" height="320" />
+            <img src="../media/ikis/falcao.png" alt="Iki Falcon" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/kame.png" alt="Iki Kame" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/dragao.png" alt="Iki Dragon" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/koi.png" alt="Iki Koi" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/cavalo.png" alt="Iki Horse" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/lobo.png" alt="Iki Wolf" loading="lazy" width="256" height="384" />
           </figure>
         </div>
       </section>
@@ -652,6 +670,9 @@
               is the real adventure.
             </p>
           </article>
+        </div>
+        <div class="wrap section-cta">
+          <a class="btn btn--cyan" href="#sec-cta-bottom">Claim my Beta spot</a>
         </div>
       </section>
 
@@ -712,6 +733,35 @@
               routine into a high-performance game.
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- CTA waitlist -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="cta-bottom"
+        id="sec-cta-bottom"
+      >
+        <div class="cta-panel">
+          <h2 class="saas-h1 mb-16">Want to be among the first 100?</h2>
+          <p class="saas-body">
+            Leave your email and hold your place in line. As soon as a spot
+            opens, you will get everything you need to enter the app and start
+            your journey.
+          </p>
+          <form class="iki-waitlist" id="waitlist-form" novalidate>
+            <label class="visually-hidden" for="waitlist-email">Email</label>
+            <input
+              id="waitlist-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="Your best email"
+            />
+            <button class="btn btn--cyan" type="submit">Claim a spot in the exclusive Beta</button>
+            <p class="iki-waitlist__msg" id="waitlist-msg" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
 
@@ -777,41 +827,12 @@
           <details class="iki-faq__item">
             <summary>How do I get into the app?</summary>
             <p>
-              Quem já tem acesso entra pelo
+              People who already have access sign in at the
               <a href="https://app.ikiapp.co/login">official login</a>.
               If you do not have a spot yet, leave your email on this page. The
               waitlist is the only way into this limited cycle.
             </p>
           </details>
-        </div>
-      </section>
-
-      <!-- CTA waitlist -->
-      <section
-        class="padded-section wrap reveal"
-        data-section="cta-bottom"
-        id="sec-cta-bottom"
-      >
-        <div class="cta-panel">
-          <h2 class="saas-h1 mb-16">Want to be among the first 100?</h2>
-          <p class="saas-body">
-            Leave your email and hold your place in line. As soon as a spot
-            opens, you will get everything you need to enter the app and start
-            your journey.
-          </p>
-          <form class="iki-waitlist" id="waitlist-form" novalidate>
-            <label class="visually-hidden" for="waitlist-email">Email</label>
-            <input
-              id="waitlist-email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              required
-              placeholder="Your best email"
-            />
-            <button class="btn btn--cyan" type="submit">Claim a spot in the exclusive Beta</button>
-            <p class="iki-waitlist__msg" id="waitlist-msg" role="status" aria-live="polite"></p>
-          </form>
         </div>
       </section>
 
@@ -857,7 +878,7 @@
       </footer>
     </main>
 
-    <script src="../motion.js?v=iki-20"></script>
+    <script src="../motion.js?v=iki-22"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {
@@ -880,7 +901,7 @@
         }
 
         document
-          .querySelectorAll('.hero-ascent__actions .btn--cyan, .nav-bar__actions .btn--cyan')
+          .querySelectorAll('a[href="#sec-cta-bottom"]')
           .forEach((btn) => {
             btn.addEventListener("click", () => {
               if (typeof fbq === "function") fbq("track", "InitiateCheckout");
