@@ -1227,36 +1227,22 @@ body.ds-saas {
   opacity: 0.9;
 }
 
-/* ——— Typewriter / encorajamento multilíngue ——— */
-.lang-pulse {
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(123, 118, 196, 0.22), transparent 55%),
-    linear-gradient(180deg, rgba(10, 12, 28, 0.2), transparent 70%);
-}
-
-.lang-pulse__hint {
-  margin: 0.75rem auto 0;
-  max-width: 28rem;
-  color: var(--color-ash, #a8aec4);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
+/* ——— Typewriter dentro de “Em 13 idiomas” (sem bloco/fundo próprio) ——— */
 .lang-pulse__line {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.55rem 0.75rem;
-  min-height: 4.5rem;
-  margin: 1.75rem auto 0;
+  min-height: 3.75rem;
+  margin: 1.5rem auto 0;
   max-width: 42rem;
   font-family: var(--font-display);
-  font-size: clamp(1.45rem, 4.2vw, 2.35rem);
+  font-size: clamp(1.35rem, 3.8vw, 2.15rem);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: var(--color-pearl, #f5f2ff);
+  color: var(--on-surface);
 }
 
 .lang-pulse__flag {
@@ -1278,18 +1264,10 @@ body.ds-saas {
   width: 0.08em;
   height: 1.05em;
   margin-left: 0.12em;
-  background: var(--secondary-soft, var(--color-mint));
+  background: var(--primary);
   border-radius: 2px;
   transform: translateY(0.08em);
   animation: lang-pulse-blink 0.9s steps(1, end) infinite;
-}
-
-.lang-pulse__meta {
-  margin-top: 0.85rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-fog, #7d849c);
 }
 
 @keyframes lang-pulse-blink {

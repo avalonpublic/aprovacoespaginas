@@ -264,19 +264,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /** Frases de encorajamento nos idiomas do app — espírito local, não tradução literal. */
 const LANG_PULSE_LINES = [
-  { lang: "pt", flag: "🇧🇷", label: "Português", text: "Para quem ama disciplina", dir: "ltr" },
-  { lang: "es", flag: "🇪🇸", label: "Español", text: "Para quien cultiva la disciplina", dir: "ltr" },
-  { lang: "en", flag: "🇬🇧", label: "English", text: "For those who show up", dir: "ltr" },
-  { lang: "fi", flag: "🇫🇮", label: "Suomi", text: "SISU", dir: "ltr" },
-  { lang: "ja", flag: "🇯🇵", label: "日本語", text: "継続は力なり", dir: "ltr" },
-  { lang: "zh", flag: "🇨🇳", label: "中文", text: "积跬步以至千里", dir: "ltr" },
-  { lang: "ar", flag: "🇸🇦", label: "العربية", text: "من جدّ وجد", dir: "rtl" },
-  { lang: "it", flag: "🇮🇹", label: "Italiano", text: "La costanza vince", dir: "ltr" },
-  { lang: "de", flag: "🇩🇪", label: "Deutsch", text: "Dranbleiben", dir: "ltr" },
-  { lang: "fr", flag: "🇫🇷", label: "Français", text: "La constance fait la force", dir: "ltr" },
-  { lang: "hi", flag: "🇮🇳", label: "हिन्दी", text: "अनुशासन ही शक्ति है", dir: "ltr" },
-  { lang: "ms", flag: "🇲🇾", label: "Bahasa Melayu", text: "Disiplin membentuk kejayaan", dir: "ltr" },
-  { lang: "fa", flag: "🇮🇷", label: "فارسی", text: "پشتکار، رمز پیروزی", dir: "rtl" },
+  { lang: "pt", flag: "🇧🇷", text: "Para quem ama disciplina", dir: "ltr" },
+  { lang: "es", flag: "🇪🇸", text: "Para quien cultiva la disciplina", dir: "ltr" },
+  { lang: "en", flag: "🇬🇧", text: "For those who show up", dir: "ltr" },
+  { lang: "fi", flag: "🇫🇮", text: "SISU", dir: "ltr" },
+  { lang: "ja", flag: "🇯🇵", text: "継続は力なり", dir: "ltr" },
+  { lang: "zh", flag: "🇨🇳", text: "积跬步以至千里", dir: "ltr" },
+  { lang: "ar", flag: "🇸🇦", text: "من جدّ وجد", dir: "rtl" },
+  { lang: "it", flag: "🇮🇹", text: "La costanza vince", dir: "ltr" },
+  { lang: "de", flag: "🇩🇪", text: "Dranbleiben", dir: "ltr" },
+  { lang: "fr", flag: "🇫🇷", text: "La constance fait la force", dir: "ltr" },
+  { lang: "hi", flag: "🇮🇳", text: "अनुशासन ही शक्ति है", dir: "ltr" },
+  { lang: "ms", flag: "🇲🇾", text: "Disiplin membentuk kejayaan", dir: "ltr" },
+  { lang: "fa", flag: "🇮🇷", text: "پشتکار، رمز پیروزی", dir: "rtl" },
 ]
 
 function initLangPulse(reduceMotion) {
@@ -285,15 +285,13 @@ function initLangPulse(reduceMotion) {
 
   const textEl = root.querySelector("[data-lang-text]")
   const flagEl = root.querySelector("[data-lang-flag]")
-  const labelEl = document.querySelector("[data-lang-label]")
-  if (!textEl || !flagEl || !labelEl) return
+  if (!textEl || !flagEl) return
 
   let index = 0
   let timer = 0
 
   const apply = (item, shown) => {
     flagEl.textContent = item.flag
-    labelEl.textContent = item.label
     textEl.textContent = shown
     textEl.setAttribute("dir", item.dir)
     textEl.setAttribute("lang", item.lang)
@@ -332,7 +330,6 @@ function initLangPulse(reduceMotion) {
   const typeLine = () => {
     const item = LANG_PULSE_LINES[index]
     flagEl.textContent = item.flag
-    labelEl.textContent = item.label
     textEl.setAttribute("dir", item.dir)
     textEl.setAttribute("lang", item.lang)
     root.setAttribute("lang", item.lang)

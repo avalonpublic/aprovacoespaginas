@@ -113,7 +113,7 @@
 
     <link rel="stylesheet" href="../variables.css?v=iki-28" />
     <link rel="stylesheet" href="../style.css?v=iki-28" />
-    <link rel="stylesheet" href="../iki-theme.css?v=iki-34" />
+    <link rel="stylesheet" href="../iki-theme.css?v=iki-35" />
 
     <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
     <script type="application/ld+json">
@@ -690,6 +690,15 @@
             Millions of people and purposes will have a friend beside them on
             the journey of self-discovery, joy and discipline.
           </p>
+          <p
+            class="lang-pulse__line"
+            id="lang-pulse-line"
+            aria-live="polite"
+            data-lang-pulse
+          >
+            <span class="lang-pulse__flag" data-lang-flag aria-hidden="true">🇧🇷</span>
+            <span class="lang-pulse__text" data-lang-text></span><span class="lang-pulse__caret" aria-hidden="true"></span>
+          </p>
           <ul class="world-flags" aria-label="IkiApp languages">
             <li><span role="img" aria-label="Português">🇧🇷</span></li>
             <li><span role="img" aria-label="English">🇬🇧</span></li>
@@ -837,31 +846,6 @@
         </div>
       </section>
 
-      <!-- Typewriter: encouragement in every app language -->
-      <section
-        class="lang-pulse padded-section reveal"
-        data-section="lang-pulse"
-        id="sec-lang-pulse"
-        aria-label="Encouragement in many languages"
-      >
-        <div class="wrap text-center">
-          <span class="saas-eyebrow">Made for the whole world</span>
-          <p class="lang-pulse__hint">The same spirit, in each person’s tongue.</p>
-          <p
-            class="lang-pulse__line"
-            id="lang-pulse-line"
-            aria-live="polite"
-            data-lang-pulse
-          >
-            <span class="lang-pulse__flag" data-lang-flag aria-hidden="true">🇧🇷</span>
-            <span class="lang-pulse__text" data-lang-text></span><span class="lang-pulse__caret" aria-hidden="true"></span>
-          </p>
-          <p class="lang-pulse__meta">
-            <span data-lang-label>Português</span>
-          </p>
-        </div>
-      </section>
-
       <footer class="saas-footer" data-section="footer-bar" id="sec-footer-bar">
         <div class="wrap saas-footer__grid">
           <div class="saas-footer__brand">
@@ -904,7 +888,7 @@
       </footer>
     </main>
 
-    <script src="../motion.js?v=iki-33"></script>
+    <script src="../motion.js?v=iki-35"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {
