@@ -244,18 +244,146 @@ document.addEventListener("DOMContentLoaded", () => {
   const els = document.querySelectorAll(".reveal")
   if (reducedMotion.matches || !("IntersectionObserver" in window)) {
     els.forEach((el) => el.classList.add("is-visible"))
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible")
+            io.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    )
+    els.forEach((el) => io.observe(el))
+  }
+
+  initLangPulse(reducedMotion.matches)
+})
+
+/** Frases de encorajamento nos idiomas do app — espírito local, não tradução literal. */
+const LANG_PULSE_LINES = [
+  { lang: "pt", flag: "🇧🇷", label: "Português", text: "Para quem ama disciplina", dir: "ltr" },
+  { lang: "es", flag: "🇪🇸", label: "Español", text: "Para quien cultiva la disciplina", dir: "ltr" },
+  { lang: "en", flag: "🇬🇧", label: "English", text: "For those who show up", dir: "ltr" },
+  { lang: "fi", flag: "🇫🇮", label: "Suomi", text: "SISU", dir: "ltr" },
+  { lang: "ja", flag: "🇯🇵", label: "日本語", text: "継続は力なり", dir: "ltr" },
+  { lang: "zh", flag: "🇨🇳", label: "中文", text: "积跬步以至千里", dir: "ltr" },
+  { lang: "ar", flag: "🇸🇦", label: "العربية", text: "من جدّ وجد", dir: "rtl" },
+  { lang: "it", flag: "🇮🇹", label: "Italiano", text: "La costanza vince", dir: "ltr" },
+  { lang: "de", flag: "🇩🇪", label: "Deutsch", text: "Dranbleiben", dir: "ltr" },
+  { lang: "fr", flag: "🇫🇷", label: "Français", text: "La constance fait la force", dir: "ltr" },
+  { lang: "hi", flag: "🇮🇳", label: "हिन्दी", text: "अनुशासन ही शक्ति है", dir: "ltr" },
+  { lang: "ms", flag: "🇲🇾", label: "Bahasa Melayu", text: "Disiplin membentuk kejayaan", dir: "ltr" },
+  { lang: "fa", flag: "🇮🇷", label: "فارسی", text: "پشتکار، رمز پیروزی", dir: "rtl" },
+]
+
+function initLangPulse(reduceMotion) {
+  const root = document.querySelector("[data-lang-pulse]")
+  if (!root) return
+
+  const textEl = root.querySelector("[data-lang-text]")
+  const flagEl = root.querySelector("[data-lang-flag]")
+  const labelEl = document.querySelector("[data-lang-label]")
+  if (!textEl || !flagEl || !labelEl) return
+
+  let index = 0
+  let timer = 0
+
+  const apply = (item, shown) => {
+    flagEl.textContent = item.flag
+    labelEl.textContent = item.label
+    textEl.textContent = shown
+    textEl.setAttribute("dir", item.dir)
+    textEl.setAttribute("lang", item.lang)
+    root.setAttribute("lang", item.lang)
+  }
+
+  const setStatic = (item) => {
+    apply(item, item.text)
+  }
+
+  if (reduceMotion) {
+    setStatic(LANG_PULSE_LINES[0])
+    let i = 0
+    window.setInterval(() => {
+      i = (i + 1) % LANG_PULSE_LINES.length
+      setStatic(LANG_PULSE_LINES[i])
+    }, 3200)
     return
   }
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible")
-          io.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-  )
-  els.forEach((el) => io.observe(el))
-})
+
+  const typeSpeed = 55
+  const eraseSpeed = 28
+  const holdMs = 1700
+  const gapMs = 380
+
+  const clearTimer = () => {
+    if (timer) window.clearTimeout(timer)
+    timer = 0
+  }
+
+  const schedule = (fn, ms) => {
+    clearTimer()
+    timer = window.setTimeout(fn, ms)
+  }
+
+  const typeLine = () => {
+    const item = LANG_PULSE_LINES[index]
+    flagEl.textContent = item.flag
+    labelEl.textContent = item.label
+    textEl.setAttribute("dir", item.dir)
+    textEl.setAttribute("lang", item.lang)
+    root.setAttribute("lang", item.lang)
+    textEl.textContent = ""
+    let i = 0
+
+    const tick = () => {
+      i += 1
+      textEl.textContent = item.text.slice(0, i)
+      if (i < item.text.length) {
+        schedule(tick, typeSpeed)
+        return
+      }
+      schedule(eraseLine, holdMs)
+    }
+    tick()
+  }
+
+  const eraseLine = () => {
+    const item = LANG_PULSE_LINES[index]
+    let i = item.text.length
+
+    const tick = () => {
+      i -= 1
+      textEl.textContent = item.text.slice(0, Math.max(0, i))
+      if (i > 0) {
+        schedule(tick, eraseSpeed)
+        return
+      }
+      index = (index + 1) % LANG_PULSE_LINES.length
+      schedule(typeLine, gapMs)
+    }
+    tick()
+  }
+
+  const section = root.closest("section")
+  const start = () => typeLine()
+
+  if (section && "IntersectionObserver" in window) {
+    let started = false
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting) || started) return
+        started = true
+        io.disconnect()
+        start()
+      },
+      { threshold: 0.25 },
+    )
+    io.observe(section)
+  } else {
+    start()
+  }
+}

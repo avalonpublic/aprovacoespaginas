@@ -113,7 +113,7 @@
 
     <link rel="stylesheet" href="./variables.css?v=iki-28" />
     <link rel="stylesheet" href="./style.css?v=iki-28" />
-    <link rel="stylesheet" href="./iki-theme.css?v=iki-32" />
+    <link rel="stylesheet" href="./iki-theme.css?v=iki-33" />
 
     <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
     <script type="application/ld+json">
@@ -369,7 +369,7 @@
             <p class="saas-body">
               Chega de planejar e não fazer nada. O IkiApp protege a sua atenção
               para você executar o que importa, enquanto você descobre e evolui
-              um tamagotchi de propósito que reage ao seu foco de verdade.
+              um tamagotchi que reage ao seu propósito e ao seu foco de verdade.
             </p>
             <div class="hero-ascent__actions">
               <a class="btn btn--cyan" href="#sec-cta-bottom">Garantir minha vaga no Beta</a>
@@ -841,6 +841,31 @@
         </div>
       </section>
 
+      <!-- Typewriter: encorajamento em cada idioma do app -->
+      <section
+        class="lang-pulse padded-section reveal"
+        data-section="lang-pulse"
+        id="sec-lang-pulse"
+        aria-label="Encorajamento em vários idiomas"
+      >
+        <div class="wrap text-center">
+          <span class="saas-eyebrow">Feito para o mundo todo</span>
+          <p class="lang-pulse__hint">O mesmo espírito, na língua de cada pessoa.</p>
+          <p
+            class="lang-pulse__line"
+            id="lang-pulse-line"
+            aria-live="polite"
+            data-lang-pulse
+          >
+            <span class="lang-pulse__flag" data-lang-flag aria-hidden="true">🇧🇷</span>
+            <span class="lang-pulse__text" data-lang-text></span><span class="lang-pulse__caret" aria-hidden="true"></span>
+          </p>
+          <p class="lang-pulse__meta">
+            <span data-lang-label>Português</span>
+          </p>
+        </div>
+      </section>
+
       <footer class="saas-footer" data-section="footer-bar" id="sec-footer-bar">
         <div class="wrap saas-footer__grid">
           <div class="saas-footer__brand">
@@ -883,7 +908,7 @@
       </footer>
     </main>
 
-    <script src="./motion.js?v=iki-28"></script>
+    <script src="./motion.js?v=iki-33"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {

@@ -1112,6 +1112,89 @@ body.ds-saas {
   opacity: 0.9;
 }
 
+/* ——— Typewriter / encorajamento multilíngue ——— */
+.lang-pulse {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(123, 118, 196, 0.22), transparent 55%),
+    linear-gradient(180deg, rgba(10, 12, 28, 0.2), transparent 70%);
+}
+
+.lang-pulse__hint {
+  margin: 0.75rem auto 0;
+  max-width: 28rem;
+  color: var(--color-ash, #a8aec4);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.lang-pulse__line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.75rem;
+  min-height: 4.5rem;
+  margin: 1.75rem auto 0;
+  max-width: 42rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 4.2vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-pearl, #f5f2ff);
+}
+
+.lang-pulse__flag {
+  font-size: 1.15em;
+  line-height: 1;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.lang-pulse__text {
+  text-wrap: balance;
+}
+
+.lang-pulse__text[dir="rtl"] {
+  unicode-bidi: plaintext;
+}
+
+.lang-pulse__caret {
+  display: inline-block;
+  width: 0.08em;
+  height: 1.05em;
+  margin-left: 0.12em;
+  background: var(--secondary-soft, var(--color-mint));
+  border-radius: 2px;
+  transform: translateY(0.08em);
+  animation: lang-pulse-blink 0.9s steps(1, end) infinite;
+}
+
+.lang-pulse__meta {
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-fog, #7d849c);
+}
+
+@keyframes lang-pulse-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-pulse__caret {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+
 /* ——— Idiomas do app ——— */
 .world-flags {
   display: flex;
