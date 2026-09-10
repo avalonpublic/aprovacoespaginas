@@ -11,8 +11,6 @@
 
 .saas-display {
   letter-spacing: var(--tracking-display);
-  font-weight: 700;
-  line-height: 1.05;
 }
 
 body.ds-saas {
@@ -138,8 +136,6 @@ body.ds-saas {
 
   .hero-ascent .saas-display {
     margin-bottom: 0.9rem;
-    font-size: clamp(2rem, 3.6vw, 3.25rem);
-    line-height: 1.08;
   }
 
   .hero-ascent .saas-body {
@@ -177,7 +173,7 @@ body.ds-saas {
   }
 }
 
-/* Telas baixas: reduz tipografia/phone, mantém ar — não cola na dobra. */
+/* Telas baixas: reduz o phone e o ar, sem mudar o tipo do título. */
 @media (min-width: 960px) and (max-height: 820px) {
   .hero-ascent {
     padding-block: 1.35rem 1.75rem;
@@ -185,10 +181,6 @@ body.ds-saas {
 
   .hero-ascent__inner {
     gap: 1.5rem;
-  }
-
-  .hero-ascent .saas-display {
-    font-size: clamp(1.75rem, 3.1vw, 2.6rem);
   }
 
   .hero-ascent .saas-body {
@@ -214,10 +206,6 @@ body.ds-saas {
   .hero-ascent {
     min-height: 0;
     padding-block: 1.1rem 1.4rem;
-  }
-
-  .hero-ascent .saas-display {
-    font-size: clamp(1.55rem, 2.9vw, 2.2rem);
   }
 
   .hero-ascent__stage {
@@ -1293,7 +1281,7 @@ body.ds-saas {
   align-items: center;
   gap: 0.7rem 0.95rem;
   list-style: none;
-  margin: 1.75rem 0 0;
+  margin: 0.15rem 0 1.5rem;
   padding: 0;
   font-size: 2rem;
   line-height: 1;
@@ -1470,7 +1458,7 @@ body.ds-saas {
   .world-flags {
     gap: 0.55rem 0.7rem;
     font-size: 1.65rem;
-    margin-top: 1.35rem;
+    margin: 0.1rem 0 1.2rem;
   }
 
   .scarcity-grid {
