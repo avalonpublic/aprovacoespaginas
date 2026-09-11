@@ -943,27 +943,52 @@
 
         const form = document.getElementById("waitlist-form");
         const msg = document.getElementById("waitlist-msg");
-        form?.addEventListener("submit", (event) => {
+        form?.addEventListener("submit", async (event) => {
           event.preventDefault();
           const emailInput = document.getElementById("waitlist-email");
+          const submitBtn = form.querySelector('button[type="submit"]');
           const email = (emailInput?.value || "").trim().toLowerCase();
           if (!email || !email.includes("@")) {
             if (msg) msg.textContent = "Enter a valid email.";
             return;
           }
+          if (submitBtn) submitBtn.disabled = true;
+          if (msg) msg.textContent = "Sending…";
           try {
-            const key = "iki.waitlist";
-            const prev = JSON.parse(localStorage.getItem(key) || "[]");
-            if (!prev.includes(email)) prev.push(email);
-            localStorage.setItem(key, JSON.stringify(prev));
+            const res = await fetch("/api/waitlist", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email }),
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok || !data.ok) {
+              if (msg) {
+                msg.textContent =
+                  "Could not send right now. Try again or email ikiapp.mkt@gmail.com.";
+              }
+              return;
+            }
+            try {
+              const key = "iki.waitlist";
+              const prev = JSON.parse(localStorage.getItem(key) || "[]");
+              if (!prev.includes(email)) prev.push(email);
+              localStorage.setItem(key, JSON.stringify(prev));
+            } catch (_) {
+              /* ignore */
+            }
+            if (typeof fbq === "function") fbq("track", "Lead");
+            if (typeof gtag === "function") gtag("event", "generate_lead");
+            sendToBackend("Lead", { email });
+            if (msg) msg.textContent = "You are on the list. See you at Iki.";
+            form.reset();
           } catch (_) {
-            /* ignore */
+            if (msg) {
+              msg.textContent =
+                "Could not send right now. Try again or email ikiapp.mkt@gmail.com.";
+            }
+          } finally {
+            if (submitBtn) submitBtn.disabled = false;
           }
-          if (typeof fbq === "function") fbq("track", "Lead");
-          if (typeof gtag === "function") gtag("event", "generate_lead");
-          sendToBackend("Lead", { email });
-          if (msg) msg.textContent = "You are on the list. See you at Iki.";
-          form.reset();
         });
       });
     </script>
