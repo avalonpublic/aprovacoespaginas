@@ -10,6 +10,6 @@ Tom público atual: **O Jogo da Sua Vida Real**
 | `foco` | cronômetro / blocos 25 ou 50 |
 | `ikis` | guardião (surge / cresce / some) |
 | `features-grid` | 4 ferramentas |
-| `world-langs` | “Feito para o mundo todo” + bandeiras dos 13 idiomas |
+| `world-langs` | “Feito para o mundo todo” + bandeiras dos 14 idiomas |
 | Nav | Seletor 🇧🇷 PT / 🇬🇧 EN (`/en/`) |
 | `beta` / `faq` / `cta` | ciclo 100 + FAQ SEO |

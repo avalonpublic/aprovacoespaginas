@@ -277,6 +277,7 @@ const LANG_PULSE_LINES = [
   { lang: "hi", flag: "🇮🇳", text: "अनुशासन ही शक्ति है", dir: "ltr" },
   { lang: "ms", flag: "🇲🇾", text: "Disiplin membentuk kejayaan", dir: "ltr" },
   { lang: "fa", flag: "🇮🇷", text: "پشتکار، رمز پیروزی", dir: "rtl" },
+  { lang: "ru", flag: "🇷🇺", text: "Дорогу осилит идущий", dir: "ltr" },
 ]
 
 function initLangPulse(reduceMotion) {

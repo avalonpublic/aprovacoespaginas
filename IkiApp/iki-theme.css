@@ -614,6 +614,86 @@ body.ds-saas {
   object-view-box: inset(1.87% 12.42% 0% 18.95%);
 }
 
+/* Mobile 3 colunas: o recorte não uniformiza no celular.
+   Percentuais medidos no PNG que está no ar, para a altura do corpo ficar parecida. */
+@media (max-width: 699px) {
+  .iki-tile img {
+    object-view-box: none;
+  }
+  .iki-tile img[src*="tsuru.png"] {
+    width: 74%;
+    height: 74%;
+    max-width: 74%;
+    max-height: 74%;
+  }
+  .iki-tile img[src*="kitsune.png"] {
+    width: 70%;
+    height: 70%;
+    max-width: 70%;
+    max-height: 70%;
+  }
+  .iki-tile img[src*="neko.png"] {
+    width: 65%;
+    height: 65%;
+    max-width: 65%;
+    max-height: 65%;
+  }
+  .iki-tile img[src*="panda.png"] {
+    width: 73%;
+    height: 73%;
+    max-width: 73%;
+    max-height: 73%;
+  }
+  .iki-tile img[src*="coruja.png"] {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .iki-tile img[src*="tiger.png"] {
+    width: 65%;
+    height: 65%;
+    max-width: 65%;
+    max-height: 65%;
+  }
+  .iki-tile img[src*="falcao.png"] {
+    width: 68%;
+    height: 68%;
+    max-width: 68%;
+    max-height: 68%;
+  }
+  .iki-tile img[src*="kame.png"] {
+    width: 86%;
+    height: 86%;
+    max-width: 86%;
+    max-height: 86%;
+  }
+  .iki-tile img[src*="dragao.png"] {
+    width: 96%;
+    height: 96%;
+    max-width: 96%;
+    max-height: 96%;
+  }
+  .iki-tile img[src*="koi.png"] {
+    width: 73%;
+    height: 73%;
+    max-width: 73%;
+    max-height: 73%;
+  }
+  .iki-tile img[src*="cavalo.png"] {
+    width: 96%;
+    height: 96%;
+    max-width: 96%;
+    max-height: 96%;
+  }
+  .iki-tile img[src*="lobo.png"] {
+    width: 88%;
+    height: 88%;
+    max-width: 88%;
+    max-height: 88%;
+  }
+}
+
 /* ——— Feature rhythm (glass, not heavy cards) ——— */
 .feature-grid {
   gap: 1rem;
@@ -1212,7 +1292,7 @@ body.ds-saas {
   opacity: 0.9;
 }
 
-/* ——— Typewriter dentro de “Em 13 idiomas” (sem bloco/fundo próprio) ——— */
+/* ——— Typewriter dentro de “Em 14 idiomas” (sem bloco/fundo próprio) ——— */
 .lang-pulse__line {
   display: flex;
   align-items: center;
