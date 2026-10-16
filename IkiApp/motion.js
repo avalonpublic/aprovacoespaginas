@@ -241,26 +241,108 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  const els = document.querySelectorAll(".reveal")
-  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
-    els.forEach((el) => el.classList.add("is-visible"))
-  } else {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible")
-            io.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    )
-    els.forEach((el) => io.observe(el))
-  }
-
+  initReveals(reducedMotion.matches)
   initLangPulse(reducedMotion.matches)
 })
+
+/** Filhos que entram em cascata dentro de cada .reveal */
+const REVEAL_CHILD_SELECTOR = [
+  ".hero-ascent__kicker",
+  ".hero-ascent__copy > .saas-display",
+  ".hero-ascent__copy > .saas-body",
+  ".hero-ascent__actions",
+  ".hero-ascent__note",
+  ".hero-ascent__phone",
+  ".ascent-split__copy > .saas-eyebrow",
+  ".ascent-split__copy > .saas-h1",
+  ".roda-frame",
+  ".step-card",
+  ".phone",
+  ".product-proof > div > .saas-eyebrow",
+  ".product-proof > div > .saas-h1",
+  ".product-proof > div > .saas-body",
+  ".proof-item",
+  ".text-center > .saas-eyebrow",
+  ".text-center > .saas-h1",
+  ".text-center > .saas-body",
+  ".text-center.mb-40 > .saas-eyebrow",
+  ".text-center.mb-40 > .saas-h1",
+  ".text-center.mb-40 > .saas-body",
+  ".feature-card",
+  ".iki-tile",
+  ".world-flags li",
+  ".lang-pulse__line",
+  ".compliance-card",
+  ".cta-panel > .saas-h1",
+  ".cta-panel > .saas-body",
+  ".iki-waitlist",
+  ".iki-faq__item",
+  ".section-cta",
+  ".nav-bar__brand",
+  ".nav-bar__langs",
+  ".nav-bar__toggle",
+  ".nav-bar__link",
+  ".nav-bar__actions .btn",
+  ".saas-footer__brand",
+  ".saas-footer__col",
+  ".saas-footer__meta",
+  ".methz-credit",
+].join(", ")
+
+function markRevealChildren(root) {
+  const seen = new Set()
+  const kids = []
+  root.querySelectorAll(REVEAL_CHILD_SELECTOR).forEach((el) => {
+    if (seen.has(el)) return
+    if (el.closest(".reveal") !== root && el !== root) return
+    // Evita marcar um nó cujo pai direto já é reveal-child (ex.: body dentro de card).
+    if (el.parentElement?.classList.contains("reveal-child")) return
+    seen.add(el)
+    kids.push(el)
+  })
+  kids.forEach((el, i) => {
+    el.classList.add("reveal-child")
+    el.style.setProperty("--reveal-i", String(i))
+  })
+  if (kids.length) root.classList.add("reveal--stagger")
+  return kids.length
+}
+
+function initReveals(reduceMotion) {
+  const nav = document.querySelector(".nav-bar")
+  const footer = document.querySelector(".saas-footer")
+  ;[nav, footer].forEach((el) => {
+    if (el && !el.classList.contains("reveal")) el.classList.add("reveal")
+  })
+
+  document.querySelectorAll(".reveal").forEach((root) => markRevealChildren(root))
+
+  const els = document.querySelectorAll(".reveal")
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    els.forEach((el) => el.classList.add("is-visible"))
+    return
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add("is-visible")
+        io.unobserve(entry.target)
+      })
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -36px 0px" },
+  )
+
+  els.forEach((el) => {
+    // Nav já na viewport: dispara logo.
+    if (el.classList.contains("nav-bar")) {
+      requestAnimationFrame(() => el.classList.add("is-visible"))
+      return
+    }
+    io.observe(el)
+  })
+}
 
 /** Frases de encorajamento nos idiomas do app — espírito local, não tradução literal. */
 const LANG_PULSE_LINES = [

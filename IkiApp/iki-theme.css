@@ -1558,3 +1558,243 @@ body.ds-saas {
   }
 }
 
+/* ——— Entrada em cascata (filhos de .reveal) ——— */
+.reveal.reveal--stagger {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-child {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0ms;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible .reveal-child {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--reveal-i, 0) * 55ms);
+}
+
+/* Caixas: entrada mais marcada que texto solto */
+.reveal-child.step-card,
+.reveal-child.feature-card,
+.reveal-child.proof-item,
+.reveal-child.iki-tile,
+.reveal-child.compliance-card,
+.reveal-child.iki-faq__item,
+.reveal-child.phone,
+.reveal-child.roda-frame,
+.reveal-child.cta-panel {
+  opacity: 0;
+  transform: translateY(44px) scale(0.92);
+  filter: blur(4px);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible .reveal-child.step-card,
+.reveal.is-visible .reveal-child.feature-card,
+.reveal.is-visible .reveal-child.proof-item,
+.reveal.is-visible .reveal-child.iki-tile,
+.reveal.is-visible .reveal-child.compliance-card,
+.reveal.is-visible .reveal-child.iki-faq__item,
+.reveal.is-visible .reveal-child.phone,
+.reveal.is-visible .reveal-child.roda-frame,
+.reveal.is-visible .reveal-child.cta-panel {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition-delay: calc(var(--reveal-i, 0) * 85ms);
+}
+
+.iki-gallery .reveal-child.iki-tile {
+  transform: translateY(36px) scale(0.9);
+  transition-duration: 0.7s;
+}
+
+.iki-gallery .reveal.is-visible .reveal-child.iki-tile {
+  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+}
+
+.nav-bar.reveal .reveal-child {
+  transform: translateY(-8px);
+}
+
+.nav-bar.reveal.is-visible .reveal-child {
+  transform: none;
+  transition-delay: calc(var(--reveal-i, 0) * 45ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-child,
+  .reveal-child.step-card,
+  .reveal-child.feature-card,
+  .reveal-child.proof-item,
+  .reveal-child.iki-tile,
+  .reveal-child.compliance-card,
+  .reveal-child.iki-faq__item,
+  .reveal-child.phone,
+  .reveal-child.roda-frame,
+  .reveal-child.cta-panel {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .reveal.is-visible .reveal-child,
+  .reveal.is-visible .reveal-child.step-card,
+  .reveal.is-visible .reveal-child.feature-card,
+  .reveal.is-visible .reveal-child.proof-item,
+  .reveal.is-visible .reveal-child.iki-tile,
+  .reveal.is-visible .reveal-child.compliance-card,
+  .reveal.is-visible .reveal-child.iki-faq__item,
+  .reveal.is-visible .reveal-child.phone,
+  .reveal.is-visible .reveal-child.roda-frame,
+  .reveal.is-visible .reveal-child.cta-panel,
+  .iki-gallery .reveal.is-visible .reveal-child.iki-tile,
+  .nav-bar.reveal.is-visible .reveal-child {
+    transition-delay: 0ms;
+  }
+}
+
+/* ——— Overs extras (FAQ, flags, phones, nav, waitlist) ——— */
+.iki-faq__item {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.iki-faq__item summary {
+  transition: color 0.25s ease;
+}
+
+.iki-faq__item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(184, 232, 228, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 14px 32px -24px rgba(0, 0, 0, 0.55);
+}
+
+.world-flags li {
+  display: inline-flex;
+  transition: transform 0.28s ease, filter 0.28s ease;
+  cursor: default;
+}
+
+.world-flags li:hover {
+  transform: translateY(-3px) scale(1.12);
+  filter: drop-shadow(0 6px 12px rgba(255, 217, 168, 0.35));
+}
+
+.phone {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.phone-stack:hover .phone--front {
+  transform: translate(12%, -6%) rotate(2deg);
+  box-shadow: 0 28px 56px -28px rgba(255, 217, 168, 0.4);
+  border-color: rgba(255, 217, 168, 0.55);
+}
+
+.phone-stack:hover .phone--back {
+  transform: translate(-20%, 4%) rotate(-8deg);
+  opacity: 1;
+}
+
+@media (max-width: 699px) {
+  .phone-stack:hover .phone--front {
+    transform: translateY(-6px);
+  }
+}
+
+.nav-bar__lang {
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.nav-bar__lang:hover,
+.nav-bar__lang:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.06);
+  background: color-mix(in oklch, white 14%, transparent);
+  box-shadow: inset 0 0 0 1px rgba(177, 166, 246, 0.45);
+}
+
+.nav-bar__toggle {
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.nav-bar__toggle:hover,
+.nav-bar__toggle:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(184, 232, 228, 0.65);
+  background: color-mix(in oklch, white 12%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.iki-waitlist input[type="email"] {
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.iki-waitlist input[type="email"]:hover {
+  border-color: rgba(184, 232, 228, 0.45);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.btn {
+  transition:
+    transform 0.22s ease,
+    filter 0.22s ease,
+    box-shadow 0.25s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.btn--cyan:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 14px 34px -12px rgba(61, 155, 155, 0.75);
+}
+
+.btn--ghost:hover {
+  transform: translateY(-2px);
+  border-color: rgba(184, 232, 228, 0.55);
+  background: color-mix(in oklch, white 10%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iki-faq__item:hover,
+  .world-flags li:hover,
+  .phone-stack:hover .phone--front,
+  .phone-stack:hover .phone--back,
+  .nav-bar__lang:hover,
+  .nav-bar__toggle:hover,
+  .btn--cyan:hover,
+  .btn--ghost:hover {
+    transform: none;
+  }
+}
