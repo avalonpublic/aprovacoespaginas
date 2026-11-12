@@ -33,7 +33,7 @@
   <meta property="og:title" content="Hoy Óptica — Ótica Premium em Uberlândia, MG">
   <meta property="og:description" content="Consultoria de imagem, armações exclusivas e lentes de alta tecnologia no coração do centro de Uberlândia. Venha viver a experiência Hoy.">
   <meta property="og:url" content="https://www.hoyoptica.com.br/">
-  <meta property="og:image" content="https://www.hoyoptica.com.br/FullbannerImagem1.png">
+  <meta property="og:image" content="https://www.hoyoptica.com.br/FullbannerImagem1.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
@@ -46,7 +46,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hoy Óptica — Ótica Premium em Uberlândia, MG">
   <meta name="twitter:description" content="Consultoria de imagem, armações exclusivas e lentes de alta tecnologia no coração do centro de Uberlândia.">
-  <meta name="twitter:image" content="https://www.hoyoptica.com.br/FullbannerImagem1.png">
+  <meta name="twitter:image" content="https://www.hoyoptica.com.br/FullbannerImagem1.webp">
 
   <!-- ─── SCHEMA.ORG (JSON-LD) — Google / IA Generativa / GEO ─── -->
   <script type="application/ld+json">
@@ -57,7 +57,7 @@
     "description": "Ótica premium no coração do centro de Uberlândia, MG. Consultoria de imagem, armações exclusivas e lentes de alta tecnologia com atendimento humanizado.",
     "url": "https://www.hoyoptica.com.br",
     "logo": "https://www.hoyoptica.com.br/favicon.png",
-    "image": "https://www.hoyoptica.com.br/FullbannerImagem1.png",
+    "image": "https://www.hoyoptica.com.br/FullbannerImagem1.webp",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -115,6 +115,8 @@
   </script>
 
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preload" as="image" href="FullbannerImagem1.webp" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" as="image" href="FullbannerImagem1Mobile.webp" media="(max-width: 768px)" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -392,17 +394,15 @@
       background-size: cover; background-position: center;
     }
     .hero-bg.img1 {
-      background-image: url('FullbannerImagem1.png');
+      background-image: url('FullbannerImagem1.webp');
       z-index: 0; /* Imagem 1 no fundo */
     }
     .hero-bg.img2 {
-      background-image: url('FullbannerImagem2.png');
       z-index: 1; /* Imagem 2 no meio */
       opacity: 0;
       animation: showImg2 12s infinite; 
     }
     .hero-bg.img3 {
-      background-image: url('FullbannerImagem3.png');
       z-index: 2; /* Imagem 3 no topo */
       opacity: 0;
       animation: showImg3 12s infinite; 
@@ -1646,6 +1646,13 @@
       padding-bottom: 0 !important;
     }
 
+    /* Desktop: a tag desce para perto do título e sai da faixa clara do banner */
+    @media (min-width: 769px) {
+      #hero .hero-eyebrow {
+        margin-bottom: -16px !important;
+      }
+    }
+
     /* Espaço entre o TÍTULO e o SUBTÍTULO */
     #hero .hero-headline {
       margin-bottom: 15px !important; /* Aproxima o texto de baixo */
@@ -1821,7 +1828,7 @@
     .marquee-background-fixed {
       position: absolute;
       inset: 0;
-      background-image: url('Imag1.png') !important;
+      background-image: url('Imag1.webp') !important;
       background-size: cover;
       background-position: center;
       z-index: 1;
@@ -1845,9 +1852,9 @@
     }
 
     /* Configuração individual das imagens */
-    .m-bg-slide.img1 { background-image: url('Imag1.png'); animation-delay: 0s; }
-    .m-bg-slide.img2 { background-image: url('Imag2.png'); animation-delay: 4s; }
-    .m-bg-slide.img3 { background-image: url('Imag3.png'); animation-delay: 8s; }
+    .m-bg-slide.img1 { animation-delay: 0s; }
+    .m-bg-slide.img2 { animation-delay: 4s; }
+    .m-bg-slide.img3 { animation-delay: 8s; }
 
     /* Efeito de Flash na troca */
     .m-bg-flash {
@@ -2141,13 +2148,7 @@
 
       /* FULLBANNER: Substituir imagens de fundo pelas versões mobile */
       .hero-bg.img1 {
-        background-image: url('FullbannerImagem1Mobile.png') !important;
-      }
-      .hero-bg.img2 {
-        background-image: url('FullbannerImagem2Mobile.png') !important;
-      }
-      .hero-bg.img3 {
-        background-image: url('FullbannerImagem3Mobile.png') !important;
+        background-image: url('FullbannerImagem1Mobile.webp') !important;
       }
 
       /* SEÇÃO LOCALIZAÇÃO: Aumentar altura das imagens */
@@ -2527,7 +2528,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">
-    <img src="HoyOptica.png" alt="Hoy Óptica">
+    <img src="HoyOptica.webp" alt="Hoy Óptica" decoding="async">
   </a>
   
   <div class="nav-center">
@@ -2600,20 +2601,20 @@
   <div class="localizacao-fotos">
     
     <div class="loja-foto reveal-scale" data-delay="1">
-      <img src="Foto Loja 2.jpeg" class="img-default" alt="Ambiente interno da Hoy Optica" loading="lazy">
-      <img src="imgmudada1.png" class="img-hover" alt="Detalhe ambiente 1" loading="lazy">
+      <img src="Foto Loja 2.webp" class="img-default" alt="Ambiente interno da Hoy Optica" loading="lazy" decoding="async">
+      <img src="imgmudada1.webp" class="img-hover" alt="Detalhe ambiente 1" loading="lazy" decoding="async">
       <div class="loja-foto-overlay"><span>Nosso espaco</span></div>
     </div>
     
     <div class="loja-foto reveal-scale" data-delay="2">
-      <img src="Foto Loja 1.jpeg" class="img-default" alt="Vitrine de armacoes Hoy" loading="lazy">
-      <img src="imgmudada2.png" class="img-hover" alt="Detalhe vitrine 2" loading="lazy">
+      <img src="Foto Loja 1.webp" class="img-default" alt="Vitrine de armacoes Hoy" loading="lazy" decoding="async">
+      <img src="imgmudada2.webp" class="img-hover" alt="Detalhe vitrine 2" loading="lazy" decoding="async">
       <div class="loja-foto-overlay"><span>Nossa curadoria</span></div>
     </div>
     
     <div class="loja-foto reveal-scale" data-delay="3">
-      <img src="Imagemsecao3.png" class="img-default" alt="Atendimento personalizado Hoy" loading="lazy">
-      <img src="imgmudada3.png" class="img-hover" alt="Detalhe atendimento 3" loading="lazy">
+      <img src="Imagemsecao3.webp" class="img-default" alt="Atendimento personalizado Hoy" loading="lazy" decoding="async">
+      <img src="imgmudada3.webp" class="img-hover" alt="Detalhe atendimento 3" loading="lazy" decoding="async">
       <div class="loja-foto-overlay"><span>Nosso atendimento</span></div>
     </div>
 
@@ -2632,19 +2633,19 @@
 
       <div class="video-card reveal" data-delay="1">
         <div class="video-wrapper">
-          <video src="video1site.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <video src="video1site.mp4" poster="video1-poster.webp" muted loop playsinline preload="none"></video>
         </div>
       </div>
 
       <div class="video-card reveal" data-delay="2">
         <div class="video-wrapper">
-          <video src="video2site.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <video src="video2site.mp4" poster="video2-poster.webp" muted loop playsinline preload="none"></video>
         </div>
       </div>
 
       <div class="video-card reveal" data-delay="3">
         <div class="video-wrapper">
-          <video src="video3site.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <video src="video3site.mp4" poster="video3-poster.webp" muted loop playsinline preload="none"></video>
         </div>
       </div>
 
@@ -2705,9 +2706,9 @@
     <div class="estilos-sticky-col">
       <div class="sticky-content-group" style="width: 100%; max-width: 1200px;">
         <div class="sticky-image-wrapper">
-          <img src="Secao2IMG1.png" class="estilo-img active" id="img-estilo-1" alt="Estilo Clássico">
-          <img src="Secao2IMG2.png" class="estilo-img" id="img-estilo-2" alt="Estilo Solar">
-          <img src="Secao2IMG3.png" class="estilo-img" id="img-estilo-3" alt="Estilo Ousado">
+          <img src="Secao2IMG1.webp" class="estilo-img active" id="img-estilo-1" alt="Estilo Clássico" decoding="async" loading="lazy">
+          <img src="Secao2IMG2.webp" class="estilo-img" id="img-estilo-2" alt="Estilo Solar" decoding="async" loading="lazy">
+          <img src="Secao2IMG3.webp" class="estilo-img" id="img-estilo-3" alt="Estilo Ousado" decoding="async" loading="lazy">
         </div>
         <div class="scroll-indicator-wrapper">
           <div class="indicator-label" id="indicatorLabel">CLÁSSICO</div>
@@ -2745,7 +2746,7 @@
 
     <div class="estilo-mobile-card">
       <div class="estilo-mobile-img-wrap">
-        <img src="Secao2IMG1.png" alt="Estilo Clássico">
+        <img src="Secao2IMG1.webp" alt="Estilo Clássico" decoding="async" loading="lazy">
       </div>
       <div class="estilo-mobile-text">
         <div class="estilo-subtitle">Grau · Clássico</div>
@@ -2757,7 +2758,7 @@
 
     <div class="estilo-mobile-card">
       <div class="estilo-mobile-img-wrap">
-        <img src="Secao2IMG2.png" alt="Estilo Solar">
+        <img src="Secao2IMG2.webp" alt="Estilo Solar" decoding="async" loading="lazy">
       </div>
       <div class="estilo-mobile-text">
         <div class="estilo-subtitle">Solar · Editorial</div>
@@ -2769,7 +2770,7 @@
 
     <div class="estilo-mobile-card">
       <div class="estilo-mobile-img-wrap">
-        <img src="Secao2IMG3.png" alt="Estilo Ousado">
+        <img src="Secao2IMG3.webp" alt="Estilo Ousado" decoding="async" loading="lazy">
       </div>
       <div class="estilo-mobile-text">
         <div class="estilo-subtitle">Design · Ousado</div>
@@ -2811,7 +2812,7 @@
 
       <div class="product-card reveal" data-delay="1" data-category="grau destaque">
         <div class="product-img-wrap">
-          <img src="Secao4IMG1.png" alt="Produto Hoy 1" loading="lazy">
+          <img src="Secao4IMG1.webp" alt="Produto Hoy 1" loading="lazy" decoding="async">
           <div class="product-tag">Destaque</div>
           <div class="product-overlay">
             <a href="https://www.skill.avalonx8.com/r/VDSPQNfq" target="_blank" class="product-overlay-btn">
@@ -2829,7 +2830,7 @@
 
       <div class="product-card reveal" data-delay="2" data-category="solar destaque">
         <div class="product-img-wrap">
-          <img src="Secao4IMG2.png" alt="Produto Hoy 2" loading="lazy">
+          <img src="Secao4IMG2.webp" alt="Produto Hoy 2" loading="lazy" decoding="async">
           <div class="product-tag">Solar</div>
           <div class="product-overlay">
             <a href="https://www.skill.avalonx8.com/r/djqSqFt5" target="_blank" class="product-overlay-btn">
@@ -2847,7 +2848,7 @@
 
       <div class="product-card reveal" data-delay="3" data-category="grau">
         <div class="product-img-wrap">
-          <img src="Secao4IMG3.png" alt="Produto Hoy 3" loading="lazy">
+          <img src="Secao4IMG3.webp" alt="Produto Hoy 3" loading="lazy" decoding="async">
           <div class="product-overlay">
             <a href="https://www.skill.avalonx8.com/r/cUsmTFnn" target="_blank" class="product-overlay-btn">
   Quero esse modelo
@@ -2864,7 +2865,7 @@
 
       <div class="product-card reveal" data-delay="1" data-category="solar">
         <div class="product-img-wrap">
-          <img src="Secao4IMG4.png" alt="Produto Hoy 4" loading="lazy">
+          <img src="Secao4IMG4.webp" alt="Produto Hoy 4" loading="lazy" decoding="async">
           <div class="product-tag">Solar</div>
           <div class="product-overlay">
             <a href="https://www.skill.avalonx8.com/r/T6yKvAhl" target="_blank" class="product-overlay-btn">
@@ -2882,7 +2883,7 @@
 
       <div class="product-card reveal" data-delay="2" data-category="grau destaque">
         <div class="product-img-wrap">
-          <img src="Secao4IMG5.png" alt="Produto Hoy 5" loading="lazy">
+          <img src="Secao4IMG5.webp" alt="Produto Hoy 5" loading="lazy" decoding="async">
           <div class="product-tag">Destaque</div>
           <div class="product-overlay">
            <a href="https://www.skill.avalonx8.com/r/95UPp0i3" target="_blank" class="product-overlay-btn">
@@ -2900,7 +2901,7 @@
 
       <div class="product-card reveal" data-delay="3" data-category="solar destaque">
         <div class="product-img-wrap">
-          <img src="Secao4IMG6.png" alt="Produto Hoy 6" loading="lazy">
+          <img src="Secao4IMG6.webp" alt="Produto Hoy 6" loading="lazy" decoding="async">
           <div class="product-overlay">
             <a href="https://www.skill.avalonx8.com/r/7YLYGte5" target="_blank" class="product-overlay-btn">
   Quero esse modelo
@@ -2917,7 +2918,7 @@
 
 <div class="product-card reveal" data-delay="3" data-category="solar">
         <div class="product-img-wrap">
-          <img src="Secao4IMG7.png" alt="Produto Hoy 9" loading="lazy">
+          <img src="Secao4IMG7.webp" alt="Produto Hoy 9" loading="lazy" decoding="async">
           <div class="product-tag">Solar</div>
           <div class="product-overlay">
             <a href="https://www.skill.avalonx8.com/r/LxdTYusr" target="_blank" class="product-overlay-btn">
@@ -2935,7 +2936,7 @@
 
       <div class="product-card reveal" data-delay="4" data-category="grau">
         <div class="product-img-wrap">
-          <img src="Secao4IMG8.png" alt="Produto Hoy 10" loading="lazy">
+          <img src="Secao4IMG8.webp" alt="Produto Hoy 10" loading="lazy" decoding="async">
           <div class="product-overlay">
            <a href="https://www.skill.avalonx8.com/r/liwmkPsQ" target="_blank" class="product-overlay-btn">
   Quero esse modelo
@@ -3009,16 +3010,16 @@
     <div class="experiencia-inner">
       <div class="diamond-grid" id="diamondGrid">
         <div class="diamond-box box-1">
-          <div class="diamond-img" style="background-image: url('Imj1.png');"></div>
+          <div class="diamond-img" data-bg="Imj1.webp"></div>
         </div>
         <div class="diamond-box box-2">
-          <div class="diamond-img" style="background-image: url('Imj2.png');"></div>
+          <div class="diamond-img" data-bg="Imj2.webp"></div>
         </div>
         <div class="diamond-box box-3">
-          <div class="diamond-img" style="background-image: url('Imj3.png');"></div>
+          <div class="diamond-img" data-bg="Imj3.webp"></div>
         </div>
         <div class="diamond-box box-4">
-          <div class="diamond-img" style="background-image: url('Imj4.png');"></div>
+          <div class="diamond-img" data-bg="Imj4.webp"></div>
         </div>
       </div>
       <div class="reveal-right">
@@ -3128,7 +3129,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">
-  <img src="HoyOptica.png" alt="Hoy Óptica" style="height: 40px; width: auto; object-fit: contain;">
+  <img src="HoyOptica.webp" alt="Hoy Óptica" style="height: 40px; width: auto; object-fit: contain;" decoding="async">
 </div>
       <nav class="footer-nav">
         <a href="#catalogo">Catálogo</a>
@@ -3148,7 +3149,7 @@
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5585999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20a%20Hoy%20Óptica." class="wa-float" aria-label="Fale pelo WhatsApp">
+<a href="https://www.skill.avalonx8.com/r/aP2bl2H5" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Fale pelo WhatsApp">
   <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -3172,11 +3173,14 @@
   animateCursor();
 
   // ── PRELOADER ──
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('preloader').classList.add('hide');
-    }, 3500);
-  });
+  // Solta a cortina quando a animação da marca termina, sem esperar foto e vídeo.
+  const hidePreloader = () => {
+    const telaPreta = document.getElementById('preloader');
+    if (telaPreta) telaPreta.classList.add('hide');
+  };
+  const armPreloader = () => setTimeout(hidePreloader, 3200);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', armPreloader);
+  else armPreloader();
 
   // ── NAV SCROLL ──
   const navbar = document.getElementById('navbar');
@@ -3520,15 +3524,66 @@
     });
   });
 
-// ── PRELOADER (TELA DE CARREGAMENTO) ──
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const telaPreta = document.getElementById('preloader');
-      if (telaPreta) {
-        telaPreta.classList.add('hide');
+  // ── MÍDIA FORA DA PRIMEIRA TELA ──
+  const whenVisible = (el, fn, margin) => {
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) { fn(); return; }
+    const obs = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        obs.disconnect();
+        fn();
       }
-    }, 4500); /* Os 4.5 segundos exatos que configuramos para a marca brilhar! */
-  });
+    }, { rootMargin: margin || '400px' });
+    obs.observe(el);
+  };
+
+  const mobileHero = window.matchMedia('(max-width: 768px)').matches;
+  const heroRest = mobileHero
+    ? ['FullbannerImagem2Mobile.webp', 'FullbannerImagem3Mobile.webp']
+    : ['FullbannerImagem2.webp', 'FullbannerImagem3.webp'];
+  const loadHeroRest = () => {
+    const img2 = document.querySelector('.hero-bg.img2');
+    const img3 = document.querySelector('.hero-bg.img3');
+    if (img2) img2.style.backgroundImage = "url('" + heroRest[0] + "')";
+    if (img3) img3.style.backgroundImage = "url('" + heroRest[1] + "')";
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(loadHeroRest, { timeout: 1200 });
+  else setTimeout(loadHeroRest, 700);
+
+  whenVisible(document.getElementById('qualidades-marquee'), () => {
+    const slides = document.querySelectorAll('#qualidades-marquee .m-bg-slide');
+    ['Imag1.webp', 'Imag2.webp', 'Imag3.webp'].forEach((src, i) => {
+      if (slides[i]) slides[i].style.backgroundImage = "url('" + src + "')";
+    });
+  }, '500px');
+
+  whenVisible(document.getElementById('experiencia'), () => {
+    document.querySelectorAll('.diamond-img[data-bg]').forEach(el => {
+      el.style.backgroundImage = "url('" + el.dataset.bg + "')";
+    });
+  }, '600px');
+
+  const videos = document.querySelectorAll('#videos-section video');
+  if (videos.length && 'IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          if (!video.dataset.armed) {
+            video.dataset.armed = '1';
+            video.preload = 'auto';
+            video.load();
+          }
+          const play = () => video.play().catch(() => {});
+          if (video.readyState >= 2) play();
+          else video.addEventListener('canplay', play, { once: true });
+        } else {
+          video.pause();
+        }
+      });
+    }, { rootMargin: '240px' });
+    videos.forEach(video => videoObserver.observe(video));
+  }
 
 </script>
 </body>
