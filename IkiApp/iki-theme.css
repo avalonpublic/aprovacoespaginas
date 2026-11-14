@@ -153,25 +153,15 @@ body.ds-saas {
   }
 
   .hero-ascent__stage {
-    width: min(220px, 24vw);
-    max-width: min(220px, 24vw);
+    width: min(200px, 22vw);
+    max-width: min(200px, 22vw);
     height: auto;
     justify-self: end;
   }
 
   .hero-ascent__phone {
     width: 100%;
-    height: auto;
-    aspect-ratio: 9 / 16;
-    max-height: min(58dvh, 26rem);
-  }
-
-  .hero-ascent__phone img,
-  .hero-ascent__phone .hero-ascent__video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    max-height: min(56dvh, 24rem);
   }
 }
 
@@ -265,7 +255,7 @@ body.ds-saas {
 .hero-ascent__stage {
   position: relative;
   justify-self: center;
-  width: min(260px, 68vw);
+  width: min(220px, 58vw);
   max-width: 100%;
   display: grid;
   place-items: center;
@@ -280,56 +270,61 @@ body.ds-saas {
   animation: iki-breathe 6s ease-in-out infinite;
 }
 
-/* Mockup reto (sem tilt) + flutuação suave */
-.hero-ascent__phone {
+/* Mockup 9:16 fiel ao Short — sem iframe/YouTube */
+.phone-mock {
   position: relative;
   width: 100%;
   margin: 0;
   aspect-ratio: 9 / 16;
-  max-height: min(62dvh, 28rem);
-  border-radius: 32px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  background: rgba(12, 10, 28, 0.45);
+  max-height: min(58dvh, 26rem);
+  padding: 0.42rem;
+  border-radius: 1.85rem;
+  background:
+    linear-gradient(160deg, #2a2a32 0%, #121218 55%, #0a0a0e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow:
     0 28px 56px -18px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  overflow: hidden;
+}
+
+.hero-ascent__phone.phone-mock {
   animation: iki-float 5.5s ease-in-out infinite;
 }
 
-.hero-ascent__phone img,
-.hero-ascent__video-poster {
+.phone-mock__bezel {
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  z-index: 2;
+  width: 32%;
+  height: 0.55rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #050508;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.phone-mock__screen {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.45rem;
+  overflow: hidden;
+  background: #000;
+}
+
+.phone-mock__screen img,
+.phone-mock__video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-}
-
-.hero-ascent__video-shell {
-  position: absolute;
-  inset: 0;
-  background: #0c0a1c;
-}
-
-.hero-ascent__video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  object-position: center center;
   border: 0;
-  opacity: 0;
-  transition: opacity 280ms ease;
   pointer-events: none;
-}
-
-.hero-ascent__video-shell.is-playing .hero-ascent__video {
-  opacity: 1;
-}
-
-.hero-ascent__video-shell.is-playing .hero-ascent__video-poster {
-  opacity: 0;
-  transition: opacity 280ms ease;
 }
 
 @keyframes iki-float {
@@ -456,58 +451,10 @@ body.ds-saas {
   place-items: center;
 }
 
-.phone {
-  width: min(220px, 52vw);
-  max-height: min(28rem, 62dvh);
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  background: rgba(255, 255, 255, 0.35);
+.phone.phone-mock {
+  width: min(200px, 48vw);
+  max-height: min(26rem, 58dvh);
   box-shadow: var(--shadow-violet);
-  backdrop-filter: blur(18px);
-}
-
-.phone img,
-.phone__video-poster {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 9 / 16;
-  max-height: min(28rem, 62dvh);
-  object-fit: cover;
-  object-position: center top;
-}
-
-.phone--video {
-  position: relative;
-  aspect-ratio: 9 / 16;
-  max-height: min(28rem, 62dvh);
-}
-
-.phone__video-shell {
-  position: absolute;
-  inset: 0;
-  background: #0c0a1c;
-}
-
-.phone__video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  opacity: 0;
-  transition: opacity 280ms ease;
-  pointer-events: none;
-}
-
-.phone__video-shell.is-playing .phone__video {
-  opacity: 1;
-}
-
-.phone__video-shell.is-playing .phone__video-poster {
-  opacity: 0;
-  transition: opacity 280ms ease;
 }
 
 .phone--back {

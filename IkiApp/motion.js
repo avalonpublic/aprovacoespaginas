@@ -243,45 +243,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initReveals(reducedMotion.matches)
   initLangPulse(reducedMotion.matches)
-  initYtShorts(reducedMotion.matches)
+  initMockVideos(reducedMotion.matches)
 })
 
-/** Shorts nos mockups: entra na tela → espera 1s → toca mudo em loop. */
-function initYtShorts(reducedMotion) {
-  if (reducedMotion) return
+/** Vídeo nativo no mockup: entra na tela → 1s → toca mudo em loop (sem YouTube). */
+function initMockVideos(reducedMotion) {
+  document.querySelectorAll("video[data-autoplay-on-view]").forEach((video) => {
+    video.muted = true
+    video.defaultMuted = true
+    video.setAttribute("muted", "")
+    video.playsInline = true
+    video.disablePictureInPicture = true
+    video.controls = false
 
-  document.querySelectorAll("[data-yt-short]").forEach((shell) => {
-    const id = shell.getAttribute("data-yt-short")
-    if (!id) return
-
-    const title = shell.getAttribute("data-yt-title") || "IkiApp"
-    const poster = shell.querySelector(
-      ".hero-ascent__video-poster, .phone__video-poster",
-    )
+    if (reducedMotion) return
 
     let armed = false
     const play = () => {
-      if (shell.querySelector("iframe")) return
-      const iframe = document.createElement("iframe")
-      iframe.className = shell.classList.contains("phone__video-shell")
-        ? "phone__video"
-        : "hero-ascent__video"
-      iframe.src =
-        "https://www.youtube-nocookie.com/embed/" +
-        encodeURIComponent(id) +
-        "?autoplay=1&mute=1&playsinline=1&loop=1&playlist=" +
-        encodeURIComponent(id) +
-        "&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
-      iframe.title = title
-      iframe.loading = "lazy"
-      iframe.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      iframe.referrerPolicy = "strict-origin-when-cross-origin"
-      iframe.setAttribute("allowfullscreen", "")
-      iframe.setAttribute("aria-label", title)
-      shell.appendChild(iframe)
-      shell.classList.add("is-playing")
-      if (poster) poster.setAttribute("aria-hidden", "true")
+      const run = video.play()
+      if (run && typeof run.catch === "function") run.catch(() => {})
     }
 
     if (!("IntersectionObserver" in window)) {
@@ -291,14 +271,21 @@ function initYtShorts(reducedMotion) {
 
     const io = new IntersectionObserver(
       (entries) => {
-        if (!entries.some((e) => e.isIntersecting) || armed) return
+        const visible = entries.some((e) => e.isIntersecting)
+        if (!visible) {
+          video.pause()
+          return
+        }
+        if (armed) {
+          play()
+          return
+        }
         armed = true
-        io.disconnect()
         window.setTimeout(play, 1000)
       },
-      { threshold: 0.4 },
+      { threshold: 0.35 },
     )
-    io.observe(shell)
+    io.observe(video.closest(".phone-mock") || video)
   })
 }
 

@@ -113,7 +113,7 @@
 
     <link rel="stylesheet" href="./variables.css?v=iki-28" />
     <link rel="stylesheet" href="./style.css?v=iki-37" />
-    <link rel="stylesheet" href="./iki-theme.css?v=iki-44" />
+    <link rel="stylesheet" href="./iki-theme.css?v=iki-45" />
 
     <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
     <script type="application/ld+json">
@@ -395,20 +395,23 @@
           </div>
           <div class="hero-ascent__stage reveal">
             <div class="hero-ascent__glow" aria-hidden="true"></div>
-            <figure class="hero-ascent__phone hero-ascent__phone--video">
-              <div
-                class="hero-ascent__video-shell"
-                data-yt-short="3tSt12cjK0M"
-                data-yt-title="IkiApp interface tour"
-              >
-                <img
-                  class="hero-ascent__video-poster"
-                  src="./media/screens/tour-short.jpg?v=iki-43"
-                  alt="IkiApp interface tour on a phone"
-                  width="886"
-                  height="1920"
-                  fetchpriority="high"
-                />
+            <figure class="phone-mock hero-ascent__phone">
+              <div class="phone-mock__bezel" aria-hidden="true"></div>
+              <div class="phone-mock__screen">
+                <video
+                  class="phone-mock__video"
+                  data-autoplay-on-view
+                  poster="./media/screens/tour-short.jpg?v=iki-45"
+                  width="296"
+                  height="640"
+                  muted
+                  playsinline
+                  loop
+                  preload="metadata"
+                  aria-label="IkiApp interface tour"
+                >
+                  <source src="./media/screens/tour-1.mp4" type="video/mp4" />
+                </video>
               </div>
             </figure>
           </div>
@@ -475,29 +478,36 @@
       >
         <div class="wrap product-proof">
           <div class="phone-stack" aria-label="Real IkiApp screens">
-            <figure class="phone phone--back">
-              <img
-                src="./media/screens/tour-short-2.jpg?v=iki-44"
-                alt="IkiApp product tour — second angle"
-                width="886"
-                height="1920"
-                loading="lazy"
-              />
-            </figure>
-            <figure class="phone phone--front phone--video">
-              <div
-                class="phone__video-shell"
-                data-yt-short="NN8W80xCJP4"
-                data-yt-title="IkiApp product tour"
-              >
+            <figure class="phone-mock phone phone--back">
+              <div class="phone-mock__bezel" aria-hidden="true"></div>
+              <div class="phone-mock__screen">
                 <img
-                  class="phone__video-poster"
-                  src="./media/screens/tour-short-2.jpg?v=iki-44"
-                  alt="IkiApp product tour on a phone"
+                  src="./media/screens/tour-short-2.jpg?v=iki-45"
+                  alt=""
                   width="886"
                   height="1920"
                   loading="lazy"
+                  aria-hidden="true"
                 />
+              </div>
+            </figure>
+            <figure class="phone-mock phone phone--front">
+              <div class="phone-mock__bezel" aria-hidden="true"></div>
+              <div class="phone-mock__screen">
+                <video
+                  class="phone-mock__video"
+                  data-autoplay-on-view
+                  poster="./media/screens/tour-short-2.jpg?v=iki-45"
+                  width="296"
+                  height="640"
+                  muted
+                  playsinline
+                  loop
+                  preload="metadata"
+                  aria-label="IkiApp product tour"
+                >
+                  <source src="./media/screens/tour-2.mp4" type="video/mp4" />
+                </video>
               </div>
             </figure>
           </div>
@@ -925,7 +935,7 @@
       </footer>
     </main>
 
-    <script src="./motion.js?v=iki-44"></script>
+    <script src="./motion.js?v=iki-45"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {
