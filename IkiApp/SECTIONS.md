@@ -12,4 +12,4 @@ Tom público atual: **O Jogo da Sua Vida Real**
 | `features-grid` | 4 ferramentas |
 | `world-langs` | “Feito para o mundo todo” + bandeiras dos 14 idiomas |
 | Nav | Seletor 🇧🇷 PT / 🇬🇧 EN (`/en/`) |
-| `beta` / `faq` / `cta` | ciclo 100 + FAQ SEO |
+| `beta` / `faq` / `cta` | ciclo 5.000 + FAQ SEO |

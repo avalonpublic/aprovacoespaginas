@@ -27,7 +27,7 @@ P: Como funciona o personagem Iki?
 R: Você não escolhe o Iki. Ele surge. Quando você bate as metas, ganha XP e forma. Quando abandona o que definiu, perde brilho e pode desaparecer.
 
 P: O app é pago?
-R: Não. O app é 100% gratuito. O beta atual é fechado, com 100 vagas.
+R: Não. O app é 100% gratuito. O beta atual é fechado, com 5.000 vagas.
 
 P: Como entrar?
 R: Quem já tem acesso entra em https://app.ikiapp.co/login. A lista de espera fica em https://www.ikiapp.co/.
