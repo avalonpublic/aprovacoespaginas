@@ -243,7 +243,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initReveals(reducedMotion.matches)
   initLangPulse(reducedMotion.matches)
+  initHeroShort(reducedMotion.matches)
 })
+
+/** Short do hero: entra na tela → espera 1s → toca mudo em loop. */
+function initHeroShort(reducedMotion) {
+  const shell = document.querySelector("[data-yt-short]")
+  if (!shell) return
+
+  const id = shell.getAttribute("data-yt-short")
+  if (!id) return
+
+  const title = shell.getAttribute("data-yt-title") || "IkiApp"
+  const poster = shell.querySelector(".hero-ascent__video-poster")
+
+  if (reducedMotion) return
+
+  let armed = false
+  const play = () => {
+    if (shell.querySelector("iframe")) return
+    const iframe = document.createElement("iframe")
+    iframe.className = "hero-ascent__video"
+    iframe.src =
+      "https://www.youtube-nocookie.com/embed/" +
+      encodeURIComponent(id) +
+      "?autoplay=1&mute=1&playsinline=1&loop=1&playlist=" +
+      encodeURIComponent(id) +
+      "&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
+    iframe.title = title
+    iframe.loading = "lazy"
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    iframe.referrerPolicy = "strict-origin-when-cross-origin"
+    iframe.setAttribute("allowfullscreen", "")
+    iframe.setAttribute("aria-label", title)
+    shell.appendChild(iframe)
+    shell.classList.add("is-playing")
+    if (poster) poster.setAttribute("aria-hidden", "true")
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    window.setTimeout(play, 1000)
+    return
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((e) => e.isIntersecting) || armed) return
+      armed = true
+      io.disconnect()
+      window.setTimeout(play, 1000)
+    },
+    { threshold: 0.4 },
+  )
+  io.observe(shell)
+}
 
 /** Filhos que entram em cascata dentro de cada .reveal */
 const REVEAL_CHILD_SELECTOR = [

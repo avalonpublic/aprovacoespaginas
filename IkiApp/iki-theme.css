@@ -153,8 +153,8 @@ body.ds-saas {
   }
 
   .hero-ascent__stage {
-    width: min(240px, 26vw);
-    max-width: min(240px, 26vw);
+    width: min(220px, 24vw);
+    max-width: min(220px, 24vw);
     height: auto;
     justify-self: end;
   }
@@ -162,12 +162,14 @@ body.ds-saas {
   .hero-ascent__phone {
     width: 100%;
     height: auto;
-    aspect-ratio: 472 / 1024;
+    aspect-ratio: 9 / 16;
+    max-height: min(58dvh, 26rem);
   }
 
-  .hero-ascent__phone img {
+  .hero-ascent__phone img,
+  .hero-ascent__phone .hero-ascent__video {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     object-position: center top;
   }
@@ -263,7 +265,7 @@ body.ds-saas {
 .hero-ascent__stage {
   position: relative;
   justify-self: center;
-  width: min(300px, 78vw);
+  width: min(260px, 68vw);
   max-width: 100%;
   display: grid;
   place-items: center;
@@ -283,6 +285,8 @@ body.ds-saas {
   position: relative;
   width: 100%;
   margin: 0;
+  aspect-ratio: 9 / 16;
+  max-height: min(62dvh, 28rem);
   border-radius: 32px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -293,10 +297,39 @@ body.ds-saas {
   animation: iki-float 5.5s ease-in-out infinite;
 }
 
-.hero-ascent__phone img {
+.hero-ascent__phone img,
+.hero-ascent__video-poster {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-ascent__video-shell {
+  position: absolute;
+  inset: 0;
+  background: #0c0a1c;
+}
+
+.hero-ascent__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  opacity: 0;
+  transition: opacity 280ms ease;
+  pointer-events: none;
+}
+
+.hero-ascent__video-shell.is-playing .hero-ascent__video {
+  opacity: 1;
+}
+
+.hero-ascent__video-shell.is-playing .hero-ascent__video-poster {
+  opacity: 0;
+  transition: opacity 280ms ease;
 }
 
 @keyframes iki-float {
@@ -418,13 +451,14 @@ body.ds-saas {
 
 .phone-stack {
   position: relative;
-  min-height: 28rem;
+  min-height: min(26rem, 70dvh);
   display: grid;
   place-items: center;
 }
 
 .phone {
-  width: min(240px, 58vw);
+  width: min(220px, 52vw);
+  max-height: min(28rem, 62dvh);
   border-radius: 28px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -437,6 +471,10 @@ body.ds-saas {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 9 / 16;
+  max-height: min(28rem, 62dvh);
+  object-fit: cover;
+  object-position: center top;
 }
 
 .phone--back {

@@ -113,7 +113,7 @@
 
     <link rel="stylesheet" href="../variables.css?v=iki-28" />
     <link rel="stylesheet" href="../style.css?v=iki-37" />
-    <link rel="stylesheet" href="../iki-theme.css?v=iki-41" />
+    <link rel="stylesheet" href="../iki-theme.css?v=iki-43" />
 
     <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
     <script type="application/ld+json">
@@ -390,14 +390,21 @@
           </div>
           <div class="hero-ascent__stage reveal">
             <div class="hero-ascent__glow" aria-hidden="true"></div>
-            <figure class="hero-ascent__phone">
-              <img
-                src="../media/screens/seu-iki.jpg?v=iki-42"
-                alt="Tela Seu Iki no celular, com o personagem origami"
-                width="472"
-                height="1024"
-                fetchpriority="high"
-              />
+            <figure class="hero-ascent__phone hero-ascent__phone--video">
+              <div
+                class="hero-ascent__video-shell"
+                data-yt-short="3tSt12cjK0M"
+                data-yt-title="Tour da interface do IkiApp"
+              >
+                <img
+                  class="hero-ascent__video-poster"
+                  src="../media/screens/tour-short.jpg?v=iki-43"
+                  alt="Tour da interface do IkiApp no celular"
+                  width="886"
+                  height="1920"
+                  fetchpriority="high"
+                />
+              </div>
             </figure>
           </div>
         </div>
@@ -466,19 +473,19 @@
           <div class="phone-stack" aria-label="Telas reais do IkiApp">
             <figure class="phone phone--back">
               <img
-                src="../media/screens/foco.jpg"
-                alt="Tela de Foco do IkiApp com timer de 25 ou 50 minutos"
-                width="430"
-                height="932"
+                src="../media/screens/tour-short.jpg?v=iki-43"
+                alt="Tour da interface do IkiApp — hábitos e foco"
+                width="886"
+                height="1920"
                 loading="lazy"
               />
             </figure>
             <figure class="phone phone--front">
               <img
-                src="../media/screens/hoje.jpg"
-                alt="Tela Hoje do IkiApp com a lista de hábitos"
-                width="472"
-                height="1024"
+                src="../media/screens/tour-short.jpg?v=iki-43"
+                alt="Tour da interface do IkiApp no celular"
+                width="886"
+                height="1920"
                 loading="lazy"
               />
             </figure>
@@ -917,7 +924,7 @@
       </footer>
     </main>
 
-    <script src="../motion.js?v=iki-37"></script>
+    <script src="../motion.js?v=iki-43"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         async function sendToBackend(eventName, userData = {}, customData = {}) {
