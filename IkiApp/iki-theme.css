@@ -153,15 +153,10 @@ body.ds-saas {
   }
 
   .hero-ascent__stage {
-    width: min(200px, 22vw);
-    max-width: min(200px, 22vw);
+    width: auto;
+    max-width: none;
     height: auto;
     justify-self: end;
-  }
-
-  .hero-ascent__phone {
-    width: 100%;
-    max-height: min(56dvh, 24rem);
   }
 }
 
@@ -184,12 +179,7 @@ body.ds-saas {
     margin-top: 1.15rem;
   }
 
-  .hero-ascent__stage {
-    width: min(210px, 24vw);
-    max-width: min(210px, 24vw);
-  }
-
-  .hero-ascent__phone {
+  .hero-ascent__phone.phone-mock {
     animation: iki-float-soft 5.5s ease-in-out infinite;
   }
 }
@@ -198,11 +188,6 @@ body.ds-saas {
   .hero-ascent {
     min-height: 0;
     padding-block: 1.1rem 1.4rem;
-  }
-
-  .hero-ascent__stage {
-    width: min(180px, 22vw);
-    max-width: min(180px, 22vw);
   }
 }
 
@@ -255,7 +240,7 @@ body.ds-saas {
 .hero-ascent__stage {
   position: relative;
   justify-self: center;
-  width: min(220px, 58vw);
+  width: fit-content;
   max-width: 100%;
   display: grid;
   place-items: center;
@@ -270,15 +255,24 @@ body.ds-saas {
   animation: iki-breathe 6s ease-in-out infinite;
 }
 
-/* Mockup 9:16 fiel ao Short — sem iframe/YouTube */
+/*
+  Mockup 9:16 real.
+  Nunca misturar width:100% + max-height: isso rompe o aspect-ratio
+  e deixa o frame mais largo que o Short (faixas pretas laterais).
+  Largura = min(cap, altura_disponível * 9/16).
+*/
 .phone-mock {
+  --phone-w: min(10.75rem, 42vw, calc(52dvh * 9 / 16));
+  box-sizing: border-box;
   position: relative;
-  width: 100%;
-  margin: 0;
+  width: var(--phone-w);
+  height: auto;
   aspect-ratio: 9 / 16;
-  max-height: min(58dvh, 26rem);
-  padding: 0.42rem;
-  border-radius: 1.85rem;
+  max-width: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0.38rem;
+  border-radius: calc(var(--phone-w) * 0.18);
   background:
     linear-gradient(160deg, #2a2a32 0%, #121218 55%, #0a0a0e 100%);
   border: 1px solid rgba(255, 255, 255, 0.22);
@@ -294,11 +288,11 @@ body.ds-saas {
 
 .phone-mock__bezel {
   position: absolute;
-  top: 0.55rem;
+  top: 0.48rem;
   left: 50%;
   z-index: 2;
-  width: 32%;
-  height: 0.55rem;
+  width: 30%;
+  height: 0.48rem;
   transform: translateX(-50%);
   border-radius: 999px;
   background: #050508;
@@ -309,15 +303,19 @@ body.ds-saas {
 .phone-mock__screen {
   position: relative;
   z-index: 1;
+  display: block;
   width: 100%;
   height: 100%;
-  border-radius: 1.45rem;
+  border-radius: calc(var(--phone-w) * 0.14);
   overflow: hidden;
   background: #000;
+  isolation: isolate;
 }
 
 .phone-mock__screen img,
 .phone-mock__video {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -452,8 +450,8 @@ body.ds-saas {
 }
 
 .phone.phone-mock {
-  width: min(200px, 48vw);
-  max-height: min(26rem, 58dvh);
+  --phone-w: min(10.25rem, 40vw, calc(48dvh * 9 / 16));
+  width: var(--phone-w);
   box-shadow: var(--shadow-violet);
 }
 
@@ -1506,8 +1504,9 @@ body.ds-saas {
     margin-bottom: 0.5rem;
   }
 
-  .phone {
-    width: min(220px, 64vw);
+  .phone.phone-mock {
+    --phone-w: min(9.75rem, 46vw, calc(50dvh * 9 / 16));
+    width: var(--phone-w);
   }
 
   .ascent-split .roda-live {
