@@ -256,25 +256,22 @@ body.ds-saas {
 }
 
 /*
-  Mockup 9:16 real.
-  Nunca misturar width:100% + max-height: isso rompe o aspect-ratio
-  e deixa o frame mais largo que o Short (faixas pretas laterais).
-  Largura = min(cap, altura_disponível * 9/16).
+  O arquivo é 296×640 (37:80), mais alto que 9:16.
+  9:16 + object-fit:cover cortava status bar e a base da tela.
 */
 .phone-mock {
-  --phone-w: min(10.75rem, 42vw, calc(52dvh * 9 / 16));
+  --phone-w: min(15rem, 28vw, calc(70dvh * 296 / 640));
   box-sizing: border-box;
   position: relative;
   width: var(--phone-w);
   height: auto;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 296 / 640;
   max-width: 100%;
   max-height: none;
   margin: 0;
-  padding: 0.38rem;
-  border-radius: calc(var(--phone-w) * 0.18);
-  background:
-    linear-gradient(160deg, #2a2a32 0%, #121218 55%, #0a0a0e 100%);
+  padding: 0.28rem;
+  border-radius: calc(var(--phone-w) * 0.16);
+  background: #0a0a0e;
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow:
     0 28px 56px -18px rgba(0, 0, 0, 0.55),
@@ -287,17 +284,7 @@ body.ds-saas {
 }
 
 .phone-mock__bezel {
-  position: absolute;
-  top: 0.48rem;
-  left: 50%;
-  z-index: 2;
-  width: 30%;
-  height: 0.48rem;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: #050508;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
-  pointer-events: none;
+  display: none;
 }
 
 .phone-mock__screen {
@@ -306,7 +293,7 @@ body.ds-saas {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: calc(var(--phone-w) * 0.14);
+  border-radius: calc(var(--phone-w) * 0.13);
   overflow: hidden;
   background: #000;
   isolation: isolate;
@@ -319,7 +306,7 @@ body.ds-saas {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
   border: 0;
   pointer-events: none;
@@ -450,7 +437,7 @@ body.ds-saas {
 }
 
 .phone.phone-mock {
-  --phone-w: min(10.25rem, 40vw, calc(48dvh * 9 / 16));
+  --phone-w: min(13.75rem, 24vw, calc(64dvh * 296 / 640));
   width: var(--phone-w);
   box-shadow: var(--shadow-violet);
 }
@@ -1504,8 +1491,9 @@ body.ds-saas {
     margin-bottom: 0.5rem;
   }
 
-  .phone.phone-mock {
-    --phone-w: min(9.75rem, 46vw, calc(50dvh * 9 / 16));
+  .phone.phone-mock,
+  .hero-ascent__phone.phone-mock {
+    --phone-w: min(12.5rem, 52vw, calc(58dvh * 296 / 640));
     width: var(--phone-w);
   }
 
