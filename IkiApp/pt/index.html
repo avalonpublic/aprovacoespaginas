@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IkiApp — O Jogo da Sua Vida Real</title>
+    <meta
+      name="description"
+      content="IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito."
+    />
+    <meta
+      name="keywords"
+      content="IkiApp, jogo da vida real, rotina, metas, Roda da Vida, hábitos, foco, personagem Iki, guardião origami, app gratuito, beta, disciplina, XP"
+    />
+    <meta name="author" content="IkiApp · linha Kalan" />
+    <meta name="creator" content="IkiApp" />
+    <meta name="publisher" content="Avalon / Kalan" />
+    <meta name="application-name" content="IkiApp" />
+    <meta name="apple-mobile-web-app-title" content="IkiApp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#1A1F4A" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Indexação -->
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- GEO / Brasil -->
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.placename" content="Brasil" />
+    <meta name="language" content="Portuguese" />
+    <meta http-equiv="content-language" content="pt-BR" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.ikiapp.co/pt/" />
+    <link rel="alternate" hreflang="en" href="https://www.ikiapp.co/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.ikiapp.co/" />
+
+    <!-- Canonical + discovery -->
+    <link rel="canonical" href="https://www.ikiapp.co/pt/" />
+    <link rel="sitemap" type="application/xml" href="https://www.ikiapp.co/sitemap.xml" />
+    <link type="text/plain" rel="alternate" href="/llms.txt" title="llms.txt" />
+    <link type="text/plain" rel="alternate" href="/llms-full.txt" title="llms-full.txt" />
+    <link type="text/plain" rel="author" href="/humans.txt" />
+
+    <!-- Favicon = mesmo do app -->
+    <link rel="icon" href="/favicon.ico?v=iki-28" sizes="any" />
+    <link rel="icon" href="/favicon.png?v=iki-28" type="image/png" sizes="64x64" />
+    <link rel="icon" href="/icon-192.png?v=iki-28" type="image/png" sizes="192x192" />
+    <link rel="icon" href="/icon-512.png?v=iki-28" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=iki-28" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest?v=iki-28" />
+    <link rel="mask-icon" href="/favicon.png?v=iki-28" color="#1A1F4A" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="IkiApp" />
+    <meta property="og:url" content="https://www.ikiapp.co/pt/" />
+    <meta
+      property="og:title"
+      content="IkiApp — O Jogo da Sua Vida Real"
+    />
+    <meta
+      property="og:description"
+      content="IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito."
+    />
+    <meta property="og:image" content="https://www.ikiapp.co/og-image.jpg?v=iki-17" />
+    <meta property="og:image:secure_url" content="https://www.ikiapp.co/og-image.jpg?v=iki-17" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="IkiApp — O Jogo da Sua Vida Real"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IkiApp — O Jogo da Sua Vida Real" />
+    <meta
+      name="twitter:description"
+      content="IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito."
+    />
+    <meta name="twitter:image" content="https://www.ikiapp.co/og-image.jpg?v=iki-17" />
+    <meta
+      name="twitter:image:alt"
+      content="IkiApp — O Jogo da Sua Vida Real"
+    />
+
+    <!-- GEO para LLMs -->
+    <meta name="ai-purpose" content="product-landing" />
+    <meta
+      name="ai-summary"
+      content="IkiApp — O Jogo da Sua Vida Real. Transforma a rotina em um jogo: metas, foco e um personagem virtual que cresce com a disciplina e some quando você procrastina. App 100% gratuito. Beta fechado."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../variables.css?v=iki-28" />
+    <link rel="stylesheet" href="../style.css?v=iki-37" />
+    <link rel="stylesheet" href="../iki-theme.css?v=iki-41" />
+
+    <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.ikiapp.co/pt/#website",
+            "url": "https://www.ikiapp.co/pt/",
+            "name": "IkiApp",
+            "alternateName": ["iki app", "Iki App"],
+            "description": "IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito.",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://www.ikiapp.co/pt/#organization" },
+            "potentialAction": {
+              "@type": "JoinAction",
+              "target": "https://www.ikiapp.co/pt/#sec-cta-bottom",
+              "name": "Garantir vaga no Beta Exclusivo"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.ikiapp.co/pt/#organization",
+            "name": "IkiApp",
+            "url": "https://www.ikiapp.co/pt/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.ikiapp.co/icon-512.png?v=iki-28",
+              "width": 512,
+              "height": 512
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Brasil"
+            },
+            "knowsLanguage": "pt-BR"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.ikiapp.co/pt/#app",
+            "name": "IkiApp",
+            "applicationCategory": "LifestyleApplication",
+            "applicationSubCategory": "HabitTracker",
+            "operatingSystem": "Web, iOS, Android",
+            "url": "https://app.ikiapp.co/",
+            "image": "https://www.ikiapp.co/og-image.jpg?v=iki-17",
+            "screenshot": "https://www.ikiapp.co/og-image.jpg?v=iki-17",
+            "description": "IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito.",
+            "inLanguage": "pt-BR",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL",
+              "availability": "https://schema.org/LimitedAvailability",
+              "category": "Free"
+            },
+            "featureList": [
+              "Roda da Vida para organizar metas",
+              "Sequência diária de hábitos",
+              "Modo Foco com blocos de 25 ou 50 minutos",
+              "Personagem Iki que evolui com a disciplina"
+            ],
+            "publisher": { "@id": "https://www.ikiapp.co/pt/#organization" },
+            "isAccessibleForFree": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.ikiapp.co/pt/#webpage",
+            "url": "https://www.ikiapp.co/pt/",
+            "name": "IkiApp — O Jogo da Sua Vida Real",
+            "description": "IkiApp transforma sua rotina em um jogo. Organize suas metas, mantenha o foco e evolua um personagem virtual que cresce com a sua disciplina, mas some quando você procrastina. App 100% gratuito.",
+            "isPartOf": { "@id": "https://www.ikiapp.co/pt/#website" },
+            "about": { "@id": "https://www.ikiapp.co/pt/#app" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.ikiapp.co/og-image.jpg?v=iki-17",
+              "width": 1200,
+              "height": 630
+            },
+            "inLanguage": "pt-BR",
+            "dateModified": "2026-09-07"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.ikiapp.co/pt/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "IkiApp",
+                "item": "https://www.ikiapp.co/pt/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.ikiapp.co/pt/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "O que é o IkiApp?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "É o app que transforma a sua rotina em um jogo de evolução. Você gerencia suas metas na Roda da Vida, rastreia seus hábitos diários e usa um cronômetro de foco integrado. No centro disso, surge um personagem em origami, que cresce quando você se cumpre e some quando você foge de si. Não é só um timer, nem só uma lista de tarefas. É a sua rotina organizada na tela e um companheiro que não deixa você mentir para si mesmo. E é 100% gratuito."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como funciona o módulo de Foco?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O módulo de Foco usa blocos ininterruptos de 25 ou 50 minutos, com pausas estratégicas, para proteger sua atenção e esmagar a procrastinação. Não é um cronômetro genérico. Cada sessão de Foco alimenta os pontos de experiência do dia e o brilho do seu Iki."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como funciona o personagem Iki?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Você não escolhe o Iki. Ele surge no caminho. Quando você bate suas metas, o personagem ganha XP, cresce, se ilumina e ganha forma. Quando você abandona o que definiu para si, ele perde brilho, amassa e pode desaparecer. O Iki é o espelho da sua constância diária, não um mascote colecionável."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "O app é de graça mesmo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. O IkiApp é 100% gratuito, sem assinaturas caras. O que existe agora é um beta fechado exclusivo, com vaga estrita para 100 pessoas, para acompanharmos de perto a experiência e garantirmos estabilidade de servidor."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Por que 100 brasileiros?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Porque neste ciclo o IkiApp recebe cem pessoas por país — e o Brasil é a primeira fila. A estrutura foi desenhada para esse recorte: um grupo pequeno o bastante para acompanhar de perto, sem abrir o portão para o mundo inteiro de uma vez. Se você está nesta página, o convite já te encontrou. Isto não é a vitrine aberta: é a porta do beta brasileiro. A vaga ainda pede o seu e-mail."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como eu entro no app?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Quem já tem acesso entra em https://app.ikiapp.co/login. Se você ainda não garantiu a sua vaga, deixe o e-mail na landing https://www.ikiapp.co/pt/. A lista de espera é o único caminho para conseguir uma vaga neste ciclo restrito."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSWV2CQ4Y6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WSWV2CQ4Y6");
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "1546551013869737");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1546551013869737&ev=PageView&noscript=1"
+    /></noscript>
+  </head>
+  <body class="ds-saas">
+    <a class="skip" href="#topo">Ir para o conteúdo</a>
+
+    <header class="nav-bar" data-section="nav-bar" id="sec-nav-bar">
+      <div class="wrap nav-bar__inner">
+        <a class="nav-bar__brand" href="#topo" aria-label="IkiApp">
+          <img src="../media/logo-lockup.png" alt="iki app" width="148" height="40" />
+        </a>
+        <nav class="nav-bar__langs" aria-label="Idioma">
+          <a
+            class="nav-bar__lang"
+            href="/pt/"
+            hreflang="pt-BR"
+            lang="pt-BR"
+            aria-label="Português"
+            aria-current="page"
+            >🇧🇷</a
+          >
+          <a class="nav-bar__lang" href="/" hreflang="en" lang="en" aria-label="English"
+            >🇬🇧</a
+          >
+        </nav>
+        <button
+          class="nav-bar__toggle"
+          type="button"
+          data-menu-toggle
+          aria-controls="menu-iki"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          Menu
+        </button>
+        <div class="nav-bar__menu" id="menu-iki" data-menu data-open="false">
+          <nav class="nav-bar__links" aria-label="Produto">
+            <a class="nav-bar__link" href="#sec-jornada">Metas</a>
+            <a class="nav-bar__link" href="#sec-produto">Rotina</a>
+            <a class="nav-bar__link" href="#sec-foco">Foco</a>
+            <a class="nav-bar__link" href="#sec-ikis">Seu Iki</a>
+          </nav>
+          <div class="nav-bar__actions">
+            <a class="btn btn--ghost btn--sm" href="https://app.ikiapp.co/login">Acessar</a>
+            <a class="btn btn--cyan btn--sm" href="#sec-cta-bottom">Entrar na lista</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="topo">
+      <!-- Hero: brand + one headline + one sentence + CTA + real Iki -->
+      <section class="hero-ascent" data-section="hero-ascent" id="sec-hero-ascent" aria-label="Início">
+        <div class="hero-ascent__bg" aria-hidden="true">
+          <img
+            src="../media/scene-hero.jpg"
+            alt=""
+            fetchpriority="high"
+            width="1600"
+            height="900"
+          />
+        </div>
+        <div class="hero-ascent__veil" aria-hidden="true"></div>
+        <div class="wrap hero-ascent__inner">
+          <div class="hero-ascent__copy reveal">
+            <p class="hero-ascent__kicker">App 100% Gratuito</p>
+            <h1 class="saas-display">
+              Seu Iki é seu reflexo. Seu reflexo
+              <span class="hl">é o seu</span> propósito.
+            </h1>
+            <p class="saas-body">
+              Com o IkiApp você entende seu propósito pelos seus hábitos,
+              cria uma rotina que leva à sua evolução real, ganha um personagem
+              virtual que cresce com a sua disciplina, mas some quando você
+              procrastina.
+            </p>
+            <div class="hero-ascent__actions">
+              <a class="btn btn--cyan" href="#sec-cta-bottom">Garantir minha vaga no Beta</a>
+              <a class="btn btn--ghost" href="#sec-jornada">Ver como funciona</a>
+            </div>
+            <p class="hero-ascent__note">
+              App gratuito · Apenas 100 vagas exclusivas
+            </p>
+          </div>
+          <div class="hero-ascent__stage reveal">
+            <div class="hero-ascent__glow" aria-hidden="true"></div>
+            <figure class="hero-ascent__phone">
+              <img
+                src="../media/screens/seu-iki.jpg?v=iki-42"
+                alt="Tela Seu Iki no celular, com o personagem origami"
+                width="472"
+                height="1024"
+                fetchpriority="high"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 2. Storytelling: propósito → disciplina → iki -->
+      <section
+        class="lav-band padded-section reveal"
+        data-section="jornada"
+        id="sec-jornada"
+      >
+        <div class="wrap ascent-split">
+          <div class="ascent-split__copy">
+            <span class="saas-eyebrow">Você nunca viu nada assim</span>
+            <h2 class="saas-h1">Propósito, Rotina e Foco em um só lugar.</h2>
+          </div>
+          <div class="roda-frame">
+            <svg
+              class="roda-live"
+              id="lp-roda"
+              viewBox="0 0 680 680"
+              role="img"
+              aria-label="Roda da Vida: passe o mouse ou o dedo para preencher"
+            ></svg>
+          </div>
+          <div class="step-list">
+            <article class="step-card">
+              <div class="step-card__num">1</div>
+              <h3 class="saas-h2">Propósito &amp; Metas</h3>
+              <p class="saas-body">
+                Organize o que realmente importa na sua vida. Visualize sua
+                jornada na sua própria Roda da Vida e saiba exatamente para onde
+                direcionar sua energia, ajustando a rota sempre que a fase mudar.
+              </p>
+            </article>
+            <article class="step-card">
+              <div class="step-card__num">2</div>
+              <h3 class="saas-h2">Constância Diária</h3>
+              <p class="saas-body">
+                O fim da procrastinação. Hábitos pequenos, mas consistentes. O
+                app te ajuda a ser 1% melhor todo dia, sem pirar com cobranças
+                irreais, focando naquilo que constrói o seu futuro.
+              </p>
+            </article>
+            <article class="step-card">
+              <div class="step-card__num">3</div>
+              <h3 class="saas-h2">Modo Foco</h3>
+              <p class="saas-body">
+                Cronômetro integrado para esmagar tarefas. Sessões de trabalho
+                focado para proteger sua atenção e garantir que as coisas sejam
+                feitas, sem dispersão.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disciplina no app: telas reais -->
+      <section
+        class="padded-section reveal"
+        data-section="produto"
+        id="sec-produto"
+      >
+        <div class="wrap product-proof">
+          <div class="phone-stack" aria-label="Telas reais do IkiApp">
+            <figure class="phone phone--back">
+              <img
+                src="../media/screens/foco.jpg"
+                alt="Tela de Foco do IkiApp com timer de 25 ou 50 minutos"
+                width="430"
+                height="932"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="phone phone--front">
+              <img
+                src="../media/screens/hoje.jpg"
+                alt="Tela Hoje do IkiApp com a lista de hábitos"
+                width="472"
+                height="1024"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+          <div>
+            <span class="saas-eyebrow">A vida com resultado</span>
+            <h2 class="saas-h1">Sua disciplina é o que ninguém pode roubar de você</h2>
+            <p class="saas-body" style="margin-top: 0.85rem">
+              Muitas pessoas não alcançam seus objetivos porque a rotina é uma
+              bagunça invisível. O IkiApp mostra exatamente onde você está se
+              dedicando e quais áreas da vida estão sendo abandonadas. Depois,
+              vem a constância que transforma.
+            </p>
+            <div class="proof-list">
+              <article class="proof-item">
+                <div class="proof-item__icon" aria-hidden="true">01</div>
+                <div>
+                  <h3>Da intenção à prática</h3>
+                  <p>
+                    Os hábitos nascem dos seus objetivos reais, não de listas
+                    genéricas ou planilhas de Excel que você nunca abre.
+                  </p>
+                </div>
+              </article>
+              <article class="proof-item">
+                <div class="proof-item__icon" aria-hidden="true">02</div>
+                <div>
+                  <h3>Sua Sequência Diária</h3>
+                  <p>
+                    Treino, leitura, trabalho, o que for seu. O app mostra e
+                    cobra a sua sequência de dias ininterruptos, transformando a
+                    rotina em um jogo de acúmulo de poder.
+                  </p>
+                </div>
+              </article>
+              <article class="proof-item">
+                <div class="proof-item__icon" aria-hidden="true">03</div>
+                <div>
+                  <h3>Constância sem castigo</h3>
+                  <p>
+                    Acumule suas vitórias no seu próprio ritmo. O objetivo é
+                    avançar tendo um registro visual e claro de todo o seu
+                    esforço diário.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Foco / Pomodoro -->
+      <section
+        class="lav-band padded-section reveal"
+        data-section="foco"
+        id="sec-foco"
+      >
+        <div class="wrap text-center mb-40">
+          <span class="saas-eyebrow">Foco sem distrações</span>
+          <h2 class="saas-h1">25 ou 50 minutos por dia<br class="br-desktop" /> podem mudar tudo</h2>
+          <p class="saas-body section-lead">
+            O módulo de Foco usa um cronômetro inteligente: blocos de
+            concentração intensa intercalados com pausas. É assim que a promessa
+            vira execução, sessão após sessão.
+          </p>
+        </div>
+        <div class="wrap feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⏱</div>
+            <h3 class="saas-h2">Blocos de concentração</h3>
+            <p class="saas-body">
+              Você entra em Foco, trabalha o que importa agora e respeita o
+              relógio. Menos dispersão, mais trabalho concluído.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <h3 class="saas-h2">Tudo interligado</h3>
+            <p class="saas-body">
+              O cronômetro não é genérico: ele fortalece a sua sequência diária
+              e alimenta o progresso dos seus hábitos em tempo real.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">✦</div>
+            <h3 class="saas-h2">Alimenta o Iki</h3>
+            <p class="saas-body">
+              Cada sessão cumprida gera XP e fortalece o seu guardião de papel.
+              Fugir da tarefa é fazer seu mascote perder energia.
+            </p>
+          </article>
+        </div>
+        <div class="wrap section-cta">
+          <a class="btn btn--cyan" href="#sec-cta-bottom">Garantir minha vaga no Beta</a>
+        </div>
+      </section>
+
+      <!-- Seu Iki -->
+      <section class="padded-section wrap reveal" data-section="ikis" id="sec-ikis">
+        <div class="text-center mb-40">
+          <span class="saas-eyebrow">Seu Guardião Virtual</span>
+          <h2 class="saas-h1">Você não escolhe seu Iki.<br class="br-desktop" /> Ele que te escolhe.</h2>
+          <p class="saas-body section-lead">
+            Seu companheiro de jornada ganha forma e cresce quando você cumpre
+            seus hábitos, e desaparece quando você foge deles. Ele é o espelho
+            exato da sua disciplina e do arquétipo da sua vida hoje.
+          </p>
+        </div>
+        <div class="iki-gallery">
+          <figure class="iki-tile">
+            <img src="../media/ikis/tsuru.png" alt="Iki Tsuru" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/kitsune.png" alt="Iki Kitsune" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/neko.png" alt="Iki Neko" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/panda.png" alt="Iki Panda" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/coruja.png" alt="Iki Coruja" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/tiger.png" alt="Iki Tigre" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/falcao.png" alt="Iki Falcão" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/kame.png" alt="Iki Kame" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/dragao.png" alt="Iki Dragão" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/koi.png" alt="Iki Carpa" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/cavalo.png" alt="Iki Cavalo" loading="lazy" width="256" height="384" />
+          </figure>
+          <figure class="iki-tile">
+            <img src="../media/ikis/lobo.png" alt="Iki Lobo" loading="lazy" width="256" height="384" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Por que existe (reforço) -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="features-grid"
+        id="sec-features-grid"
+      >
+        <div class="text-center mb-40">
+          <span class="saas-eyebrow">O ecossistema definitivo para a sua evolução</span>
+          <h2 class="saas-h1">4 ferramentas em 1 app pra você</h2>
+          <p class="saas-body section-lead">
+            Roda da vida, rastreador de hábitos, cronômetro de foco e um jogo
+            de evolução de personagem. Tornar-se alguém melhor fica muito mais
+            fácil quando você tem as ferramentas certas e um espelho visual das
+            suas conquistas.
+          </p>
+        </div>
+        <div class="feature-grid feature-grid--four">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <h3 class="saas-h2">A Roda da Vida</h3>
+            <p class="saas-body">
+              Um painel visual para você acompanhar de forma clara suas áreas
+              de vida, definindo metas equilibradas para finanças, saúde,
+              trabalho e desenvolvimento pessoal.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">▲</div>
+            <h3 class="saas-h2">A Sequência Diária</h3>
+            <p class="saas-body">
+              O sistema que monitora seus dias consecutivos de sucesso, provando
+              que é melhor 1% executado hoje do que 100% planejado para um dia
+              que nunca chega.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⏱</div>
+            <h3 class="saas-h2">O Modo Foco</h3>
+            <p class="saas-body">
+              O cronômetro direto ao ponto para execução em blocos de
+              concentração. Você vai sentir que 25 ou 50 minutos focados valem
+              mais que horas de distração.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">✦</div>
+            <h3 class="saas-h2">Seu Iki (Guardião)</h3>
+            <p class="saas-body">
+              Um companheiro virtual que evolui, choca e ganha acessórios
+              baseados no XP e na energia que você investe em si mesmo todos os
+              dias. Essa é a aventura.
+            </p>
+          </article>
+        </div>
+        <div class="wrap section-cta">
+          <a class="btn btn--cyan" href="#sec-cta-bottom">Garantir minha vaga no Beta</a>
+        </div>
+      </section>
+
+      <!-- Idiomas do app -->
+      <section
+        class="lav-band padded-section reveal"
+        data-section="world-langs"
+        id="sec-world-langs"
+      >
+        <div class="wrap text-center">
+          <span class="saas-eyebrow">Em 14 idiomas</span>
+          <ul class="world-flags" aria-label="Idiomas do IkiApp">
+            <li><span role="img" aria-label="Português">🇧🇷</span></li>
+            <li><span role="img" aria-label="English">🇬🇧</span></li>
+            <li><span role="img" aria-label="Español">🇪🇸</span></li>
+            <li><span role="img" aria-label="Suomi">🇫🇮</span></li>
+            <li><span role="img" aria-label="日本語">🇯🇵</span></li>
+            <li><span role="img" aria-label="中文">🇨🇳</span></li>
+            <li><span role="img" aria-label="العربية">🇸🇦</span></li>
+            <li><span role="img" aria-label="Italiano">🇮🇹</span></li>
+            <li><span role="img" aria-label="Deutsch">🇩🇪</span></li>
+            <li><span role="img" aria-label="Français">🇫🇷</span></li>
+            <li><span role="img" aria-label="हिन्दी">🇮🇳</span></li>
+            <li><span role="img" aria-label="Bahasa Melayu">🇲🇾</span></li>
+            <li><span role="img" aria-label="فارسی">🇮🇷</span></li>
+            <li><span role="img" aria-label="Русский">🇷🇺</span></li>
+          </ul>
+          <h2 class="saas-h1 mb-16">Feito para o mundo todo</h2>
+          <p class="saas-body section-lead">
+            Milhões de pessoas e propósitos terão um amigo lado a lado na
+            incrível jornada de autodescoberta, prazer e disciplina.
+          </p>
+          <p
+            class="lang-pulse__line"
+            id="lang-pulse-line"
+            aria-live="polite"
+            data-lang-pulse
+          >
+            <span class="lang-pulse__flag" data-lang-flag aria-hidden="true">🇧🇷</span>
+            <span class="lang-pulse__text" data-lang-text></span><span class="lang-pulse__caret" aria-hidden="true"></span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Beta scarcity -->
+      <section
+        class="mint-band padded-section reveal"
+        data-section="beta"
+        id="sec-beta"
+      >
+        <div class="wrap text-center">
+          <span class="saas-eyebrow">Beta fechado e exclusivo</span>
+          <h2 class="saas-h1 mb-16">Vaga para 100 brasileiros</h2>
+          <p class="saas-body section-lead">
+            O aplicativo está em fase de testes intensivos para manter o
+            servidor estável. Nesta versão beta, liberamos o acesso a um grupo
+            extremamente restrito para ajudar quem quer parar de procrastinar.
+            Se você gostou, envie seu e-mail e aguarde.
+          </p>
+          <div class="scarcity-grid">
+            <div class="compliance-card">
+              <strong>Acesso limitado</strong><br />
+              Apenas 100 brasileiros convidados terão acesso neste ciclo
+              beta do IkiApp para testar.
+            </div>
+            <div class="compliance-card">
+              <strong>Se você entrar</strong><br />
+              Você testará em primeira mão a ferramenta que transforma a rotina
+              chata em um jogo de alta performance.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA waitlist -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="cta-bottom"
+        id="sec-cta-bottom"
+      >
+        <div class="cta-panel">
+          <h2 class="saas-h1 mb-16">Quer estar entre os 100?</h2>
+          <p class="saas-body">
+            Cadastre seu e-mail e garanta seu lugar na fila. Assim que uma vaga
+            for liberada, você receberá todas as informações para acessar o app
+            e começar a sua jornada.
+          </p>
+          <form class="iki-waitlist" id="waitlist-form" novalidate>
+            <label class="visually-hidden" for="waitlist-email">E-mail</label>
+            <input
+              id="waitlist-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="Seu melhor e-mail"
+            />
+            <button class="btn btn--cyan" type="submit">Garantir vaga no Beta Exclusivo</button>
+            <p class="iki-waitlist__msg" id="waitlist-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FAQ (visível = SEO + GEO) -->
+      <section
+        class="padded-section wrap reveal"
+        data-section="faq"
+        id="sec-faq"
+        aria-labelledby="faq-title"
+      >
+        <div class="text-center">
+          <span class="saas-eyebrow">Perguntas</span>
+          <h2 class="saas-h1 mb-16" id="faq-title">O que as pessoas perguntam</h2>
+        </div>
+        <div class="iki-faq">
+          <details class="iki-faq__item">
+            <summary>O que é o IkiApp?</summary>
+            <p>
+              É o app que transforma a sua rotina em um jogo de evolução. Você
+              gerencia suas metas na Roda da Vida, rastreia seus hábitos diários
+              e usa um cronômetro de foco integrado. No centro disso, surge um
+              personagem em origami, que cresce quando você se cumpre e some
+              quando você foge de si.
+            </p>
+            <p>
+              Não é só um timer, nem só uma lista de tarefas. É a sua rotina
+              organizada na tela e um companheiro que não deixa você mentir para
+              si mesmo. E é 100% gratuito.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>Como funciona o módulo de Foco?</summary>
+            <p>
+              O módulo de Foco usa blocos ininterruptos de 25 ou 50 minutos, com
+              pausas estratégicas, para proteger sua atenção e esmagar a
+              procrastinação.
+            </p>
+            <p>
+              Não é um cronômetro genérico. Cada sessão de Foco alimenta os
+              pontos de experiência do dia e o brilho do seu Iki.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>Como funciona o personagem Iki?</summary>
+            <p>
+              Você não escolhe o Iki. Ele surge no caminho. Quando você bate
+              suas metas, o personagem ganha XP, cresce, se ilumina e ganha
+              forma. Quando você abandona o que definiu para si, ele perde
+              brilho, amassa e pode desaparecer.
+            </p>
+            <p>
+              O Iki é o espelho da sua constância diária, não um mascote
+              colecionável.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>O app é de graça mesmo?</summary>
+            <p>
+              Sim. O IkiApp é 100% gratuito, sem assinaturas caras. O que existe
+              agora é um beta fechado exclusivo, com vaga estrita para 100
+              pessoas, para acompanharmos de perto a experiência e garantirmos
+              estabilidade de servidor.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>Por que 100 brasileiros?</summary>
+            <p>
+              Porque neste ciclo o IkiApp recebe cem pessoas por país — e o
+              Brasil é a primeira fila. A estrutura foi desenhada para esse
+              recorte: um grupo pequeno o bastante para acompanhar de perto,
+              sem abrir o portão para o mundo inteiro de uma vez.
+            </p>
+            <p>
+              Se você está nesta página, o convite já te encontrou. Isto não é
+              a vitrine aberta: é a porta do beta brasileiro. A vaga ainda pede
+              o seu e-mail.
+            </p>
+          </details>
+          <details class="iki-faq__item">
+            <summary>Como eu entro no app?</summary>
+            <p>
+              Quem já tem acesso entra pelo
+              <a href="https://app.ikiapp.co/login">login oficial</a>.
+              Se você ainda não garantiu a sua vaga, deixe o seu e-mail nesta
+              página. A lista de espera é o único caminho para conseguir uma
+              vaga neste ciclo restrito.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <footer class="saas-footer" data-section="footer-bar" id="sec-footer-bar">
+        <div class="wrap saas-footer__grid">
+          <div class="saas-footer__brand">
+            <a class="nav-bar__brand" href="#topo" aria-label="IkiApp">
+              <img src="../media/logo-lockup.png" alt="iki app" width="128" height="36" />
+            </a>
+            <p class="saas-caption" style="margin-top: 0.85rem">
+              IkiApp · O jogo da sua vida real
+            </p>
+          </div>
+          <div class="saas-footer__col">
+            <span class="saas-caption">Produto</span>
+            <ul>
+              <li><a href="#sec-jornada">Metas</a></li>
+              <li><a href="#sec-produto">Rotina</a></li>
+              <li><a href="#sec-foco">Foco</a></li>
+              <li><a href="#sec-ikis">Seu Iki</a></li>
+              <li><a href="#sec-faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="saas-footer__col">
+            <span class="saas-caption">Acesso</span>
+            <ul>
+              <li><a href="https://app.ikiapp.co/login">Acessar o app</a></li>
+              <li><a href="#sec-cta-bottom">Lista de espera</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="wrap saas-footer__meta">
+          <span class="saas-caption">© 2026 IkiApp</span>
+          <a class="saas-caption" href="#topo">Voltar ao topo</a>
+        </div>
+        <div class="wrap">
+          <p class="methz-credit">
+            <a href="https://methz.com.br/" target="_blank" rel="noopener noreferrer"
+              >Feito com Methz</a
+            >
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="../motion.js?v=iki-37"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        async function sendToBackend(eventName, userData = {}, customData = {}) {
+          try {
+            await fetch("/api/track", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                eventName,
+                userData: {
+                  ...userData,
+                  userAgent: navigator.userAgent,
+                },
+                customData,
+              }),
+            });
+          } catch (_) {
+            /* tracking best-effort */
+          }
+        }
+
+        document
+          .querySelectorAll('a[href="#sec-cta-bottom"]')
+          .forEach((btn) => {
+            btn.addEventListener("click", () => {
+              if (typeof fbq === "function") fbq("track", "InitiateCheckout");
+              if (typeof gtag === "function") gtag("event", "begin_checkout");
+              sendToBackend("InitiateCheckout");
+            });
+          });
+
+        const form = document.getElementById("waitlist-form");
+        const msg = document.getElementById("waitlist-msg");
+        form?.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const emailInput = document.getElementById("waitlist-email");
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const email = (emailInput?.value || "").trim().toLowerCase();
+          if (!email || !email.includes("@")) {
+            if (msg) msg.textContent = "Digite um e-mail válido.";
+            return;
+          }
+          if (submitBtn) submitBtn.disabled = true;
+          if (msg) msg.textContent = "Enviando…";
+          try {
+            const res = await fetch("/api/waitlist", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email }),
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok || !data.ok) {
+              if (msg) {
+                msg.textContent =
+                  "Não deu pra enviar agora. Tente de novo ou escreva para ikiapp.mkt@gmail.com.";
+              }
+              return;
+            }
+            try {
+              const key = "iki.waitlist";
+              const prev = JSON.parse(localStorage.getItem(key) || "[]");
+              if (!prev.includes(email)) prev.push(email);
+              localStorage.setItem(key, JSON.stringify(prev));
+            } catch (_) {
+              /* ignore */
+            }
+            if (typeof fbq === "function") fbq("track", "Lead");
+            if (typeof gtag === "function") gtag("event", "generate_lead");
+            sendToBackend("Lead", { email });
+            if (msg) msg.textContent = "Você entrou na lista. Te vemos no Iki.";
+            form.reset();
+          } catch (_) {
+            if (msg) {
+              msg.textContent =
+                "Não deu pra enviar agora. Tente de novo ou escreva para ikiapp.mkt@gmail.com.";
+            }
+          } finally {
+            if (submitBtn) submitBtn.disabled = false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
