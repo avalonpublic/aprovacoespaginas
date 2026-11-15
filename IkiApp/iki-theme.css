@@ -1803,3 +1803,35 @@ body.ds-saas {
     transform: none;
   }
 }
+
+.cookie-bar {
+  position: fixed;
+  z-index: 80;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem 1.25rem;
+  width: min(52rem, calc(100% - 2rem));
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(184, 232, 228, 0.28);
+  border-radius: 1.1rem;
+  background: rgba(8, 12, 16, 0.94);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  color: #f4f7f8;
+}
+
+.cookie-bar__text {
+  margin: 0;
+  flex: 1 1 16rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.cookie-bar__actions {
+  display: flex;
+  gap: 0.55rem;
+}

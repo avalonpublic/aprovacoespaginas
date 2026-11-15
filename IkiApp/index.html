@@ -113,7 +113,7 @@
 
     <link rel="stylesheet" href="./variables.css?v=iki-28" />
     <link rel="stylesheet" href="./style.css?v=iki-37" />
-    <link rel="stylesheet" href="./iki-theme.css?v=iki-47" />
+    <link rel="stylesheet" href="./iki-theme.css?v=iki-49" />
 
     <!-- JSON-LD: WebSite + SoftwareApplication + Organization + FAQ + Breadcrumb -->
     <script type="application/ld+json">
@@ -267,45 +267,20 @@
       }
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSWV2CQ4Y6"></script>
+    <!-- Google Tag Manager — page_view só depois do aceite de cookies -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "G-WSWV2CQ4Y6");
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        wait_for_update: 500,
+      });
     </script>
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-      fbq("init", "1546551013869737");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=1546551013869737&ev=PageView&noscript=1"
-    /></noscript>
   </head>
   <body class="ds-saas">
     <a class="skip" href="#topo">Skip to content</a>
@@ -961,6 +936,13 @@
           .querySelectorAll('a[href="#sec-cta-bottom"]')
           .forEach((btn) => {
             btn.addEventListener("click", () => {
+              var allowed = false;
+              try {
+                allowed = localStorage.getItem("iki.cookie_consent") === "accepted";
+              } catch (_) {
+                allowed = false;
+              }
+              if (!allowed) return;
               if (typeof fbq === "function") fbq("track", "InitiateCheckout");
               if (typeof gtag === "function") gtag("event", "begin_checkout");
               sendToBackend("InitiateCheckout");
@@ -1002,9 +984,12 @@
             } catch (_) {
               /* ignore */
             }
-            if (typeof fbq === "function") fbq("track", "Lead");
-            if (typeof gtag === "function") gtag("event", "generate_lead");
-            sendToBackend("Lead", { email });
+            if (window.ikiTrack) window.ikiTrack("lead", { method: "waitlist" });
+            if (window.ikiWhenGranted) {
+              window.ikiWhenGranted(function () {
+                sendToBackend("Lead", { email: email });
+              });
+            }
             if (msg) msg.textContent = "You are on the list. See you at Iki.";
             form.reset();
           } catch (_) {
@@ -1018,5 +1003,6 @@
         });
       });
     </script>
+    <script src="./gtm.js?v=iki-51"></script>
   </body>
 </html>
